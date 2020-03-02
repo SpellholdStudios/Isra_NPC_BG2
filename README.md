@@ -122,8 +122,7 @@ In addition to the methods above for removing individual components, you can com
 
 ## <a name="details" id="details"></a>Details
 
-<img style="float: left;" src="isra_bg2/readme/images/rhisral.png">
-Isra is a twenty-one year old paladin with the Sisters and Brothers of the Ruby Rose, an order devoted to Sune Firehair. As a follower of Sune Firehair, the goddess of love, beauty, and passion, and the only chaotic aligned deity to sponsor paladins, Isra has far more experience with (and sympathy for) the chaotic good churches of Sune and Lliira than any of the lawful churches, and associates with some of the most mirthful churches in the Realms.
+<img style="float: left;" src="isra_bg2/readme/images/rhisral.png"> Isra is a twenty-one year old paladin with the Sisters and Brothers of the Ruby Rose, an order devoted to Sune Firehair. As a follower of Sune Firehair, the goddess of love, beauty, and passion, and the only chaotic aligned deity to sponsor paladins, Isra has far more experience with (and sympathy for) the chaotic good churches of Sune and Lliira than any of the lawful churches, and associates with some of the most mirthful churches in the Realms.
 
 So her outlook and personality are somewhat removed from what you might expect from a paladin. Don't expect sermons or proselytism: the Firehair's faith is something better served by building close friendships than by lecturing dogma, and Isra understands that. She definitely still believes in honor, discipline, and order, but she tends to value the courtly aspects of the code of conduct more highly than the demands of duty. As a result, she's usually pretty willing to ignore harmlessly chaotic behavior (not evil behavior, though).
 
