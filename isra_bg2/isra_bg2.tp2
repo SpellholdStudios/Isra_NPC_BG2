@@ -1,0 +1,678 @@
+BACKUP ~isra_bg2/backup~
+AUTHOR ~spellholdstudios.net~
+VERSION ~v3~
+README ~isra_bg2/Isra_BG2_Readme.html~
+
+AUTO_TRA ~isra_bg2/translations/%s~
+
+ALWAYS
+// eet compatibility
+ACTION_IF (GAME_IS ~eet~) BEGIN
+  OUTER_SET bg2_chapter = 12
+END ELSE BEGIN
+  OUTER_SET bg2_chapter = 0
+END
+OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+  OUTER_SET bg2_chapter = bg2_chapter + 1
+  OUTER_SPRINT name_source ~bg2_chapter_%i%~
+  OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+END
+END
+
+LANGUAGE ~English~
+         ~English~
+         ~isra_bg2/translations/english/setup.tra~
+
+BEGIN @0 /* Isra for BGII */
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal installed. */
+
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+// Fixing Imoen's dialogue file
+ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN
+  COPY_EXISTING ~interdia.2da~ ~override~
+    READ_2DA_ENTRY 17 0 2 scriptname
+    PATCH_IF (~%scriptname%~ STR_EQ ~IMOEN~) THEN BEGIN
+    SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
+    END
+    BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+  APPEND ~interdia.2da~ ~IMOEN       BIMOEN2~ // fixes SoA version
+    UNLESS ~BIMOEN2~
+END
+
+// fixing kit.ids; creature corrections are down in the creature section
+COPY_EXISTING ~kit.ids~ ~override~
+  REPLACE_TEXTUALLY ~.*\bGODHELM\b~                ~0x4014 GODHELM~
+  REPLACE_TEXTUALLY ~.*\bGODLATHANDER\b~           ~0x4015 GODLATHANDER~
+  BUT_ONLY_IF_IT_CHANGES
+
+// fixing area file
+COPY_EXISTING ar1005.are ~override~
+  WRITE_ASCII AREA_SCRIPT ar1005 #8
+BUT_ONLY
+
+// ---------------------------------------------
+// Audio
+// ---------------------------------------------
+
+COPY ~isra_bg2/audio/rh#blank.mus~ ~music~
+    
+COPY_EXISTING ~songlist.2da~ ~override~
+  SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
+    
+LAF HANDLE_AUDIO END
+
+// ---------------------------------------------
+// Dialogue & Scripts
+// ---------------------------------------------
+
+COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isr.d~
+COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isrj.d~
+COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#isrp.d~
+COMPILE ~isra_bg2/dialogue/brh#isr.d~
+COMPILE ~isra_bg2/dialogue/rh#quest.d~
+
+COMPILE EVALUATE_BUFFER ~isra_bg2/scripts/rh#isr.baf~
+COMPILE EVALUATE_BUFFER ~isra_bg2/scripts/rh#isrd.baf~
+COMPILE ~isra_bg2/scripts/rh#isrx.baf~
+COMPILE ~isra_bg2/scripts/rh#alia.baf~
+COMPILE ~isra_bg2/scripts/rh#alia2.baf~
+COMPILE ~isra_bg2/scripts/rh#rana.baf~
+COMPILE ~isra_bg2/scripts/rh#thug1.baf~
+COMPILE ~isra_bg2/scripts/rh#phedr.baf~
+COMPILE ~isra_bg2/scripts/rh#is2.baf~
+COMPILE ~isra_bg2/scripts/rh#gelio.baf~
+COMPILE ~isra_bg2/scripts/rh#isct1.baf~
+COMPILE ~isra_bg2/scripts/rh#isct2.baf~
+COMPILE ~isra_bg2/scripts/rh#isct3.baf~
+COMPILE ~isra_bg2/scripts/rh#isct4.baf~
+COMPILE ~isra_bg2/scripts/rh#isct5.baf~
+COMPILE ~isra_bg2/scripts/rh#isct6.baf~
+COMPILE ~isra_bg2/scripts/rh#isct7.baf~
+COMPILE ~isra_bg2/scripts/rh#isstr.baf~
+COMPILE ~isra_bg2/scripts/rh#isme.baf~
+COMPILE ~isra_bg2/scripts/rh#isvmp.baf~
+COMPILE ~isra_bg2/scripts/rh#evend.baf~
+
+EXTEND_TOP ~ar0313.bcs~ ~isra_bg2/scripts/AR0313.baf~
+EXTEND_TOP ~ar0704.bcs~ ~isra_bg2/scripts/AR0704.baf~
+EXTEND_TOP ~ar0709.bcs~ ~isra_bg2/scripts/AR0709.baf~
+EXTEND_TOP ~ar0902.bcs~ ~isra_bg2/scripts/AR0902.baf~
+EXTEND_TOP ~ar1000.bcs~ ~isra_bg2/scripts/AR1000.baf~
+EXTEND_TOP ~ar1002.bcs~ ~isra_bg2/scripts/AR1002.baf~
+EXTEND_TOP ~ar1005.bcs~ ~isra_bg2/scripts/AR1005.baf~
+EXTEND_BOTTOM ~ar1006.bcs~ ~isra_bg2/scripts/AR1006.baf~
+EXTEND_BOTTOM ~ar0809.bcs~ ~isra_bg2/scripts/AR0809.baf~
+EXTEND_BOTTOM ~aerie.bcs~ ~isra_bg2/scripts/aerie.baf~
+EXTEND_BOTTOM ~anomen.bcs~ ~isra_bg2/scripts/anomen.baf~
+EXTEND_BOTTOM ~bodhiamb.bcs~ ~isra_bg2/scripts/bodhiamb.baf~
+EXTEND_BOTTOM ~cleanse.bcs~  ~isra_bg2/scripts/cleanse.baf~
+EXTEND_BOTTOM ~jaheira.bcs~  ~isra_bg2/scripts/jaheira.baf~
+EXTEND_BOTTOM ~vampamb.bcs~  ~isra_bg2/scripts/vampamb.baf~
+EXTEND_BOTTOM ~viconia.bcs~  ~isra_bg2/scripts/viconia.baf~
+
+// ToB
+COMPILE ~isra_bg2/dialogue/rh#is25.d~
+COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#is25j.d~
+COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#is25p.d~
+COMPILE ~isra_bg2/dialogue/brh#is25.d~
+
+COMPILE ~isra_bg2/scripts/rh#is25.baf~
+COMPILE ~isra_bg2/scripts/rh#is25d.baf~
+COMPILE ~isra_bg2/scripts/rh#iswr1.baf~
+
+EXTEND_TOP ~ar6200.bcs~ ~isra_bg2/scripts/ar6200.baf~
+EXTEND_BOTTOM ~cut218g.bcs~ ~isra_bg2/scripts/rh#iswr2.baf~
+
+// ---------------------------------------------
+// EET & BG2EE
+// ---------------------------------------------
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+INCLUDE ~EET/other/EET_functions.tph~
+LAF ~EET_NPC_TRANSITION~
+INT_VAR
+type = 2
+clean_ToB = 1
+STR_VAR
+dv = "rh#Isra2"
+override_SoA = "RH#ISR"
+override_ToB = "RH#IS25"
+dialog_ToB = "RH#IS25"
+traFile = EVAL "Isra_bg2/translations/%LANGUAGE%/rh#is25.tra"
+string = "@1" //Bring me Isra, the Sunite cavalier.
+stringPosDV = "Jaheira"
+clean_ToB_DV = "rh#isra"
+END
+END ELSE BEGIN
+COMPILE ~Isra_bg2/dialogue/fatesp.d~ USING ~Isra_bg2/translations/%LANGUAGE%/rh#is25.tra~
+END
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+  COMPILE ~isra_bg2/dialogue/bgee.d~
+  EXTEND_BOTTOM ~rh#isr.bcs~ ~isra_bg2/scripts/rh#isree.baf~
+  EXTEND_BOTTOM ~rh#is25.bcs~ ~isra_bg2/scripts/rh#is25ee.baf~
+  EXTEND_BOTTOM ~neera.bcs~ ~isra_bg2/scripts/neera.baf~
+  EXTEND_TOP ~ohndenna.bcs~ ~isra_bg2/scripts/ohndenna.baf~
+
+ADD_JOURNAL @19 @22 @33 @36 @63 @81 @113 @124 @129 @155 @168 @175 @191 USING ~isra_bg2/translations/%LANGUAGE%/rh#isr.tra~
+ADD_JOURNAL @17 @23 @88 @125 @142 @160 @187 @233 @235 @237 @269 @277 USING ~isra_bg2/translations/%LANGUAGE%/rh#quest.tra~
+ADD_JOURNAL EXISTING TITLE (#74337) @15 @29 @34 @58 @60 @89 @108 @126 USING ~isra_bg2/translations/%LANGUAGE%/rh#isrp.tra~
+END
+
+// Areas
+COPY ~isra_bg2/areas~ ~override~
+
+APPEND ~mastarea.2da~
+  ~RH#IS1  value~
+UNLESS ~RH#IS1~
+
+APPEND ~mastarea.2da~
+  ~RH#IS2  value~
+UNLESS ~RH#IS2~
+
+APPEND ~mastarea.2da~
+  ~RH#IS3  value~
+UNLESS ~RH#IS3~
+
+
+// ---------------------------------------------
+// Creatures and Images
+// ---------------------------------------------
+
+COPY ~isra_bg2/creatures/rh#isr.cre~ ~override/rh#isr.cre~
+  SAY NAME1 @2 /* Isra */
+  SAY NAME2 @2 /* Isra */
+  WRITE_ASCII 0x248 ~rh#isr~ #8  //override script
+  WRITE_ASCII 0x280 ~rh#Isra2~ #32  //DV
+  WRITE_ASCII 0x2cc ~rh#isr~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~rh#isras~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
+  SAY BIO @3 /* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
+  SAY MORALE ~~ []
+  SAY HAPPY @5 /* I'm truly honored to be in your company. */ 
+  SAY UNHAPPY_ANNOYED @6 /* I don't care for some of the choices you've been making. */ 
+  SAY UNHAPPY_SERIOUS @7 /* I shan't simply stand by and watch this any longer. */ 
+  SAY UNHAPPY_BREAKING_POINT @8 /* Enough! I shall be party to this no longer. */  
+  SAY LEADER @9 /* This is new... and not entirely unwelcome. */ 
+  SAY TIRED @10 /* These hours are beginning to wear on me. */ 
+  SAY BORED @11 /* Would that we had some Lliirans amongst us to laugh away the tedium. */ 
+  SAY BATTLE_CRY1 @12 /* For the Firehair! */ 
+  SAY BATTLE_CRY2 @13 /* For all that is good! */ 
+  SAY BATTLE_CRY3 @14 /* For the glory of Sune! */ 
+  SAY BATTLE_CRY4 ~~ []
+  SAY BATTLE_CRY5 ~~ []
+  SAY DAMAGE ~~ [rh#is011]
+  SAY DYING ~~ [rh#is012]
+  SAY HURT @17 /* A healer's aid, please! */ 
+  SAY AREA_FOREST @18 /* As lovely as it is here, I'm beginning to miss civilization. */ 
+  SAY AREA_CITY @19 /* Ah, the city, in all of its magnificence... and infamy. */ 
+  SAY AREA_DUNGEON @20 /* I wonder what lost marvels we might find hidden down here. */ 
+  SAY AREA_DAY @21 /* All things seem possible in the daylight. */ 
+  SAY AREA_NIGHT @22 /* 'Tis a beautiful night... at least for the moment. */ 
+  SAY SELECT_COMMON1 @23 /* I hear you. */ 
+  SAY SELECT_COMMON2 @24 /* What do you need? */ 
+  SAY SELECT_COMMON3 @25 /* How may I help? */ 
+  SAY SELECT_COMMON4 @26 /* I'm ready. */ 
+  SAY SELECT_COMMON5 @27 /* Yes? */ 
+  SAY SELECT_COMMON6 @28 /* Yes, what is it? */ 
+  SAY SELECT_ACTION1 @29 /* Of course. */ 
+  SAY SELECT_ACTION2 @30 /* Very well. */ 
+  SAY SELECT_ACTION3 @31 /* As you wish. */ 
+  SAY SELECT_ACTION4 @32 /* I shall do as you say. */ 
+  SAY SELECT_ACTION5 @33 /* Aye, I thought so. */ 
+  SAY SELECT_ACTION6 @34 /* Certainly. */ 
+  SAY SELECT_ACTION7 @35 /* As you would have it. */ 
+  SAY CRITICAL_HIT ~~ [rh#is032]
+  SAY CRITICAL_MISS ~~ [rh#is033]
+  SAY TARGET_IMMUNE @38 /* This does not work at all! */ 
+  SAY INVENTORY_FULL @39 /* That's more than I can carry. */ 
+  SAY SELECT_RARE1 @40 /* Hmm? */ 
+  SAY SELECT_RARE2 @41 /* This should prove interesting. */ 
+  SAY SPELL_DISRUPTED @42 /* My spell... */ 
+  SAY SET_A_TRAP ~~ []
+  SAY HIDDEN_IN_SHADOWS ~~ []
+  SAY PICKED_POCKET ~~ []
+  ADD_CRE_ITEM ~plat01~ #0 #0 #0 ~NONE~ ~armor~
+  ADD_CRE_ITEM ~sw2h02~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~ EQUIP
+  ADD_CRE_ITEM ~rh#isrng~ #0 #0 #0 ~NONE~ ~lring~
+
+COPY ~isra_bg2/creatures/rh#is25.cre~ ~override/rh#is25.cre~
+  SAY NAME1 @2 /* Isra */
+  SAY NAME2 @2 /* Isra */
+  WRITE_ASCII 0x248 ~rh#is25~ #8  //override script
+  WRITE_ASCII 0x280 ~rh#Isra2~ #32  //DV
+  WRITE_ASCII 0x2cc ~rh#is25~ #8   //pre-joining dialogue file
+  WRITE_ASCII 0X34 ~rh#isras~ #8   //small portrait
+  WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
+  SAY BIO @3 /* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
+  SAY MORALE ~~ []
+  SAY HAPPY @5 /* I'm truly honored to be in your company. */ 
+  SAY UNHAPPY_ANNOYED @6 /* I don't care for some of the choices you've been making. */ 
+  SAY UNHAPPY_SERIOUS @7 /* I shan't simply stand by and watch this any longer. */ 
+  SAY UNHAPPY_BREAKING_POINT @8 /* Enough! I shall be party to this no longer. */  
+  SAY LEADER @9 /* This is new... and not entirely unwelcome. */ 
+  SAY TIRED @10 /* These hours are beginning to wear on me. */ 
+  SAY BORED @11 /* Would that we had some Lliirans amongst us to laugh away the tedium. */ 
+  SAY BATTLE_CRY1 @12 /* For the Firehair! */ 
+  SAY BATTLE_CRY2 @13 /* For all that is good! */ 
+  SAY BATTLE_CRY3 @14 /* For the glory of Sune! */ 
+  SAY BATTLE_CRY4 ~~ []
+  SAY BATTLE_CRY5 ~~ []
+  SAY DAMAGE ~~ [rh#is011]
+  SAY DYING ~~ [rh#is012]
+  SAY HURT @17 /* A healer's aid, please! */ 
+  SAY AREA_FOREST @18 /* As lovely as it is here, I'm beginning to miss civilization. */ 
+  SAY AREA_CITY @19 /* Ah, the city, in all of its magnificence... and infamy. */ 
+  SAY AREA_DUNGEON @20 /* I wonder what lost marvels we might find hidden down here. */ 
+  SAY AREA_DAY @21 /* All things seem possible in the daylight. */ 
+  SAY AREA_NIGHT @22 /* 'Tis a beautiful night... at least for the moment. */ 
+  SAY SELECT_COMMON1 @23 /* I hear you. */ 
+  SAY SELECT_COMMON2 @24 /* What do you need? */ 
+  SAY SELECT_COMMON3 @25 /* How may I help? */ 
+  SAY SELECT_COMMON4 @26 /* I'm ready. */ 
+  SAY SELECT_COMMON5 @27 /* Yes? */ 
+  SAY SELECT_COMMON6 @28 /* Yes, what is it? */ 
+  SAY SELECT_ACTION1 @29 /* Of course. */ 
+  SAY SELECT_ACTION2 @30 /* Very well. */ 
+  SAY SELECT_ACTION3 @31 /* As you wish. */ 
+  SAY SELECT_ACTION4 @32 /* I shall do as you say. */ 
+  SAY SELECT_ACTION5 @33 /* Aye, I thought so. */ 
+  SAY SELECT_ACTION6 @34 /* Certainly. */ 
+  SAY SELECT_ACTION7 @35 /* As you would have it. */ 
+  SAY CRITICAL_HIT ~~ [rh#is032]
+  SAY CRITICAL_MISS ~~ [rh#is033]
+  SAY TARGET_IMMUNE @38 /* This does not work at all! */ 
+  SAY INVENTORY_FULL @39 /* That's more than I can carry. */ 
+  SAY SELECT_RARE1 @40 /* Hmm? */ 
+  SAY SELECT_RARE2 @41 /* This should prove interesting. */ 
+  SAY SPELL_DISRUPTED @42 /* My spell... */ 
+  SAY SET_A_TRAP ~~ []
+  SAY HIDDEN_IN_SHADOWS ~~ []
+  SAY PICKED_POCKET ~~ []
+  ADD_CRE_ITEM ~plat14~ #0 #0 #0 ~NONE~ ~armor~
+  ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
+  ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~NONE~ ~shield~
+  ADD_CRE_ITEM ~rh#isrng~ #0 #0 #0 ~NONE~ ~lring~
+
+ACTION_IF (GAME_IS ~bg2ee eet~) BEGIN
+  COPY ~isra_bg2/images/rh#isral.bmp~ ~override~
+  COPY ~override/rh#isr.cre~ ~override/rh#isr.cre~
+  WRITE_ASCII 0x34 ~rh#isral~ #8   // small portrait
+  WRITE_ASCII 0x3c ~rh#isral~ #8   // large portrait
+
+COPY ~override/rh#is25.cre~ ~override/rh#is25.cre~
+  WRITE_ASCII 0x34 ~rh#isral~ #8   // small portrait
+  WRITE_ASCII 0x3c ~rh#isral~ #8   // large portrait
+END ELSE BEGIN
+COPY ~isra_bg2/images~ ~override~
+END
+  
+// Alia
+COPY_EXISTING ~sartem01.cre~ ~override/rh#alia.cre~
+  SAY NAME1 @43 /* Alia */
+  SAY NAME2 @44 /* Alia Ghadir */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#Alia~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Alia~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#Alia~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~rh#Alia~ #8
+  WRITE_BYTE 0x2F 84 		// skin color
+  WRITE_BYTE 0x32 0		// hair color
+  WRITE_BYTE 0x27b 49 		// alignment: chaotic good
+
+COPY_EXISTING ~sartem01.cre~ ~override/rh#alia2.cre~
+  SAY NAME1 @43 /* Alia */
+  SAY NAME2 @44 /* Alia Ghadir */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#Alia~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#Alia2~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#Alia2~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~rh#Alia2~ #8
+  WRITE_BYTE 0x2F 84 		// skin color
+  WRITE_BYTE 0x32 0		// hair color
+  WRITE_BYTE 0x27b 49 		// alignment: chaotic good
+    
+// Rana:
+COPY_EXISTING ~noblew2.cre~ ~override/rh#rana.cre~
+  SAY NAME1 @45 /* Rana */
+  SAY NAME2 @46 /* Rana Jysstev */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#rana~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#rana~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#rana~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~rh#rana~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_RACE  ~rh#rana~ #8
+  WRITE_BYTE 0x2F 84 		// skin color
+  WRITE_BYTE 0x32 0		// hair color
+  WRITE_BYTE 0x27b 34 		// alignment: true neutral
+    
+// Quentin:
+COPY_EXISTING ~gnoblem1.cre~ ~override/rh#quent.cre~
+  SAY NAME1 @47 /* Quentin */
+  SAY NAME2 @48 /* Quentin Jysstev */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#quent~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#quent~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#quent~ #8
+  WRITE_BYTE 0x2F 12 		// skin color
+  WRITE_BYTE 0x32 4		// hair color
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  
+// Thugs
+COPY_EXISTING ~bmugg1.cre~ ~override/rh#thug1.cre~
+  SAY NAME1 @49 /* Thug */
+  SAY NAME2 @49 /* Thug */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#thug1~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#thug1~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#thug1~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_CLASS  ~rh#thug1~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~rh#thug1~ #8
+  WRITE_BYTE 0x27b 35 // alignment: neutral evil
+
+COPY_EXISTING ~bmugg1.cre~ ~override/rh#thug2.cre~
+  SAY NAME1 @49 /* Thug */
+  SAY NAME2 @49 /* Thug */
+  WRITE_EVALUATED_ASCII DIALOG          ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#thug2~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#thug1~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_CLASS  ~rh#thug1~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~rh#thug1~ #8
+  WRITE_BYTE 0x27b 35 // alignment: neutral evil
+  
+// Rat
+COPY_EXISTING ~rat.cre~ ~override/rh#rat.cre~
+  SAY NAME1 @50 /* Rat */
+  SAY NAME2 @50 /* Rat */
+  WRITE_EVALUATED_ASCII DIALOG          ~~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#rat~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Phedra
+COPY_EXISTING ~mage10D.cre~ ~override/rh#phedr.cre~
+  SAY NAME1 @51 /* Phedra */
+  SAY NAME2 @51 /* Phedra */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#phedr~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#phedra~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#phedr~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Gelion Deymiare
+COPY_EXISTING ~mekrat.cre~ ~override/rh#gelio.cre~
+  SAY NAME1 @52 /* Gelion */
+  SAY NAME2 @53 /* Gelion Deymiare */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#gelio~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#gelion~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#gelio~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  ADD_CRE_ITEM ~ring06~ #0 #0 #0 ~NONE~ ~rring~
+  ADD_CRE_ITEM ~scrl2d~ #0 #0 #0 ~NONE~ ~qitem1~
+  WRITE_LONG 0x1c 897
+
+// Taren Zoar
+COPY_EXISTING ~heartg3.cre~ ~override/rh#taren.cre~
+  SAY NAME1 @54 /* Taren */
+  SAY NAME2 @55 /* Taren Zoar */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#taren~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#taren~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Alim al-Makram
+COPY_EXISTING ~yusef.cre~ ~override/rh#alim.cre~
+  SAY NAME1 @56 /* Alim */
+  SAY NAME2 @57 /* Alim al-Makram */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#alim~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#alim~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  WRITE_BYTE 0x27b 34 // alignment: true neutral
+  REMOVE_CRE_ITEM ~hamm02~
+  REMOVE_CRE_ITEM ~sw1h01~
+  REMOVE_CRE_ITEM ~chan02~
+  REMOVE_CRE_ITEM ~shld04~
+  
+// Ghislain
+COPY_EXISTING ~yusef.cre~ ~override/rh#ghsln.cre~
+  SAY NAME1 @58 /* Ghislain */
+  SAY NAME2 @58 /* Ghislain */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#ghsln~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#ghsln~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+
+// Lamia Crytrapper
+COPY_EXISTING ~noblew2.cre~ ~override/rh#lamia.cre~
+  SAY NAME1 @59 /* Lamia */
+  SAY NAME2 @60 /* Lamia Crytrapper */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#lamia~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#lamia~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  WRITE_BYTE 0x2F 13 		// skin color
+  WRITE_BYTE 0x32 6		// hair color
+  WRITE_BYTE 0x27b 33 		// alignment: neutral good
+
+// Butler
+COPY_EXISTING ~scbutler.cre~ ~override/rh#btlr.cre~
+  SAY NAME1 @61 /* Butler */
+  SAY NAME2 @61 /* Butler */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#btlr~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#btlr~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~%DEST_RES%~ #8
+
+// Messenger
+COPY_EXISTING ~messen.cre~ ~override/rh#isme.cre~
+  SAY NAME1 @62 /* Messenger */
+  SAY NAME2 @62 /* Messenger */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#isme~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#isme~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#isme~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~%DEST_RES%~ #8
+
+// Corinna Ghadir
+COPY_EXISTING ~noblew2.cre~ ~override/rh#cora.cre~
+  SAY NAME1 @63 /* Corinna */
+  SAY NAME2 @64 /* Corinna Ghadir */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#cora~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#cora~ #32
+  WRITE_BYTE 0x2F 13 		// skin color
+  WRITE_BYTE 0x32 3		// hair color
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~~ #8
+  WRITE_BYTE 0x27b 33 		// alignment: neutral good
+  
+// Vampire Isra
+COPY ~isra_bg2/creatures/rh#isvmp.cre~ ~override/rh#isvmp.cre~
+  SAY NAME1 @2 /* Isra */
+  SAY NAME2 @2 /* Isra */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#isvmp~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~%DEST_RES%~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_BYTE            0x0237          2
+  WRITE_BYTE            0x0275          2
+  WRITE_ASCII           0x0034          ~rh#isras~ #8
+  WRITE_ASCII           0x003c          ~rh#isram~ #8
+  REPLACE_CRE_ITEM ~RH#ISBDY~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
+
+// Evendur Crytrapper
+COPY_EXISTING ~cadril.cre~ ~override/rh#evend.cre~
+  SAY NAME1 @65 /* Sir Evendur */
+  SAY NAME2 @65 /* Sir Evendur */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#evend~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#evend~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#evend~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~%DEST_RES%~ #8
+  WRITE_BYTE 0x2F 13 		// skin color
+  WRITE_BYTE 0x32 3		// hair color
+  ADD_CRE_ITEM ~rh#mail~ #0 #0 #0 ~NONE~ ~armor~
+  REMOVE_CRE_ITEM ~sw1h04~
+  REMOVE_CRE_ITEM ~plat01~
+  REMOVE_CRE_ITEM ~shld03~
+ 
+// Ilian
+COPY_EXISTING ~scsarles.cre~ ~override/rh#ilian.cre~
+  SAY NAME1 @66 /* Ilian */
+  SAY NAME2 @66 /* Ilian */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#ilian~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#ilian~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~rh#ilian~ #8
+  WRITE_EVALUATED_ASCII SCRIPT_DEFAULT  ~%DEST_RES%~ #8
+  WRITE_BYTE 0x27b 50 // alignment: chaotic neutral
+    
+// Wraith Scene
+COPY_EXISTING ~noblew2.cre~ ~override/rh#rana2.cre~
+  SAY NAME1 @45 /* Rana */
+  SAY NAME2 @46 /* Rana Jysstev */
+  WRITE_EVALUATED_ASCII DIALOG          ~rh#rana2~ #8
+  WRITE_EVALUATED_ASCII DEATHVAR        ~rh#rana2~ #32
+  WRITE_EVALUATED_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+  WRITE_BYTE 0x2F 84 		// skin color
+  WRITE_BYTE 0x32 0 		// hair color
+
+// ---------------------------------------------
+// Items
+// ---------------------------------------------
+
+COPY ~isra_bg2/Items/rh#isrng.itm~ ~override~
+  SAY NAME1 @67 /* Ghadir Family Ring */
+  SAY NAME2 @67 /* Ghadir Family Ring */
+  SAY DESC @68 /* Of Calishite origin, this ring has belonged to Isra's family for generations. It grants her a +1 bonus to all saving throws and a +1 armor class bonus. */
+
+COPY ~isra_bg2/Items/rh#cloak.itm~ ~override~
+  SAY NAME1 @69 /* Mantle of Roses */
+  SAY NAME2 @69 /* Mantle of Roses */
+  SAY DESC @70 /* This cloak, woven by a priestess of Sune, was intended as a gift for <CHARNAME> of Candlekeep. It grants its wear a +1 bonus to Charisma as well as immunity to confusion. */
+
+COPY ~isra_bg2/Items/rh#isbdy.itm~ ~override~
+  SAY NAME1 @71 /* Isra's Body */
+  SAY NAME2 @71 /* Isra's Body */
+  SAY DESC @72 /* Isra was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be. */
+  
+COPY ~isra_bg2/Items/rh#mail.itm~ ~override~
+  SAY NAME1 @73 /* Green Dragon Scale */
+  SAY NAME2 @73 /* Green Dragon Scale */
+  SAY DESC @74 /* Dragon Scale armor is light of weight, strong, and resistant to acid. Because of these properties it is much sought after, but finding, let alone slaying, a powerful ancient dragon is near impossible. It is usually easier to search for an existing suit, such as this one. One should be careful wearing it near dragons, however, particularly green ones.
+
+STATISTICS:
+
+Bonuses: +50% Acid Resistance
+Armor Class: -1
+Weight: 30
+Requires: 8 Strength */
+
+COPY_EXISTING ~scrlhp.itm~ ~override/rh#lttr.itm~
+  SAY NAME1 @75 /* Letter */
+  SAY NAME2 @75 /* Letter */
+  SAY DESC @76 /* This note is plain, though a chalky, sulfuric residue clings to it. Perhaps its author was in a laboratory of some sort. It reads:
+  
+Jysstev,
+
+I am not as easily defied as you might wish. Comply with my wishes or your wife will suffer the consequences.
+
+GD */
+
+COPY_EXISTING ~book25.itm~ ~override/rh#docu1.itm~
+  SAY NAME1 @77 /* Gelion's Financial Statements */
+  SAY NAME2 @77 /* Gelion's Financial Statements */
+  SAY DESC @78 /* This is a copy of a ledger listing the most recent transactions of the late Gelion Deymiare, a Cowled Wizard who apparently dealt heavily in the illegal trade of magical items. */
+  
+COPY_EXISTING ~book25.itm~ ~override/rh#docu2.itm~
+  SAY NAME1 @79 /* Quentin's Financial Statements */
+  SAY NAME2 @79 /* Quentin's Financial Statements */
+  SAY DESC @80 /* This is a ledger of income for Quentin Jysstev, a nobleman accused of smuggling magical items. It will take some time to examine these records for signs of illegal activity. */
+
+COPY_EXISTING ~misc97.itm~ ~override/rh#ale.itm~
+  SAY NAME1 @81 /* Ale Jug */
+  SAY NAME2 @82 /* Sea Bounty's Bitter Black Ale */
+  SAY DESC @83 /* The Thumb's Bitter Black Ale, intended as a gift for the smuggler Alim al-Makram. */
+
+// ---------------------------------------------
+// EPILOGUES
+// ---------------------------------------------
+
+// 1. No romance
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra1.2da~
+REPLACE ~99999~ @84 /* After the victory at the Throne of Bhaal, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though she seldom spoke of the uglier aspects of the conflict, those who knew her believed that she felt the need to atone for harm inadvertently committed. This did little to dampen her spirits, however, and she became quite popular amongst the Tethyrian aristocracy... and with one if its minstrels in particular, according to rumor. Nevertheless, her time in Tethyr came to an abrupt end when relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. She never married, though if Athkatlan gossip can be believed, she seldom suffered from loneliness. */
+
+// 2. Romance, PC stays mortal, wants to travel, father is nice
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra2.2da~
+REPLACE ~99999~ @85 /* After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. <CHARNAME> found himself very welcome amongst the Sunite paladins as well, and legend says that he accompanied Isra on a number of missions on their behest. Unconventional though their romance may have been during those years, their commitment to each other only grew, and upon retiring from active service, they were eventually married in Athkatla. Isra's father took an instant liking to her new husband, only bemoaning the fact that they were not wed years earlier. More poignant for Isra was her eldest sister Rana's unexpected presence at the wedding, and they took the first steps towards mending their very damaged relationship. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells. */
+
+// 3. Romance, PC stays mortal, wants to travel, father is not nice
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra3.2da~
+REPLACE ~99999~ @86 /* After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. <CHARNAME> found <PRO_HIMHER>self very welcome amongst the Sunite paladins as well, and legend says that <PRO_HESHE> accompanied Isra on a number of missions on their behest. Unconventional though their romance may have been during those years, their commitment to each other only grew, and upon retiring from active service, they were eventually married in Athkatla. Although Isra's father was not as gracious to his new <PRO_SONDAUGHTER>-in-law as he might have been, his disapproval was more than overshadowed by Isra's eldest sister Rana's presence at the wedding. While it would take years to fully mend their damaged relationship, the first steps proved easier than either had expected. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells. */
+
+// 4. Romance, PC stays mortal, wants to settle, father is nice
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra4.2da~
+REPLACE ~99999~ @87 /* After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. The subsequent years were difficult on Isra and <CHARNAME>, and they did not see nearly as much of one another as they would have liked. Though their relationship was strained at times, it never died entirely, and upon Isra's retirement from active service, they worked to rebuild what they had once had. Unsurprisingly, perhaps, for a couple almost certainly blessed by Sune Firehair, they succeeded, and they were eventually married in Athkatla. Isra's father took an instant liking to her new husband, only bemoaning the fact that they were not wed years earlier. More poignant for Isra was her eldest sister Rana's unexpected presence at the wedding, and they took the first steps towards mending their very damaged relationship. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells. */
+
+// 5. Romance, PC stays mortal, wants to settle, father is not nice
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra5.2da~
+REPLACE ~99999~ @88 /* After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. The subsequent years were difficult on Isra and <CHARNAME>, and they did not see nearly as much of one another as they would have liked. Though their relationship was strained at times, it never died entirely, and upon Isra's retirement from active service, they worked to rebuild what they had once had. Unsurprisingly, perhaps, for a couple almost certainly blessed by Sune Firehair, they succeeded, and they were eventually married in Athkatla. Although Isra's father was not as gracious to his new <PRO_SONDAUGHTER>-in-law as he might have been, his disapproval was more than overshadowed by Isra's eldest sister Rana's presence at the wedding. While it would take years to fully mend their damaged relationship, the first steps proved easier than either had expected. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells. */
+
+// 6. Romance, PC ascends
+COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra6.2da~
+REPLACE ~99999~ @89 /* After <CHARNAME>'s ascension, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though saddened by her former lover's departure, she found a degree of solace in her work, and soon became quite popular amongst the Tethyrian aristocracy... at least until relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. Though she would remember <CHARNAME> fondly, Isra was never one to live in memory alone, and her various romances became a favorite topic of Athkatla's gossips in the years to come. */
+
+APPEND ~pdialog.2da~
+  ~rh#isra2 rh#isrp rh#isrj rh#isrd rh#is25p rh#is25j rh#is25d rh#is25~
+UNLESS ~rh#isra2~
+
+APPEND ~interdia.2da~
+  ~rh#isra2 brh#isr brh#is25~
+UNLESS ~rh#isra2~
+
+// Crossmod Content
+
+BEGIN ~Crossmod Content~
+REQUIRE_COMPONENT ~Isra_bg2.tp2~ ~0~ ~Please install Isra before additional content~
+
+// Adrian-Isra Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~rh#isr.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Adrian and Isra...~
+COMPILE ~isra_bg2/crossmod/adrian.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Dace-Isra Material
+ACTION_IF FILE_EXISTS_IN_GAME ~t#dace.dlg~ AND FILE_EXISTS_IN_GAME ~rh#isr.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Dace and Isra...~
+COMPILE ~isra_bg2/crossmod/dace.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Isra-Kulyok's Coran Material
+ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#coran25.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Isra and Kulyok's Coran...~
+  COMPILE EVALUATE_BUFFER ~isra_bg2/crossmod/coran.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Isra-Kulyok's Tiax Material
+ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#tia25.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Isra and Kulyok's Tiax...~
+  COMPILE ~isra_bg2/crossmod/tiax.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Isra-Kulyok's Xan Material
+ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#xan25.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Isra and Kulyok's Xan...~
+  COMPILE ~isra_bg2/crossmod/xan.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Isra-Nephele Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#neph.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Isra and Nephele...~
+  COMPILE ~isra_bg2/crossmod/nephele.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END
+
+// Isra-Ninde Material
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#ni25.dlg~
+THEN BEGIN
+  PRINT ~Adding SoA banters between Isra and Ninde...~
+  COMPILE ~isra_bg2/crossmod/ninde.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
+END

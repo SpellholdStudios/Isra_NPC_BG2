@@ -1,0 +1,36 @@
+IF
+	Global("rh#IsraRanaAttacked","GLOBAL",0)
+	CombatCounter(0)
+	Range([PC],30)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraRanaAttacked","GLOBAL",1)
+END
+
+IF
+	Global("rh#IsraRanaAttacked","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	Global("rh#IsraRanaAttacked","GLOBAL",2)
+	!StateCheck("rh#Rana",CD_STATE_NOTVALID)
+	See(Player1)
+	Allegiance(Myself,NEUTRAL)
+	Dead("rh#thug1")
+	Dead("rh#thug2")
+	!Dead("rh#Rana")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraRanaAttacked","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRanaAttacked","GLOBAL",3)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+

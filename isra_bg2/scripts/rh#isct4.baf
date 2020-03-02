@@ -1,0 +1,26 @@
+
+IF
+	True()
+THEN
+RESPONSE #100
+	CutSceneId(Player1)
+	Wait(1)
+	FadeToColor([20.0],0)
+    Wait(2)
+    ActionOverride("RH#RANA",LeaveAreaLUA("AR1006","",[650.270],8))
+    LeaveAreaLUA("AR1006","",[570.322],10)
+    ActionOverride(Player2,LeaveAreaLUA("AR1006","",[616.377],10))
+    ActionOverride(Player3,LeaveAreaLUA("AR1006","",[526.290],10))
+    ActionOverride(Player4,LeaveAreaLUA("AR1006","",[479.325],10))
+    ActionOverride(Player5,LeaveAreaLUA("AR1006","",[518.373],10))
+    ActionOverride(Player6,LeaveAreaLUA("AR1006","",[560.414],10))
+	Wait(1)
+    CreateCreature("rh#isr",[670.311],3)
+    CreateCreature("rh#quent",[592.240],14)
+    SetGlobal("rh#IsraJysstevEstate","GLOBAL",1)
+    FadeFromColor([20.0],0)
+    Wait(2)
+    SmallWait(5)
+	EndCutSceneMode()
+	ActionOverride("rh#Quent",Dialogue("rh#Rana"))
+END

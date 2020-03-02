@@ -1,0 +1,109 @@
+// 1. No romance, PC stays mortal
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	!Global("rh#IsraRomanceActive","GLOBAL",2)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra1")
+	SmallWait(1)
+	Continue()
+END
+
+
+// 2. Romance, PC stays mortal, wants to travel, father is nice
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#IsraSettled","GLOBAL",0)
+	Gender(Player1,MALE)
+	Race(Player1,HUMAN)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra2")
+	SmallWait(1)
+	Continue()
+END
+
+// 3. Romance, PC stays mortal, wants to travel, father is not nice
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#IsraSettled","GLOBAL",0)
+	OR(2)
+		!Gender(Player1,MALE)
+		!Race(Player1,HUMAN)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra3")
+	SmallWait(1)
+	Continue()
+END
+
+// 4. Romance, PC stays mortal, wants to settle, father is nice
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#IsraSettled","GLOBAL",1)
+	Gender(Player1,MALE)
+	Race(Player1,HUMAN)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra4")
+	SmallWait(1)
+	Continue()
+END
+
+// 5. Romance, PC stays mortal, wants to settle, father is not nice
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",0)
+	Global("rh#IsraSettled","GLOBAL",1)
+	OR(2)
+		!Gender(Player1,MALE)
+		!Race(Player1,HUMAN)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra5")
+	SmallWait(1)
+	Continue()
+END
+
+// 6. Romance, PC ascends
+
+IF
+	Global("StartEndBios","AR6200",1)
+	InParty("rh#Isra2")
+	Global("rh#IsraBio","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraBio","GLOBAL",1)
+	TextScreen("rh#isra6")
+	SmallWait(1)
+	Continue()
+END

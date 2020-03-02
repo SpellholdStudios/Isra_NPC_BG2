@@ -1,0 +1,53 @@
+// romance conflict
+
+IF
+	InParty("rh#Isra2")
+	InParty("Jaheira")
+	See("rh#Isra2")
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraJaheiraRomance","GLOBAL",0)
+	Global("JaheiraRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	GlobalGT("rh#IsraTalks","GLOBAL",26)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#IsraJaheiraTalkTimer","GLOBAL",1200)
+	SetGlobal("rh#IsraJaheiraRomance","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Jaheira")
+	See("rh#Isra2")
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraJaheiraRomance","GLOBAL",1)
+	Global("JaheiraRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraJaheiraTalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraJaheiraRomance","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Jaheira")
+	See("rh#Isra2")
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	!StateCheck("Jaheira",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraJaheiraRomance","GLOBAL",2)
+	Global("JaheiraRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraJaheiraTalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+	Dialogue("rh#Isra2")
+END

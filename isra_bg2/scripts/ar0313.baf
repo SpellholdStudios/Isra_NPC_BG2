@@ -1,0 +1,9 @@
+IF
+	Global("rh#IsraQuestTwo","GLOBAL",5)
+	Global("rh#GhislainExists","AR0313",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#GhislainExists","AR0313",1)
+	CreateCreature("rh#ghsln",[686.238],3)
+	Continue()
+END

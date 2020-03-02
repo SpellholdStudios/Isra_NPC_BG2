@@ -1,0 +1,110 @@
+IF
+    InParty(Myself)
+    InParty("Dorn")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck("Dorn",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#IsraDornSoA","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Dialogue(Player1)
+END
+
+// Dorn conflict
+
+IF
+    InParty(Myself)
+    InParty("Dorn")
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck("Dorn",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#IsraDornSoA","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#IsraDornSoA","GLOBAL",1)
+END
+
+// Hexxat Conflict
+IF
+    InParty(Myself)
+    InParty("Hexxat")
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck("Dorn",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#IsraHexxat","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#IsraHexxat","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    InParty("Hexxat")
+    See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck("Hexxat",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !Detect([ENEMY])
+    Global("rh#IsraHexxat","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Dialogue(Player1)
+END
+
+// Rasaad Conflict
+IF
+    InParty("rh#Isra2")
+    InParty("Rasaad")
+    Global("rh#IsraRasaadRomance","GLOBAL",0)
+    Global("RasaadRomanceActive","GLOBAL",1)
+    Global("rh#IsraRomanceActive","GLOBAL",1)
+    GlobalGT("RasaadLovetalks","GLOBAL",9)
+    GlobalGT("rh#IsraTalks","GLOBAL",28)
+THEN
+RESPONSE #100
+    RealSetGlobalTimer("rh#IsraRasaadRomanceTimer","GLOBAL",1200)
+    SetGlobal("rh#IsraRasaadRomance","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+    InParty("Rasaad")
+    See(Player1)
+    !StateCheck("Rasaad",CD_STATE_NOTVALID)
+    !StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraRasaadRomance","GLOBAL",1)
+    Global("RasaadRomanceActive","GLOBAL",1)
+    Global("rh#IsraRomanceActive","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraRasaadRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+    SetGlobal("rh#IsraRasaadRomance","GLOBAL",2)
+END
+
+IF
+    InParty("rh#Isra2")
+    InParty("Rasaad")
+    See(Player1)
+    !StateCheck("Rasaad",CD_STATE_NOTVALID)
+    !StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraRasaadRomance","GLOBAL",2)
+    Global("RasaadRomanceActive","GLOBAL",1)
+    Global("rh#IsraRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+    Dialogue(Player1)
+END

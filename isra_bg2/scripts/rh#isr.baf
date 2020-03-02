@@ -1,0 +1,1368 @@
+// ---------------------------------------------
+// Quests
+// ---------------------------------------------
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",0)
+	CombatCounter(0)
+	Range([PC],30)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraSevenVales","GLOBAL",1)
+END
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",1)
+THEN
+RESPONSE #100
+	StartDialogueNoSet("rh#Alia")
+END
+
+IF	
+	Global("rh#IsraJysstevEstate","GLOBAL",2)
+THEN
+  RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(7)    
+		Global("rh#IsraQuestOne","GLOBAL",2)
+    	Global("rh#IsraQuestOne","GLOBAL",4)
+    	Global("rh#IsraQuestOne","GLOBAL",15)
+		Global("rh#IsraQuestTwo","GLOBAL",4)
+		Global("rh#QarTalks","GLOBAL",3)
+		Global("rh#AlimTalks","GLOBAL",5)
+		Global("rh#IsraQuestTwo","GLOBAL",6)
+THEN
+  RESPONSE #100
+	Dialogue(Player1)
+END
+
+IF
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR1000")
+    OR(2)
+    	Global("rh#IsraQuestOne","GLOBAL",1)
+    	Global("rh#IsraQuestOne","GLOBAL",14)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraQuestOne","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Isra2")
+	See(Player1)
+	Range("rh#rat",20)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR1000")
+    Global("rh#IsraQuestOne","GLOBAL",3)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraQuestOne","GLOBAL",4)
+END
+
+IF
+	RealGlobalTimerExpired("rh#IsraQuestTimer","GLOBAL")
+	InParty("rh#Isra2")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	ReputationGT(Player1,13)
+	OR(6)
+		AreaCheck("AR0300") // Docks
+		AreaCheck("AR0400") // Slums
+		AreaCheck("AR0500") // Bridge
+		AreaCheck("AR0700") // Market
+		AreaCheck("AR0900") // Temple
+		AreaCheck("AR1000") // Government
+	Global("rh#IsraQuestTwo","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraQuestTwo","GLOBAL",1)
+	CreateCreatureObjectOffScreen("rh#alia2",Myself,0,0,0) // Alia Ghadir
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR1000")
+    Global("rh#IsraQuestTwo","GLOBAL",3)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraQuestTwo","GLOBAL",1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR1000")
+	Global("rh#QarTalks","GLOBAL",2)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#QarTalks","GLOBAL",3)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#AlimTalks","GLOBAL",4)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#AlimTalks","GLOBAL",5)
+END
+
+IF
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#IsraQuestTwo","GLOBAL",5)
+	Global("rh#QarTalks","GLOBAL",4)
+	Global("rh#AlimTalks","GLOBAL",6)
+	PartyRested()
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraQuestTwo","GLOBAL",6)
+END
+
+IF
+    Global("rh#IsraQuestTwo","GLOBAL",8)
+THEN
+  RESPONSE #100
+    CreateCreature("rh#lamia",[880.340],1)
+    CreateCreature("rh#btlr",[240.500],3)
+    CreateCreature("rh#rana",[260.490],3)
+    FadeFromColor([20.0],0)
+    Wait(2)
+    SetGlobal("rh#IsraQuestTwo","GLOBAL",9)
+END
+
+// quest reminders
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(6)    
+		Global("rh#IsraQuestOneReminder","GLOBAL",1)
+		Global("rh#IsraQuestOneReminder","GLOBAL",3)
+		Global("rh#IsraQuestTwoReminder","GLOBAL",1)
+		Global("rh#IsraQuestTwoReminder","GLOBAL",3)
+		Global("rh#IsraQuestThreeReminder","GLOBAL",1)
+		Global("rh#IsraQuestThreeReminder","GLOBAL",3)
+THEN
+  RESPONSE #100
+	Dialogue(Player1)
+END
+
+IF
+	GlobalLT("rh#IsraQuestOne","GLOBAL",14)
+	GlobalTimerExpired("rh#IsraQuestOneReminderTimer","GLOBAL")
+	OR(2)
+		Global("rh#IsraQuestOneReminder","GLOBAL",0)
+		Global("rh#IsraQuestOneReminder","GLOBAL",2)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraQuestOneReminder","GLOBAL",1)
+END
+
+IF
+	GlobalLT("rh#IsraQuestTwo","GLOBAL",8)
+	GlobalTimerExpired("rh#IsraQuestTwoReminderTimer","GLOBAL")
+	OR(2)
+		Global("rh#IsraQuestTwoReminder","GLOBAL",0)
+		Global("rh#IsraQuestTwoReminder","GLOBAL",2)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraQuestTwoReminder","GLOBAL",1)
+END
+
+IF
+	GlobalLT("rh#IsraPaladin","GLOBAL",6)
+	GlobalTimerExpired("rh#IsraQuestThreeReminderTimer","GLOBAL")
+	OR(2)
+		Global("rh#IsraQuestThreeReminder","GLOBAL",0)
+		Global("rh#IsraQuestThreeReminder","GLOBAL",2)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraQuestThreeReminder","GLOBAL",1)
+END
+
+// Starting PC Dialogue After Quests
+
+IF
+	Global("rh#IsraQuestOne","GLOBAL",16)
+	Global("rh#IsraTalks","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",900)
+	SetGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+IF
+	Global("rh#IsraQuestTwo","GLOBAL",12)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700)
+	SetGlobal("rh#IsraQuestTwo","GLOBAL",13)
+END
+
+// ---------------------------------------------
+// Romance Checks
+// ---------------------------------------------
+
+IF
+	Alignment(Player1,MASK_GOOD)
+	CheckStatGT(Player1,12,CHR)
+	Global("rh#IsraRomanceCheck","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraRomanceCheck","GLOBAL",1)
+END
+
+IF
+	OR(2)
+		!Alignment(Player1,MASK_GOOD)
+		!CheckStatGT(Player1,12,CHR)
+	Global("rh#IsraRomanceCheck","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraRomanceCheck","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Isra2")
+	Global("rh#IsraRomanceCheck","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraRomanceActive","GLOBAL",1)
+END
+
+// ---------------------------------------------
+// Dialogue Track
+// ---------------------------------------------
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    OR(13)
+		Global("rh#IsraTalks","GLOBAL",2)
+    	Global("rh#IsraTalks","GLOBAL",4)
+    	Global("rh#IsraTalks","GLOBAL",6)
+    	Global("rh#IsraTalks","GLOBAL",8)
+    	Global("rh#IsraTalks","GLOBAL",12)
+    	Global("rh#IsraTalks","GLOBAL",14)
+    	Global("rh#IsraTalks","GLOBAL",16)
+    	Global("rh#IsraTalks","GLOBAL",18)
+    	Global("rh#IsraTalks","GLOBAL",20)
+    	Global("rh#IsraTalks","GLOBAL",22)
+		Global("rh#IsraTalks","GLOBAL",24)
+		Global("rh#IsraTalks","GLOBAL",26)
+		Global("rh#IsraTalks","GLOBAL",28)
+THEN
+  RESPONSE #100
+  	PlaySong(0)
+    PlaySound("rh#isong")
+	Dialogue(Player1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    OR(2)
+	    Global("rh#IsraRomanceActive","GLOBAL",1)
+	    Global("rh#IsraRomanceActive","GLOBAL",2)
+    OR(6)
+		Global("rh#IsraTalks","GLOBAL",32)
+		Global("rh#IsraTalks","GLOBAL",34)
+		Global("rh#IsraTalks","GLOBAL",38)
+		Global("rh#IsraTalks","GLOBAL",40)
+		Global("rh#IsraTalks","GLOBAL",42)
+		Global("rh#IsraTalks","GLOBAL",44)
+THEN
+  RESPONSE #100
+  	PlaySong(0)
+    PlaySound("rh#isong")
+	Dialogue(Player1)
+END
+
+// incrementing
+
+// 1, 2, 3, 4, 6, 8, 9, 10
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,9)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+    OR(8)
+		Global("rh#IsraTalks","GLOBAL",1)
+    	Global("rh#IsraTalks","GLOBAL",3)
+		Global("rh#IsraTalks","GLOBAL",5)
+    	Global("rh#IsraTalks","GLOBAL",7)
+    	Global("rh#IsraTalks","GLOBAL",11)
+    	Global("rh#IsraTalks","GLOBAL",15)
+    	Global("rh#IsraTalks","GLOBAL",17)
+    	Global("rh#IsraTalks","GLOBAL",19)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+// 7.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,9)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+    OR(7)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+		AreaCheck("AR1000")
+    Global("rh#IsraTalks","GLOBAL",13)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+// 11, 12, 13, 14
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,13)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+	Global("rh#IsraQuestTwo","GLOBAL",13)
+	OR(4)
+    	Global("rh#IsraTalks","GLOBAL",21)
+    	Global("rh#IsraTalks","GLOBAL",23)	
+    	Global("rh#IsraTalks","GLOBAL",25)
+		Global("rh#IsraTalks","GLOBAL",27)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+	
+// 16, 17, 21, 22
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,13)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+    OR(2)
+    	Global("rh#IsraRomanceActive","GLOBAL",1)
+    	Global("rh#IsraRomanceActive","GLOBAL",2)
+    OR(4)
+    	Global("rh#IsraTalks","GLOBAL",31)
+    	Global("rh#IsraTalks","GLOBAL",33)
+    	Global("rh#IsraTalks","GLOBAL",41)
+    	Global("rh#IsraTalks","GLOBAL",43)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+// 19.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,13)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+    OR(2)
+    	Global("rh#IsraRomanceActive","GLOBAL",1)
+    	Global("rh#IsraRomanceActive","GLOBAL",2)
+    OR(7)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+		AreaCheck("AR1000")
+   	Global("rh#IsraTalks","GLOBAL",37)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+// 20.
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    ReputationGT(Player1,13)
+    RealGlobalTimerExpired("rh#IsraTalksMessengerTimer","GLOBAL")
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraTalks","GLOBAL",39)
+    Global("rh#IsraMessenger","GLOBAL",0)
+    OR(7)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+		AreaCheck("AR1000")
+THEN
+  RESPONSE #100
+	CreateCreatureObjectOffScreen("rh#isme",Myself,0,0,0) // messenger
+	RealSetGlobalTimer("rh#IsraMessengerRespawningTimer","GLOBAL",300)
+	SetGlobal("rh#IsraMessenger","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    RealGlobalTimerExpired("rh#IsraMessengerRespawningTimer","GLOBAL")
+	Global("rh#IsraMessenger","GLOBAL",1)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraMessenger","GLOBAL",0)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    GlobalLT("chapter","GLOBAL",%bg2_chapter_4%)
+    RealGlobalTimerExpired("rh#IsraTalksTimer","GLOBAL")
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraTalks","GLOBAL",39)
+    Global("rh#IsraMessenger","GLOBAL",2)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+END
+
+// ---------------------------------------------
+// Post-Spellhold Romance Track
+// ---------------------------------------------
+
+// initiating
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(5)
+		Global("rh#IsraSpellholdTalks","GLOBAL",2)
+		Global("rh#IsraSpellholdTalks","GLOBAL",5)
+		Global("rh#IsraSpellholdTalks","GLOBAL",7)
+		Global("rh#IsraAthkatlaTalk","GLOBAL",2)
+		Global("rh#IsraPaladin","GLOBAL",7)
+THEN
+  RESPONSE #100
+  	PlaySong(0)
+    PlaySound("rh#isong")
+	Dialogue(Player1)
+END
+
+// 23.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR1512")
+    ReputationGT(Player1,13)
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraSpellholdTalks","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraSpellholdTimer","GLOBAL",300)
+	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    ReputationGT(Player1,13)
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraSpellholdTalks","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraSpellholdTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+END
+
+// 24.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    ReputationGT(Player1,13)
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("OpenJonBedroom","GLOBAL",1)
+    Global("rh#IsraSpellholdTalks","GLOBAL",3)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraSpellholdTimer","GLOBAL",300)
+	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    ReputationGT(Player1,13)
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraSpellholdTalks","GLOBAL",4)
+	RealGlobalTimerExpired("rh#IsraSpellholdTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+END
+
+// 25.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    ReputationGT(Player1,13)
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraSpellholdTalks","GLOBAL",6)
+    GlobalGT("chapter","GLOBAL",%bg2_chapter_4%)
+	RealGlobalTimerExpired("rh#IsraSpellholdTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+END
+
+// 27.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("chapter","GLOBAL",%bg2_chapter_6%)
+    ReputationGT(Player1,13)
+ 	Global("rh#IsraRomanceActive","GLOBAL",2)
+ 	!Dead("c6bodhi")
+    OR(7)
+		AreaCheck("AR0020")
+		AreaCheck("AR0300")
+		AreaCheck("AR0400")
+		AreaCheck("AR0500")
+		AreaCheck("AR0700")
+		AreaCheck("AR0900")
+		AreaCheck("AR1000")
+	Global("rh#IsraAthkatlaTalk","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraAthkatlaTimer","GLOBAL",15)
+	IncrementGlobal("rh#IsraAthkatlaTalk","GLOBAL",1)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("chapter","GLOBAL",%bg2_chapter_6%)
+    !Dead("c6bodhi")
+    ReputationGT(Player1,13)
+ 	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("rh#IsraAthkatlaTalk","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraAthkatlaTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraAthkatlaTalk","GLOBAL",1)
+END
+
+// 28.
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#IsraPaladin","GLOBAL",3)
+	AreaCheck("AR0704")
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraPaladin","GLOBAL",4)
+END
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraPaladin","GLOBAL",6)
+ 	Global("rh#IsraRomanceActive","GLOBAL",2)
+	RealGlobalTimerExpired("rh#IsraPaladinTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraPaladin","GLOBAL",1)
+END
+
+// Morning After
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	Global("rh#IsraSex","GLOBAL",1)
+	Global("rh#IsraMorning","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraMorning","GLOBAL",1)
+END
+
+// ---------------------------------------------
+// Scenery Talks
+// ---------------------------------------------
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(18)
+		Global("rh#IsraOphals","GLOBAL",3)
+		Global("rh#IsraRadiantHeart","GLOBAL",1)
+		Global("rh#IsraFirkraag","GLOBAL",1)
+		Global("rh#IsraShadeLord","GLOBAL",2)
+		Global("rh#IsraSurayah","GLOBAL",1)
+		Global("rh#IsraShadowThieves","GLOBAL",1)
+		Global("rh#IsraSanik","GLOBAL",1)
+		Global("rh#IsraBrynnlaw","GLOBAL",2)
+		Global("rh#IsraAdalon","GLOBAL",2)
+		Global("rh#IsraPhaere","GLOBAL",2)
+		Global("rh#IsraPhaereInnuendo1","GLOBAL",1)
+		Global("rh#IsraPhaereInnuendo2","GLOBAL",1)
+		Global("rh#IsraElhan","GLOBAL",2)
+		Global("rh#IsraViconiaRomance","GLOBAL",2)
+		Global("rh#IsraAnomenRomance","GLOBAL",2)
+		Global("rh#IsraRomanceBreakup","GLOBAL",1)
+		Global("rh#IsraPaladin","GLOBAL",4)
+		Global("rh#IsraMorning","GLOBAL",1)
+THEN
+  RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+// Ophals
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraOphals","GLOBAL",1)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraOphalsTimer","GLOBAL",5)
+	IncrementGlobal("rh#IsraOphals","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    RealGlobalTimerExpired("rh#IsraOphalsTimer","GLOBAL")
+    Global("rh#IsraOphals","GLOBAL",2)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraOphals","GLOBAL",1)
+END
+
+// Radiant Heart
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR0903")
+    Global("rh#IsraRadiantHeart","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraRadiantHeart","GLOBAL",1)
+END
+
+// Firkraag
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("firmag01")
+    AreaCheck("AR1200")
+    Global("rh#IsraFirkraag","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraFirkraag","GLOBAL",1)
+END
+
+// Shade Lord
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("uhrang01")
+    !Global("VillageSaved","GLOBAL",1)
+    Global("rh#IsraShadeLord","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraShadeLordTimer","GLOBAL",15)
+	IncrementGlobal("rh#IsraShadeLord","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("shadel")
+    !Global("VillageSaved","GLOBAL",1)
+    Global("rh#IsraShadeLord","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraShadeLordTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraShadeLord","GLOBAL",1)
+END
+
+// Surayah
+
+IF
+    InParty("rh#Isra2")
+    InParty("Anomen")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Anomen",CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR0500")
+    Dead("surayah")
+    Global("rh#IsraSurayah","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraSurayah","GLOBAL",1)
+END
+
+// Shadow Thieves
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	AreaCheck("AR0400")
+	Global("WorkingForAran","GLOBAL",1)
+	Global("rh#IsraShadowThieves","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraShadowThieves","GLOBAL",1)
+END
+
+// Sanik
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("ppsanik")
+    Dead("pirmur02")
+    Global("rh#IsraSanik","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraSanik","GLOBAL",1)
+END
+
+// Brynnlaw
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("pirmur01")
+    AreaCheck("AR1600")
+    Global("rh#IsraBrynnlaw","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraBrynnlawTimer","GLOBAL",15)
+	IncrementGlobal("rh#IsraBrynnlaw","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Dead("pirmur01")
+    Global("rh#IsraBrynnlaw","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraBrynnlawTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraBrynnlaw","GLOBAL",1)
+END
+
+// Adalon
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("PlayerLooksLikeDrow","GLOBAL",1)
+    AreaCheck("AR2100")
+    Global("rh#IsraAdalon","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraAdalonTimer","GLOBAL",5)
+	IncrementGlobal("rh#IsraAdalon","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraAdalon","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraAdalonTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraAdalon","GLOBAL",1)
+END
+
+// Phaere & Solaufein
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    PartyHasItem("misc9w")
+    !Dead("Solaufein")
+    Global("rh#IsraPhaere","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraPhaereTimer","GLOBAL",300)
+	IncrementGlobal("rh#IsraPhaere","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraPhaere","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraPhaereTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraPhaere","GLOBAL",1)
+END
+
+// Phaere Innuendo
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("PhaereInnuendo","GLOBAL",1)
+    Global("rh#IsraPhaereInnuendo1","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraPhaereInnuendo1","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("PhaereInnuendo","GLOBAL",2)
+    Global("rh#IsraPhaereInnuendo2","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraPhaereInnuendo2","GLOBAL",1)
+END
+
+// Elhan
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    AreaCheck("AR2500")
+    Global("ElhanFinishedSpeaking","GLOBAL",1)
+    !Global("rh#IsraRomanceActive","GLOBAL",2)
+    Global("rh#IsraElhan","GLOBAL",0)
+THEN
+  RESPONSE #100
+	RealSetGlobalTimer("rh#IsraElhanTimer","GLOBAL",10)
+	IncrementGlobal("rh#IsraElhan","GLOBAL",1)
+END
+    
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("rh#IsraElhan","GLOBAL",1)
+    !Global("rh#IsraRomanceActive","GLOBAL",2)
+    RealGlobalTimerExpired("rh#IsraElhanTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraElhan","GLOBAL",1)
+END
+
+// ---------------------------------------------
+// Romance Conflicts
+// ---------------------------------------------
+
+IF
+	OR(2)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(6)
+		Global("AerieRomanceActive","GLOBAL",2)
+		Global("JaheiraRomanceActive","GLOBAL",2)
+		Global("ViconiaRomanceActive","GLOBAL",2)
+		Global("AnomenRomanceActive","GLOBAL",2)
+		Global("NeeraRomanceActive","GLOBAL",2)
+		Global("RasaadRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("rh#IsraRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("AerieRomanceActive","GLOBAL",1)
+		Global("AerieRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("AerieRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("JaheiraRomanceActive","GLOBAL",1)
+		Global("JaheiraRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("JaheiraRomanceActive","GLOBAL",3)
+END
+
+IF	
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("ViconiaRomanceActive","GLOBAL",1)
+		Global("ViconiaRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("ViconiaRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("AnomenRomanceActive","GLOBAL",1)
+		Global("AnomenRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("AnomenRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("RasaadRomanceActive","GLOBAL",1)
+		Global("RasaadRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("RasaadRomanceActive","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("NeeraRomanceActive","GLOBAL",1)
+		Global("NeeraRomanceActive","GLOBAL",2)
+THEN
+  RESPONSE #100
+  	SetGlobal("NeeraRomanceActive","GLOBAL",3)
+END
+
+// conflicts
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("ViconiaRomanceActive","GLOBAL",1)
+    Global("rh#IsraViconiaRomance","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraViconiaTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraViconiaRomance","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("AnomenRomanceActive","GLOBAL",1)
+    Global("rh#IsraAnomenRomance","GLOBAL",1)
+    RealGlobalTimerExpired("rh#IsraAnomenTimer","GLOBAL")
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraAnomenRomance","GLOBAL",1)
+END
+
+IF
+    InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(2)
+	    !ReputationGT(Player1,8)
+    	GlobalGT("rh#IsraOffense","GLOBAL",2)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+	Global("rh#IsraRomanceBreakup","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraRomanceBreakup","GLOBAL",1)
+END
+
+// ---------------------------------------------
+// Flirts
+// ---------------------------------------------
+
+IF 
+	Global("rh#IsraStartFlirts","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",2)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#IsraStartFlirts","GLOBAL",1)
+	RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)
+END
+
+IF 
+	Global("rh#IsraStartFlirts","GLOBAL",0)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	Global("rh#IsraQuestTwo","GLOBAL",13)
+ THEN
+RESPONSE #100
+	SetGlobal("rh#IsraStartFlirts","GLOBAL",1)
+	RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)
+END
+
+IF
+	InParty("rh#Isra2")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("rh#IsraFlirtTimer","GLOBAL")
+	!Global("rh#IsraFlirtsDisabled","GLOBAL",1)
+    !Global("chapter","GLOBAL",%bg2_chapter_5%)
+	Global("rh#IsraTimeForFlirt","GLOBAL",0)
+	OR(2)
+		Global("rh#IsraRomanceActive","GLOBAL",1)
+		Global("rh#IsraRomanceActive","GLOBAL",2)
+ THEN
+RESPONSE #100	
+	SetGlobal("rh#IsraTimeForFlirt","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Isra2")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	RealGlobalTimerExpired("rh#IsraFlirtTimer","GLOBAL")
+	!Global("rh#IsraFlirtsDisabled","GLOBAL",1)
+    !Global("chapter","GLOBAL",%bg2_chapter_5%)
+	Global("rh#IsraTimeForFlirt","GLOBAL",1)
+	OR(2)
+		Global("rh#IsraRomanceActive","GLOBAL",1)
+		Global("rh#IsraRomanceActive","GLOBAL",2)
+ THEN
+RESPONSE #100
+	Dialogue(Player1)
+END
+
+// religion stuff
+
+IF
+	OR(5)
+		Global("rh#IsraTyrranPC","GLOBAL",1)
+		Global("rh#IsraTormitePC","GLOBAL",1)
+		Global("rh#IsraRedKnightPC","GLOBAL",1)
+		Kit(Player1,GODLATHANDER)
+		Kit(Player1,GODHELM)
+	Global("rh#IsraSunitePC","GLOBAL",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraSunitePC","GLOBAL",2)
+END
+
+// low rep
+
+IF	
+	InParty("rh#Isra2")
+	See(Player1)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+    CombatCounter(0)
+    !See([ENEMY])
+	OR(2)
+		Global("rh#IsraLowReputation","GLOBAL",1)
+		Global("rh#IsraReputationBreak","GLOBAL",1)
+ THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF
+	InParty(Myself)
+    !ReputationGT(Player1,9)
+	Global("rh#IsraLowReputation","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraLowReputation","GLOBAL",1)
+END
+
+IF
+	InParty(Myself)
+    !ReputationGT(Player1,5)
+	Global("rh#IsraReputationBreak","GLOBAL",0)
+THEN
+  RESPONSE #100
+	SetGlobal("rh#IsraReputationBreak","GLOBAL",1)
+END
+
+// IF HOSTILE
+
+IF
+	Allegiance(Myself,ENEMY)
+	!InParty(Myself)
+	Global("rh#NPCFight","LOCALS",0)
+THEN
+  RESPONSE #100
+	ChangeAIScript("rh#isrx",CLASS)
+	ChangeAIScript("useitem",GENERAL)
+	ChangeAIScript("",DEFAULT)
+	SetGlobal("rh#NPCFight","LOCALS",1)
+END
+
+IF 
+	InParty(Myself)
+	Global("rh#IsraAttackedFamily","GLOBAL",0)
+	OR(14)
+		Dead("rh#Alia")
+		Allegiance("rh#Alia",ENEMY)
+		Dead("rh#Alia2")
+		Allegiance("rh#Alia2",ENEMY)
+		Dead("rh#Rana")
+		Allegiance("rh#Rana",ENEMY)
+		Dead("rh#Quent")
+		Allegiance("rh#Quent",ENEMY)
+		Dead("rh#Cora")
+		Allegiance("rh#Cora",ENEMY)
+		Dead("rh#Lamia")
+		Allegiance("rh#Lamia",ENEMY)
+		Dead("rh#Evend")
+		Allegiance("rh#Evend",ENEMY)
+THEN
+  RESPONSE #100
+  	SetGlobal("rh#IsraAttackedFamily","GLOBAL",1)
+  	DisplayStringHead(Myself,@239 /* You would do such a thing!? */)
+  	LeaveParty()
+  	Enemy()
+END
+
+IF 
+	!InParty(Myself)
+	Global("rh#IsraAttackedFamily","GLOBAL",0)
+	OR(6)
+		Dead("rh#Alia")
+		Allegiance("rh#Alia",ENEMY)
+		Dead("rh#Rana")
+		Allegiance("rh#Rana",ENEMY)
+		Dead("rh#Quent")
+		Allegiance("rh#Quent",ENEMY)
+THEN
+  RESPONSE #100
+  	SetGlobal("rh#IsraAttackedFamily","GLOBAL",1)
+  	Enemy()
+END

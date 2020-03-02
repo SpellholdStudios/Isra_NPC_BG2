@@ -1,0 +1,103 @@
+@0    = ~Isra for BGII~
+@1    = ~You must have Throne of Bhaal installed.~
+@2    = ~Isra~
+@3    = ~When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.~
+
+@5    = ~I'm truly honored to be in your company.~ [rh#is001]
+@6    = ~I don't care for some of the choices you've been making.~ [rh#is002]
+@7    = ~I shan't simply stand by and watch this any longer.~ [rh#is003]
+@8    = ~Enough! I shall be party to this no longer.~ [rh#is004]
+@9    = ~This is new... and not entirely unwelcome.~ [rh#is005]
+@10   = ~These hours are beginning to wear on me.~ [rh#is006]
+@11   = ~Would that we had some Lliirans amongst us to laugh away the tedium.~ [rh#is007]
+@12   = ~For the Firehair!~ [rh#is008]
+@13   = ~For all that is good!~ [rh#is009]
+@14   = ~For the glory of Sune!~ [rh#is010]
+
+
+@17   = ~A healer's aid, please!~ [rh#is013]
+@18   = ~As lovely as it is here, I'm beginning to miss civilization.~ [rh#is014]
+@19   = ~Ah, the city, in all of its magnificence... and infamy.~ [rh#is015]
+@20   = ~I wonder what lost marvels we might find hidden down here.~ [rh#is016]
+@21   = ~All things seem possible in the daylight.~ [rh#is017]
+@22   = ~'Tis a beautiful night... at least for the moment.~ [rh#is018]
+@23   = ~I hear you.~ [rh#is019]
+@24   = ~What do you need?~ [rh#is020]
+@25   = ~How may I help?~ [rh#is021]
+@26   = ~I'm ready.~ [rh#is022]
+@27   = ~Yes?~ [rh#is023]
+@28   = ~Yes, what is it?~ [rh#is024]
+@29   = ~Of course.~ [rh#is025]
+@30   = ~Very well.~ [rh#is026]
+@31   = ~As you wish.~ [rh#is027]
+@32   = ~I shall do as you say.~ [rh#is028]
+@33   = ~Aye, I thought so.~ [rh#is029]
+@34   = ~Certainly.~ [rh#is030]
+@35   = ~As you would have it.~ [rh#is031]
+
+
+@38   = ~This does not work at all!~ [rh#is034]
+@39   = ~That's more than I can carry.~ [rh#is035]
+@40   = ~Hmm?~ [rh#is036]
+@41   = ~This should prove interesting.~ [rh#is037]
+@42   = ~My spell...~ [rh#is038]
+@43   = ~Alia~
+@44   = ~Alia Ghadir~
+@45   = ~Rana~
+@46   = ~Rana Jysstev~
+@47   = ~Quentin~
+@48   = ~Quentin Jysstev~
+@49   = ~Thug~
+@50   = ~Rat~
+@51   = ~Phedra~
+@52   = ~Gelion~
+@53   = ~Gelion Deymiare~
+@54   = ~Taren~
+@55   = ~Taren Zoar~
+@56   = ~Alim~
+@57   = ~Alim al-Makram~
+@58   = ~Ghislain~
+@59   = ~Lamia~
+@60   = ~Lamia Crytrapper~
+@61   = ~Butler~
+@62   = ~Messenger~
+@63   = ~Corinna~
+@64   = ~Corinna Ghadir~
+@65   = ~Sir Evendur~
+@66   = ~Ilian~
+@67   = ~Ghadir Family Ring~
+@68   = ~Of Calishite origin, this ring has belonged to Isra's family for generations. It grants her a +1 bonus to all saving throws and a +1 armor class bonus.~
+@69   = ~Mantle of Roses~
+@70   = ~This cloak, woven by a priestess of Sune, was intended as a gift for <CHARNAME> of Candlekeep. It grants its wear a +1 bonus to Charisma as well as immunity to confusion.~
+@71   = ~Isra's Body~
+@72   = ~Isra was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be.~
+@73   = ~Green Dragon Scale~
+@74   = ~Dragon Scale armor is light of weight, strong, and resistant to acid. Because of these properties it is much sought after, but finding, let alone slaying, a powerful ancient dragon is near impossible. It is usually easier to search for an existing suit, such as this one. One should be careful wearing it near dragons, however, particularly green ones.
+
+STATISTICS:
+
+Bonuses: +50% Acid Resistance
+Armor Class: -1
+Weight: 30
+Requires: 8 Strength~
+@75   = ~Letter~
+@76   = ~This note is plain, though a chalky, sulfuric residue clings to it. Perhaps its author was in a laboratory of some sort. It reads:
+  
+Jysstev,
+
+I am not as easily defied as you might wish. Comply with my wishes or your wife will suffer the consequences.
+
+GD~
+@77   = ~Gelion's Financial Statements~
+@78   = ~This is a copy of a ledger listing the most recent transactions of the late Gelion Deymiare, a Cowled Wizard who apparently dealt heavily in the illegal trade of magical items.~
+@79   = ~Quentin's Financial Statements~
+@80   = ~This is a ledger of income for Quentin Jysstev, a nobleman accused of smuggling magical items. It will take some time to examine these records for signs of illegal activity.~
+@81   = ~Ale Jug~
+@82   = ~Sea Bounty's Bitter Black Ale~
+@83   = ~The Thumb's Bitter Black Ale, intended as a gift for the smuggler Alim al-Makram.~
+@84   = ~After the victory at the Throne of Bhaal, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though she seldom spoke of the uglier aspects of the conflict, those who knew her believed that she felt the need to atone for harm inadvertently committed. This did little to dampen her spirits, however, and she became quite popular amongst the Tethyrian aristocracy... and with one if its minstrels in particular, according to rumor. Nevertheless, her time in Tethyr came to an abrupt end when relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. She never married, though if Athkatlan gossip can be believed, she seldom suffered from loneliness.~
+@85   = ~After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. <CHARNAME> found himself very welcome amongst the Sunite paladins as well, and legend says that he accompanied Isra on a number of missions on their behest. Unconventional though their romance may have been during those years, their commitment to each other only grew, and upon retiring from active service, they were eventually married in Athkatla. Isra's father took an instant liking to her new husband, only bemoaning the fact that they were not wed years earlier. More poignant for Isra was her eldest sister Rana's unexpected presence at the wedding, and they took the first steps towards mending their very damaged relationship. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells.~
+@86   = ~After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. <CHARNAME> found <PRO_HIMHER>self very welcome amongst the Sunite paladins as well, and legend says that <PRO_HESHE> accompanied Isra on a number of missions on their behest. Unconventional though their romance may have been during those years, their commitment to each other only grew, and upon retiring from active service, they were eventually married in Athkatla. Although Isra's father was not as gracious to his new <PRO_SONDAUGHTER>-in-law as he might have been, his disapproval was more than overshadowed by Isra's eldest sister Rana's presence at the wedding. While it would take years to fully mend their damaged relationship, the first steps proved easier than either had expected. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells.~
+@87   = ~After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. The subsequent years were difficult on Isra and <CHARNAME>, and they did not see nearly as much of one another as they would have liked. Though their relationship was strained at times, it never died entirely, and upon Isra's retirement from active service, they worked to rebuild what they had once had. Unsurprisingly, perhaps, for a couple almost certainly blessed by Sune Firehair, they succeeded, and they were eventually married in Athkatla. Isra's father took an instant liking to her new husband, only bemoaning the fact that they were not wed years earlier. More poignant for Isra was her eldest sister Rana's unexpected presence at the wedding, and they took the first steps towards mending their very damaged relationship. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells.~
+@88   = ~After their victory at the Throne of Bhaal, Isra and <CHARNAME> returned to Amn for a short time, where Isra was finally able to show her lover around her adopted home city of Crimmor. The moment of calm did not last long, however, as Isra could not dislodge the feeling that they had left their work in Tethyr unfinished. Hoping to help repair the damage caused during the Bhaalspawn Crisis, they returned south, and despite an initial cool reception by the Crown, eventually became well regarded within the kingdom... at least until relations with Amn escalated. They returned north to Crimmor, where Isra finally renewed her ties to the Order of the Ruby Rose. The subsequent years were difficult on Isra and <CHARNAME>, and they did not see nearly as much of one another as they would have liked. Though their relationship was strained at times, it never died entirely, and upon Isra's retirement from active service, they worked to rebuild what they had once had. Unsurprisingly, perhaps, for a couple almost certainly blessed by Sune Firehair, they succeeded, and they were eventually married in Athkatla. Although Isra's father was not as gracious to his new <PRO_SONDAUGHTER>-in-law as he might have been, his disapproval was more than overshadowed by Isra's eldest sister Rana's presence at the wedding. While it would take years to fully mend their damaged relationship, the first steps proved easier than either had expected. It is said that Isra eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. What ultimately became of Isra and <CHARNAME>, however, no tale tells.~
+@89   = ~After <CHARNAME>'s ascension, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though saddened by her former lover's departure, she found a degree of solace in her work, and soon became quite popular amongst the Tethyrian aristocracy... at least until relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. Though she would remember <CHARNAME> fondly, Isra was never one to live in memory alone, and her various romances became a favorite topic of Athkatla's gossips in the years to come.~

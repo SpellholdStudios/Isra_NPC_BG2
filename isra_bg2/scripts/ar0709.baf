@@ -1,0 +1,17 @@
+IF
+	Global("rh#IsraExists","AR0709",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraExists","AR0709",1)
+	CreateCreature("rh#isr",[412.768],9)
+	Continue()
+END
+
+IF
+	Global("rh#AliaExists","AR0709",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AliaExists","AR0709",1)
+	CreateCreature("rh#alia",[520.732],4)
+	Continue()
+END

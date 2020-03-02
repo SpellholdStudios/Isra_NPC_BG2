@@ -1,0 +1,100 @@
+IF 
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	See("rh#Isra2")
+	!StateCheck("Aerie",CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	GlobalGT("rh#IsraTalks","GLOBAL",22)
+	GlobalLT("rh#IsraTalks","GLOBAL",26)
+	OR(2)
+		Global("rh#IsraAerie1","GLOBAL",1)
+		Global("rh#IsraAerie2","GLOBAL",1)
+	Global("rh#IsraAerie4","GLOBAL",0)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#IsraAerieTalkTimer","GLOBAL",600)
+	SetGlobal("rh#IsraAerie4","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	See("rh#Isra2")
+	!StateCheck("Aerie",CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraAerie4","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraAerieTalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraAerie4","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	See("rh#Isra2")
+	!StateCheck("Aerie",CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraAerie4","GLOBAL",2)
+	RealGlobalTimerExpired("rh#IsraAerieTalkTimer","GLOBAL")
+THEN
+RESPONSE #100
+	Dialogue("rh#Isra2")
+END
+
+// romance conflict
+
+IF
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	Global("rh#IsraAerieRomance","GLOBAL",0)
+	Global("AerieRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	GlobalGT("LoveTalk","LOCALS",13)
+	GlobalGT("rh#IsraTalks","GLOBAL",16)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#IsraAerieRomanceTimer","GLOBAL",1200)
+	SetGlobal("rh#IsraAerieRomance","GLOBAL",1)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	See(Player1)
+	!StateCheck("Aerie",CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraAerieRomance","GLOBAL",1)
+	Global("AerieRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+	RealGlobalTimerExpired("rh#IsraAerieRomanceTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraAerieRomance","GLOBAL",2)
+END
+
+IF
+	InParty("rh#Isra2")
+	InParty("Aerie")
+	See(Player1)
+	!StateCheck("Aerie",CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+	Global("rh#IsraAerieRomance","GLOBAL",2)
+	Global("AerieRomanceActive","GLOBAL",1)
+	Global("rh#IsraRomanceActive","GLOBAL",1)
+THEN
+RESPONSE #100
+	Dialogue(Player1)
+END

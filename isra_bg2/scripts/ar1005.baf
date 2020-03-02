@@ -1,0 +1,19 @@
+IF
+	Global("rh#IsraQuestTwo","GLOBAL",5)
+	Global("rh#AlimExists","AR1005",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#AlimExists","AR1005",1)
+	CreateCreature("rh#alim",[1254.425],3)
+	Continue()
+END
+
+IF
+	GlobalGT("rh#IsraQuestTwo","GLOBAL",7)
+	Global("rh#AlimExists","AR1005",1)
+THEN
+RESPONSE #100
+	ActionOverride("rh#alim",DestroySelf())
+	SetGlobal("rh#AlimExists","AR1005",2)
+	Continue()
+END

@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+RESPONSE #100
+	CutSceneId(Player1)
+	Wait(1)
+	FadeToColor([20.0],0)
+    Wait(2)
+	LeaveAreaLUA("rh#is3","",[810.615],6)
+    ActionOverride(Player2,LeaveAreaLUA("rh#is3","",[650.520],6))
+    ActionOverride(Player3,LeaveAreaLUA("rh#is3","",[725.575],6))
+    ActionOverride(Player4,LeaveAreaLUA("rh#is3","",[745.675],6))
+    ActionOverride(Player5,LeaveAreaLUA("rh#is3","",[660.620],6))
+    ActionOverride(Player6,LeaveAreaLUA("rh#is3","",[575.570],6))
+    FadeFromColor([20.0],0)
+    Wait(1)
+    CreateCreature("rh#lamia",[460.500],1)
+    CreateCreature("rh#rana",[645.290],14)
+    SetGlobal("rh#IsraQuestTwo","GLOBAL",9)
+    Wait(2)
+    SmallWait(5)
+	EndCutSceneMode()
+	ActionOverride("rh#lamia",StartDialogueNoSet("rh#Isra2"))
+END

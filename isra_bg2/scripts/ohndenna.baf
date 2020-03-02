@@ -1,0 +1,14 @@
+IF
+	Global("OHN_TOB_PLOT","GLOBAL",11)
+	!GlobalTimerNotExpired("ohn_intro_timer","locals")
+	!GlobalTimerNotExpired("ohb_mc_shout_timer","locals")
+	Global("rh#ohn_isra_intro","locals",0)
+	InParty("rh#Isra2")
+	!Dead("rh#Isra2")
+  THEN
+RESPONSE #100
+	SetGlobal("rh#ohn_isra_intro","locals",1)
+	SetGlobalTimer("ohn_intro_timer","locals",9)
+	SetGlobalTimer("ohb_mc_shout_timer","locals",6)
+	DisplayStringHead(Myself,@0 /* Behold the lovely PALADIN of SUNE! Her weapons are well honed, but will she prove equal to THIS task?! */)
+END

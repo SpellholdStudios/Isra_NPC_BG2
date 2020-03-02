@@ -1,0 +1,18 @@
+IF
+    InParty("rh#Isra2") 
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	See("rh#Isra2") 
+	Global("rh#IsraVampire","GLOBAL",6)
+	Global("rh#IsraPaladin","GLOBAL",0)
+THEN
+  RESPONSE #100
+	IncrementGlobal("rh#IsraPaladin","GLOBAL",1)
+END
+
+IF
+	Global("rh#IsraPaladin","GLOBAL",1)
+THEN
+  RESPONSE #100
+	MoveToObject("rh#Isra2")
+	Dialogue(Player1)
+END

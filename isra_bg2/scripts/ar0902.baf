@@ -1,0 +1,9 @@
+IF
+	Global("rh#IsraVampire","GLOBAL",6)
+	Global("rh#EvendurExists","AR0902",0)	
+THEN
+RESPONSE #100
+	SetGlobal("rh#EvendurExists","AR0902",1)
+	CreateCreature("rh#evend",[1252.1236],3)
+	Continue()
+END

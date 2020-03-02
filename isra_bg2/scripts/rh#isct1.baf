@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+RESPONSE #100
+	CutSceneId("rh#Rana")
+	Wait(1)
+    MoveToObject("rh#Isra2")
+	Wait(1)
+	EndCutSceneMode()
+	ActionOverride("rh#Rana",StartDialogueNoSet("rh#Isra2"))
+END

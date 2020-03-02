@@ -1,0 +1,30 @@
+IF
+	Global("rh#IsraMessenger","GLOBAL",2)
+	Global("rh#CorinnaExists","AR0704",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#CorinnaExists","AR0704",1)
+	CreateCreature("rh#cora",[478.526],7)
+	Continue()
+END
+
+
+IF
+	Global("rh#IsraPaladin","GLOBAL",2)
+	Global("rh#IlianExists","AR0704",0)	
+THEN
+RESPONSE #100
+	SetGlobal("rh#IlianExists","AR0704",1)
+	CreateCreature("rh#ilian",[614.661],1) 
+	Continue()
+END
+
+IF
+	Global("rh#IsraPaladin","GLOBAL",3)
+	Global("rh#IlianExists","AR0704",1)	
+THEN
+RESPONSE #100
+	SetGlobal("rh#IlianExists","AR0704",2)
+	ActionOverride("rh#ilian",DestroySelf())
+	Continue()
+END

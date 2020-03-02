@@ -1,0 +1,12 @@
+@0    = ~You truly wish to part company, <CHARNAME>?~
+@1    = ~For the moment, yes.~
+@2    = ~Sorry, no. I'd rather not.~
+@3    = ~I see. Should you change your mind, I expect you will be able to find me somewhere within Saradush.~
+@4    = ~I see. Should you change your mind, I expect you will be able to find me somewhere within Amkethran.~
+@5    = ~I see. Do not be gone too long, my <PRO_LADYLORD>.~
+@6    = ~Very well. I am pleased to hear it.~
+@7    = ~Hello, <CHARNAME>. 'Tis a pleasure to see you again.~
+@8    = ~Would you care to join up with me again?~
+@9    = ~Hello, Isra. I was just checking to see how you were.~
+@10   = ~Certainly, my <PRO_LADYLORD>.~
+@11   = ~I could certainly be better.~

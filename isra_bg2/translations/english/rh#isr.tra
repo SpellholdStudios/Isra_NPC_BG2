@@ -1,0 +1,266 @@
+@0    = ~You cannot expect me to believe that you know nothing of this matter, Alia.~ [rh#is100]
+@1    = ~What I know isn't important. The fact that you're even wasting your time on this... you're a knight now, Isra. Surely you have more important things to worry about.~
+@2    = ~She is my sister also.~
+@3    = ~Yes, and it took you how many years to remember that?~
+@4    = ~I understand that you're concerned, but she's capable of taking care of herself. She has so far.~
+@5    = ~The evidence would certainly imply otherwise.~
+@6    = ~Izzy, let it go already. The Jysstevs aren't as bad as you think they are. Even the one she married.~
+@7    = ~So you will tell me nothing? Nothing at all? If the situation is anywhere near as dire as I've heard, this is unbelievably irresponsible of you--~
+@8    = ~Yes, well, that can't be much of a surprise by now.~
+@9    = ~Go back to Crimmor, Izzy. Pursue this, and you may not like what you find.~
+@10   = ~You know I can't do that. There is something very wrong here, even if you're not willing to admit it.~
+@11   = ~Fine. Do as you wish, but don't be surprised if the Jysstevs aren't exactly pleased to see you.~
+@12   = ~I can't imagine that their welcome could prove colder than yours.~
+@13   = ~I do hope you enjoyed the show.~
+@14   = ~I'm sorry to intrude. Isra was a friend of mine up north.~
+@15   = ~Maybe it's not my place, but is there anything I can do to help?~
+@16   = ~It was definitely loud enough. I'll be going now.~
+@17   = ~Up north? Hmm. You must be <CHARNAME>, then. Interesting.~
+@18   = ~If you're determined to get involved, I certainly won't try to stop you, though the best thing you could do is head to the estate and convince Izzy to drop this nonsense. Maybe she'd even listen.~
+@19   = ~A Family Affair
+
+I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more.~
+@20   = ~Ah... no. No, we have far too much help right now as it is.~
+@21   = ~If you're determined to get involved, the best thing you could do is head to the estate and convince my sister to drop this nonsense, though I can't imagine she'd listen.~
+@22   = ~A Family Affair
+
+I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more.~
+@23   = ~Wonderful.~
+@24   = ~Wait! This is... this is just a big misunderstanding--~
+@25   = ~You there! Help me, please!~
+@26   = ~Dammit! That blasted wizard won't be happy about complications. Kill them all!~
+@27   = ~Thank you, <PRO_SIRMAAM>... thank you. You very likely saved my life.~
+@28   = ~I...I don't expect another attack, but if you could escort me to the Jysstev estate, I would be very grateful.~
+@29   = ~It would be my pleasure.~
+@30   = ~Exactly how grateful are we talking about here?~
+@31   = ~I have no desire to get wrapped into this any further, lady.~
+@32   = ~Again, you have my thanks. The estate is just around the corner, if you'd please follow me.~
+@33   = ~A Family Affair
+
+I have agreed to escort Rana Jysstev, a noblewoman I rescued from several thugs, to her estate. Perhaps someone there will be willing to explain exactly why she is being threatened.~
+@34   = ~My husband will surely want to reward you for your trouble. The estate is just around the corner, if you would please follow me.~
+@35   = ~Of course. Very well then, stranger. Good <DAYNIGHT>.~
+@36   = ~A Family Affair
+
+I rescued Rana Jysstev from several thugs, though I have decided not to get further involved in her family's intrigue.~
+@37   = ~Rana? By the gods, you're bleeding! You should know better to associate with such--~
+@38   = ~Calm down, Quentin. It isn't what you think. These people saved my life.~
+@39   = ~Calm down, Quentin. It isn't what you think. This <PRO_MANWOMAN> saved my life.~
+@40   = ~Hmph. If you had heeded your sister's warning--~
+@41   = ~Indeed. What happened, Rana? You told me that you didn't need an escort. You insisted that the rumors of trouble were exaggeration.~
+@42   = ~This is Athkatla. I'll have to hire myself some new guards. I said that I didn't need you hovering over my shoulder, and I meant it.~
+@43   = ~Your sister is only trying to help, Rana.~
+@44   = ~Really. I'm not sure I've ever heard you defend her before.~
+@45   = ~This isn't the time for grudges. Your life is clearly in danger now, and we cannot continue to pretend that this will simply go away--~
+@46   = ~Isra, if you have something to say, say it. I grow tired of the constant glares.~
+@47   = ~I have little to say now that I haven't said before.~
+@48   = ~Surely all of this infighting can wait until a better time?~
+@49   = ~I'm sorry, <CHARNAME>. No doubt you have other business to attend to. Quentin can see to a reward, if you require one.~
+@50   = ~Yes, of course. I trust this will be sufficient.~
+@51   = ~<CHARNAME>? By the gods, it is you. I am sorry... after last night's hectic ride from Crimmor, I can hardly think clearly.~ [rh#is101]
+@52   = ~I don't know why you're in Athkatla, but thank Sune that you are. My sister... obviously all is not well here.~
+@53   = ~Isra, if you need any help, you only have to ask.~
+@54   = ~What exactly is going on here?~
+@55   = ~Right. Well, good luck with that. See you around sometime.~
+@56   = ~You have my heartfelt gratitude, my <PRO_LADYLORD>. Had you not been here... I don't care to even think about the likely outcome.~ [rh#is102]
+@57   = ~If you need any further help, you only have to ask.~
+@58   = ~That is very kind of you.~
+@59   = ~Quentin, would you care to explain the situation? I would like to hear the full story myself.~
+@60   = ~I would like to hear the full story myself. Quentin, would you care to explain the situation?~
+@61   = ~<CHARNAME>, your current company... as much as I trust you, I would rather do without further assistance. At least for the moment.~
+@62   = ~You have already done more than enough, my <PRO_LADYLORD>, I assure you. Good <DAYNIGHT>.~
+@63   = ~A Family Affair
+
+I have been paid for my service to the Jysstev family. They seem to have no further need for my assistance.~
+@64   = ~Nothing you need concern yourself with any further, my <PRO_LADYLORD>. Your assistance is appreciated.~
+@65   = ~Of course. 'Twas a pleasure to see you again, my <PRO_LADYLORD>. If you will excuse me, there are things I must see to.~
+@66   = ~Of course. Your assistance is appreciated, my <PRO_LADYLORD>. Good <DAYNIGHT>.~
+@67   = ~If I must. The men you encountered to<DAYNIGHT>, <CHARNAME>... their attack was not entirely unexpected. My wife and I have been receiving threatening letters for several weeks now.~
+@68   = ~I can only guess that a business rival is attempting to intimidate us, though who in specific it might be, I could not say.~
+@69   = ~Quentin, I can take care of matters myself. This really isn't necessary.~
+@70   = ~I'm afraid it is.~
+@71   = ~I intend to look into matters myself. If you wish to help, <CHARNAME>... you must know that I would be glad of your company.~
+@72   = ~I intend to look into matters myself. If you wish to help... you are obviously already involved anyway.~
+@73   = ~I would be happy to aid you in this.~
+@74   = ~We can at least look into the situation.~
+@75   = ~I really don't have the time right now.~
+@76   = ~I'm glad to hear it.~
+@77   = ~I see. You have my thanks all the same. Farewell.~
+@78   = ~Then it is settled.~
+@79   = ~<CHARNAME>, this is one of the letters that we received. The initials GD... it is not much, but perhaps they will lead you to whomever is responsible for these attacks.~
+@80   = ~Thank you, and the gods be with you.~
+@81   = ~A Family Affair
+
+I have decided to assist Quentin Jysstev in discovering who has been threatening his family. The only piece of evidence he was willing to share, however, was a letter signed with the initials GD. I may need to make inquiries elsewhere.~
+@82   = ~I am grateful for your help, my <PRO_LADYLORD>, but surely you have your own concerns to see to?~
+@83   = ~Thank you again for your aid, <PRO_SIRMAAM>.~
+@84   = ~Further assistance will not be necessary, <PRO_SIRMAAM>.~
+@85   = ~How may I help you?~ [rh#is021]
+@86   = ~I've changed my mind about getting involved.~
+@87   = ~Never mind.~
+@88   = ~Yes?~
+@89   = ~Your help is appreciated.~
+@90   = ~What is it?~
+@91   = ~Thank you again.~
+@92   = ~This is not exactly how I would have wished for you to meet my family, though had you not been there... I do not care to even think about it, <CHARNAME>.~ [rh#is103]
+@93   = ~I only just arrived in Athkatla myself, and not a moment too early, apparently. When I heard word of my sister's predicament... 'twill be some time before the stables in Crimmor lend me another horse, I'm afraid.~
+@94   = ~You didn't kill the poor thing, I hope.~
+@95   = ~I'm happy to see you again regardless, Isra.~
+@96   = ~At least now I know you weren't exaggerating the dysfunctional family.~
+@97   = ~I should thank you in advance, my <PRO_LADYLORD>, and apologize for the inconvenience. My family troubles... really, 'tis good of you to involve yourself.~ [rh#is104]
+@98   = ~Forgive me my discourtesy... I should at least introduce myself properly. I am Isra Ghadir, of the Order of the Ruby Rose.~
+@99   = ~My duties do not often bring me into Athkatla, but when I heard word of my sister's predicament... 'twill be some time before the stables in Crimmor lend me another horse, I'm afraid.~
+@100  = ~It's a pleasure to meet you, my lady.~
+@101  = ~The Ruby Rose? What's that?~
+@102  = ~Order? Duties? Gods, did I accidentally just let a paladin into my party?~
+@103  = ~No, I did not... though only because I healed her afterward.~
+@104  = ~(smile) And I you, though I doubt we can spare the time for a proper reunion just yet.~
+@105  = ~No... no I was not, though this is a poor time to complain.~
+@106  = ~The sentiment is quite mutual, I assure you.~
+@107  = ~'Tis a paladinic order devoted to Sune Firehair. As much as I would like to describe it further, this is probably a poor time for such things.~
+@108  = ~If you continue to display such poor manners, you will not need to worry about your... mistake for long.~
+@109  = ~Come, I would like to take a look at your late attackers before we attempt to decipher that letter. Hopefully they will have left some clue as to their employer's identity as well.~
+@110  = ~These men... I am certain I've seen them before.~ [rh#is105]
+@111  = ~Oh, yes. They used to frequent the Den of the Seven Vales. I can guess all too well now how they obtained their drinking money.~
+@112  = ~Perhaps we should visit Patricia in the tavern... she may know more about them.~
+@113  = ~A Family Affair
+
+Isra believes that Rana's attackers may have once frequented the Den of the Seven Vales. Hopefully the innkeeper can tell me who they were.~
+@114  = ~I'm wondering if you could tell me anything about several of your late customers.~
+@115  = ~Late, ye say? Well, that's no wonder. There are a handful I haven't seen recently, thank all the gods.~
+@116  = ~These often preferred that back corner, as I recall. I'm afraid I don't remember their names.~
+@117  = ~Neither do I, though I think I know who yer talkin' about. What do you want with them?~
+@118  = ~They attacked someone. I want to know why.~
+@119  = ~Had they mentioned anything strange recently?~
+@120  = ~Do you know if they were working for someone?~
+@121  = ~Did they? That's none too surprisin'.~
+@122  = ~Come to think of it, one of them had taken to mentionin' Cowled Wizards at his drunken best. Their deep pockets, that is.~
+@123  = ~He wasn't stupid enough to name the mage, but if they got themselves into some trouble, I reckon it's related.~
+@124  = ~A Family Affair
+
+Patricia, the proprietor of the Den of the Seven Vales, believes that the Rana's attackers had become involved with one of the Cowled Wizards. Perhaps I can ask the mages themselves, though I do not expect them to be very forthcoming.~
+@125  = ~A Cowled Wizard? They do have their headquarters in the city, though they tend to be an insular group.~
+@126  = ~I wouldn't expect much cooperation out of them, but it's as fine a place to start as any.~
+@127  = ~Is there any Cowled Wizard in the city whose initials are GD?~
+@128  = ~I have nothing to say to you of any wizard, whatever his initials. Ask me no more of such things.~
+@129  = ~A Family Affair
+
+I have asked Corneil, a Cowled Wizard in the government building, if he knows who the mysterious GD might be. He wasn't very obliging, of course.~
+@130  = ~Such vehemence... he knows something, <CHARNAME>. I am almost certain of it. Though if he won't speak... I don't relish the thought of searching Athkatla house by house.~
+@131  = ~I'm very busy, citizen. Leave me be.~
+@132  = ~I couldn't help but overhear your inquiry, <PRO_SIRMAAM>. I assume you have some... grievance with this particular Cowled Wizard?~ [solf02]
+@133  = ~By the looks of that note he's left you, it would certainly seem that you do.~
+@134  = ~Does it make much of a difference?~
+@135  = ~You could put it like that.~
+@136  = ~Oh, no. I'm sure that this mess can be sorted out.~
+@137  = ~Can you tell me who he is?~
+@138  = ~It does, though I doubt your feelings for this man are any kinder than my own. Most people learn to steer clear of doing him any favors; he has a way of sinking his claws into a benefactor, so to speak.~
+@139  = ~Well, then. That makes things easier. That he has made a new enemy is not surprising... most people learn to steer clear of doing him any favors; he has a way of sinking his claws into a benefactor, so to speak.~
+@140  = ~Most decent people learn to steer clear of doing Gelion Deymiare any favors. He has a way of sinking his claws into a benefactor, so to speak.~
+@141  = ~His name is Gelion Deymiare. Most decent people learn to steer clear of doing him any favors; he has a way of sinking his claws into a benefactor, so to speak.~
+@142  = ~Gelion's ego may surpass his skill, but he's still a conjurer not to be trifled with. Few within the Cowled Wizards would mourn his passing, however, if you mean to deal with him... permanently.~
+@143  = ~What sort of favors do people learn not to do for him?~
+@144  = ~Few would mourn his passing... including you, I take it.~
+@145  = ~Do you think I'll have to deal with him permanently?~
+@146  = ~I didn't expect any Cowled Wizards to be eager to speak to me.~
+@147  = ~I would know nothing of such things, of course.~
+@148  = ~Especially me.~
+@149  = ~Someone will have to, sooner or later.~
+@150  = ~Enough talk. I shouldn't be discussing such things with outsiders, but as I said, few within our ranks would mourn him.~
+@151  = ~I can show you to his house, if you wish it.~
+@152  = ~I would appreciate that.~
+@153  = ~I'm not ready. Later, perhaps.~
+@154  = ~Very well.~
+@155  = ~A Family Affair
+
+Phedra, a Cowled Wizard who overheard my short conversation with Corneil, has proved somewhat more helpful. GD is apparently Gelion Deymiare, a conjurer of some skill. Phedra is willing to take me to his home in Athkatla. She seems to bear a grudge against him as well.~
+@156  = ~I won't promise that I'll still be available.~
+@157  = ~I did not expect to see you again so soon.~ [solf02]
+@158  = ~Could you take me back to his house now?~
+@159  = ~I'm still considering your offer.~
+@160  = ~Are you? Don't take too much time.~
+@161  = ~If I'm not mistaken, Gelion should be upstairs. Speak with me again once you've done what you came for.~ [solf01]
+@162  = ~Take your sweet time. Hopefully he won't notice.~ [solf01]
+@163  = ~You have made a terrible mistake by intruding upon me here, <PRO_GIRLBOY>. What do you mean by this?~
+@164  = ~I want you to stop harassing the Jysstevs.~
+@165  = ~I mean to kill you, naturally.~
+@166  = ~Sorry, I'll be going now.~
+@167  = ~I should have expected them to grow so bold. I shall deal with you first, and then your masters.~
+@168  = ~A Family Affair
+
+I have slain the wizard Gelion Deymiare. Whatever business he had with the Jysstevs is still a mystery, though he will trouble them no more.~
+@169  = ~Jysstev and his whore sent you, didn't they?~
+@170  = ~Wait one moment... Jysstev and his whore sent you, didn't they?~
+@171  = ~You cannot mean to leave this half finished.~ [solf02]
+@172  = ~He is dead, then? Yes... yes, I imagine he would have otherwise followed you downstairs in a fury. Well, that is one less rival to worry myself over.~ [solf02]
+@173  = ~Come, I'll return you to the Government District now. We won't speak of this again.~
+@174  = ~It has been a pleasure working with you, <CHARNAME>. Forgive me if I now make myself scarce.~ [solf01]
+@175  = ~A Family Affair
+
+Phedra has gone her own way, and I doubt I will see her again. All that remains to be done now is to inform the Jysstevs of my findings.~
+@176  = ~I cannot say that I'm sorry this mess is over. We ought to make haste for the Jysstev estate. I am sure Rana and Quentin will want to know what has transpired.~
+@177  = ~Have you learned anything?~
+@178  = ~Aye, we have. A Cowled Wizard named Gelion Deymiare was behind the attack. What he wanted with you, however, I could not say.~
+@179  = ~When it comes to the mages, who can? He is... dead now, I trust?~
+@180  = ~He is.~
+@181  = ~You've returned. With good news, I hope?~
+@182  = ~Good enough, aye. A Cowled Wizard named Gelion Deymiare was behind the attack. What he wanted with you, however, I could not say.~
+@183  = ~I hope you weren't adverse to the situation ending violently.~
+@184  = ~Does the name Gelion Deymiare mean anything to you?~
+@185  = ~It was a Cowled Wizard. What he wanted with you, I'm not sure.~
+@186  = ~No... no, not at all.~
+@187  = ~Gelion Deymiare... I-I cannot say that it does. He is dead now, I trust? No... of course he is.~
+@188  = ~Who can say for certain? But he is dead now, I trust? No... of course he is.~
+@189  = ~Permanent solutions tend to be required for problems such as this. I am sure we can compensate you properly for the complications, <CHARNAME>.~
+@190  = ~The past few days have been harrowing for us all. The butler can show you out when you are ready to leave.~
+@191  = ~A Family Affair
+
+The Jysstevs are pleased to hear that Gelion Deymiare is no more, though they were not very forthcoming about the reasons he was harassing them at all. It is possible that they do not even know. I may yet one day get to the bottom of this scheme, though that day may be very far away indeed.~
+@192  = ~There's nothing more to tell, <CHARNAME>. You may well know more than we do by now.~
+@193  = ~I have told you everything I know, <PRO_SIRMAAM>. Good luck.~
+@194  = ~Your business is with my cousin, peasant, not with myself.~
+@195  = ~Goodness, you must be the adventurers that Rana and Quentin have hired... how very odd.~
+@196  = ~Oh! I did not realize that Lady Rana had company. Excuse me.~
+@197  = ~I'm here to speak with Rana and Quentin Jysstev.~
+@198  = ~Yes, you were going to help them with some bother or another, I suppose. You are expected.~
+@199  = ~I should thank you for your help, my <PRO_LADYLORD>. Intrigue is not exactly where my own talents lie.~ [rh#is106]
+@200  = ~I might have preferred more... concrete answers, but I know as well as any that Athkatla seldom provides them.~
+@201  = ~Yes, I've certainly noticed that as well.~
+@202  = ~At least your sister should be safe now.~
+@203  = ~Answers will surface eventually, I'm sure. They usually do.~
+@204  = ~Are you planning on returning to the Ruby Rose now?~
+@205  = ~I can believe it.~
+@206  = ~And thank the gods for that much.~
+@207  = ~Aye. We can only wait and watch, I suspect.~
+@208  = ~I haven't quite decided yet.~
+@209  = ~Might I ask what brings you to Amn, <CHARNAME>? I wouldn't have expected to find you so far south, and... I know you well enough to suspect that this is no mere social call.~
+@210  = ~I'm sure you've noticed by now that Imoen is missing. Her absence isn't voluntary.~
+@211  = ~I have my own grievances with the Cowled Wizards. They've arrested Imoen, alongside the mage that captured us.~
+@212  = ~I'm hunting a mage called Irenicus. His people kidnapped me in Baldur's Gate.~
+@213  = ~It's a long story, but a mage called Irenicus stole my soul.~
+@214  = ~I'm trying to help the elves of Suldanessellar. They're being threatened by a powerful wizard.~
+@215  = ~Unless I am very much mistaken, you seem to have pressing business in the city of your own. Might I ask as to its nature?~
+@216  = ~Aid is hard to come by in Athkatla, and I'm trying to rescue an old friend.~
+@217  = ~I have my own grievances with the Cowled Wizards. They've arrested a friend, alongside the mage that captured us.~
+@218  = ~Oh. I had wondered why she was not with you, though... I had hoped the explanation would not be so dark.~
+@219  = ~I see. If your evil mage is anything like my sister's was, it sounds like a cause well worth pursuing.~
+@220  = ~I... I see. I did not realize such things were possible.~
+@221  = ~I cannot say I know much about the elven city, though that sounds like a cause well worth pursuing.~
+@222  = ~I'm sorry to hear about that, <CHARNAME>.~
+@223  = ~If you would care for my continued company, I've no other immediate obligations at the moment, and your quest seems as urgent as any. I would be happy to lend my aid to it.~
+@224  = ~You don't need to ask your order first this time?~
+@225  = ~Don't you have an order to answer to?~
+@226  = ~Stop being so formal. You should know by now that I would appreciate your company.~
+@227  = ~I would certainly appreciate your company.~
+@228  = ~For a while, perhaps. I won't promise that it'll work out.~
+@229  = ~I think it would be better if we parted ways.~
+@230  = ~I'm no longer a squire, <CHARNAME>. The Ruby Rose affords its actual members a great deal of freedom.~
+@231  = ~In that case, I would certainly appreciate your company.~
+@232  = ~I see. Then we'll see if it works out this time, I suppose.~
+@233  = ~Aye, the Ruby Rose. It affords its members a degree of freedom to choose their own missions, however.~
+@234  = ~In that case, I would appreciate your company.~
+@235  = ~I see. Then we'll see if it works out, I suppose.~
+@236  = ~Aye, though time can change things. I'm glad that hasn't proven the case here.~
+@237  = ~I am glad to hear it.~
+@238  = ~I would not ask for more.~
+@239  = ~Should you change your mind, I mean to visit my sister in the Den of the Seven Vales. You might be able to find me there, at least for a time.~

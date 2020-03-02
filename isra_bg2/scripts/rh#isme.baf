@@ -1,0 +1,22 @@
+IF
+	Global("rh#IsraTalks","GLOBAL",39)
+	Global("rh#IsraMessenger","GLOBAL",1)
+	InParty("rh#Isra2")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+	MoveToObject("rh#Isra2")
+	Dialogue("rh#Isra2")
+END
+
+IF
+	Global("rh#IsraMessenger","GLOBAL",2)
+	Global("rh#IsraMessengerGoAway","LOCALS",0)
+	InParty("rh#Isra2")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraMessengerGoAway","LOCALS",1)
+	EscapeAreaDestroy(5)
+END

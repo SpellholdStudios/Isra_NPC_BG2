@@ -1,0 +1,42 @@
+IF
+	Global("rh#IsraSevenVales","GLOBAL",5)
+	Global("rh#RanaExists","AR1000",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#RanaExists","AR1000",1)
+	CreateCreature("rh#rana",[3746.2564],9)
+	ActionOverride("rh#rana",MakeGlobal())
+	Continue()
+END
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",5)
+	Global("rh#RanasAttackersExists","AR1000",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#RanasAttackersExists","AR1000",1)
+	CreateCreature("rh#thug1",[3803.2532],3)
+	CreateCreature("rh#thug2",[3666.2635],9)
+	Continue()
+END
+
+IF
+	Global("rh#IsraQuestOne","GLOBAL",3)
+	Global("rh#RatExists","AR1000",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#RatExists","AR1000",1)
+	CreateCreature("rh#rat",[3746.2564],9)
+	Continue()
+END
+
+IF
+	Global("rh#PhedraExists","AR1000",0)
+	Global("rh#IsraQuestOne","GLOBAL",7)
+THEN
+RESPONSE #100
+	SetGlobal("rh#PhedraExists","AR1000",1)
+	CreateCreature("rh#phedr",[3092.1006],9)
+	ActionOverride("rh#phedra",MakeGlobal())
+	Continue()
+END

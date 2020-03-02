@@ -1,0 +1,24 @@
+// Initial Meeting
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",2)
+THEN
+RESPONSE #100
+	RealSetGlobalTimer("rh#IsraAliaSevenValesTimer","GLOBAL",2)
+	SetGlobal("rh#IsraSevenVales","GLOBAL",3)
+END
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",3)
+	RealGlobalTimerExpired("rh#IsraAliaSevenValesTimer","GLOBAL")
+THEN
+RESPONSE #100
+	SetGlobal("rh#IsraSevenVales","GLOBAL",4)
+END
+
+IF
+	Global("rh#IsraSevenVales","GLOBAL",4)
+THEN
+RESPONSE #100
+	StartDialogueNoSet(Player1)
+END

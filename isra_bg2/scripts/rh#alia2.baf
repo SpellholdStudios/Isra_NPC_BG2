@@ -1,0 +1,11 @@
+IF
+	Global("rh#IsraQuestTwo","GLOBAL",1)
+	InParty("rh#Isra2")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
+	See("rh#Isra2")
+THEN
+RESPONSE #100
+	Dialogue("rh#Isra2")
+END

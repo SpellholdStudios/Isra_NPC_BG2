@@ -1,0 +1,19 @@
+IF
+	Global("rh#IsraQuestTwo","GLOBAL",2)
+	Global("rh#TarenExists","AR1002",0)
+THEN
+RESPONSE #100
+	SetGlobal("rh#TarenExists","AR1002",1)
+	CreateCreature("rh#taren",[441.643],3)
+	Continue()
+END
+
+IF
+	GlobalGT("rh#IsraQuestTwo","GLOBAL",10)
+	Global("rh#TarenExists","AR1002",1)
+THEN
+RESPONSE #100
+	SetGlobal("rh#TarenExists","AR1002",2)
+	ActionOverride("rh#taren",DestroySelf())
+	Continue()
+END

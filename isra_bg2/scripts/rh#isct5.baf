@@ -1,0 +1,22 @@
+
+IF
+	True()
+THEN
+RESPONSE #100
+	CutSceneId(Player1)
+	Wait(1)
+	FadeToColor([20.0],0)
+    Wait(2)
+	ActionOverride("rh#phedra",LeaveAreaLUA("RH#IS1","",[502.356],5))
+    LeaveAreaLUA("RH#IS1","",[403.284],13)
+    ActionOverride(Player2,LeaveAreaLUA("RH#IS1","",[437.346],13))
+    ActionOverride(Player3,LeaveAreaLUA("RH#IS1","",[464.293],13))
+    ActionOverride(Player4,LeaveAreaLUA("RH#IS1","",[360.331],13))
+    ActionOverride(Player5,LeaveAreaLUA("RH#IS1","",[422.250],13))
+    ActionOverride(Player6,LeaveAreaLUA("RH#IS1","",[369.285],13))
+    FadeFromColor([20.0],0)
+    Wait(2)
+    SmallWait(5)
+	EndCutSceneMode()
+	ActionOverride("rh#phedra",Dialogue(Player1))
+END

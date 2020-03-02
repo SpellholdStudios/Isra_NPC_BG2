@@ -1,0 +1,10 @@
+// Appended to Bodhi's lair to spawn Vamp!Isra
+
+IF
+  Global("rh#IsraVampire","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("rh#IsraVampire","GLOBAL",2)
+    CreateCreature("rh#isvmp",[1473.332],2)
+    Continue()
+END
