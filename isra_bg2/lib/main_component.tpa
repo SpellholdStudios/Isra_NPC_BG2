@@ -3,7 +3,7 @@
  * =========================================== */
 
 /* -------------------------------------------------------------------------------------------------- *
- *   	ADDs CamDawg's custom IsValidForPartyDialogue state used throughout ninde. Thanks Cam!         *
+ *   	ADDs CamDawg's custom IsValidForPartyDialogue state used throughout isra. Thanks Cam!         *
  * -------------------------------------------------------------------------------------------------- *
  *  covers STATE_CONFUSED, STATE_FEEBLEMINDED, STATE_SILENCED, STATE_DEAD, STATE_ACID_DEATH,          *
  *  STATE_FLAME_DEATH, STATE_EXPLODING_DEATH, STATE_STONE_DEATH, STATE_FROZEN_DEATH, STATE_HELPLESS,  *
@@ -113,7 +113,7 @@ EXTEND_BOTTOM ~cut218g.bcs~ ~isra_bg2/scripts/rh#iswr2.baf~
 // EET & BG2EE
 // ---------------------------------------------
 
-ACTION_IF GAME_IS ~eet~ BEGIN
+ACTION_IF is_eet BEGIN
 INCLUDE ~EET/other/EET_functions.tph~
 LAF ~EET_NPC_TRANSITION~
 INT_VAR
@@ -133,7 +133,7 @@ END ELSE BEGIN
 COMPILE ~Isra_bg2/dialogue/fatesp.d~ USING ~Isra_bg2/translations/%LANGUAGE%/rh#is25.tra~
 END
 
-ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+ACTION_IF is_ee BEGIN
   COMPILE ~isra_bg2/dialogue/bgee.d~
   EXTEND_BOTTOM ~rh#isr.bcs~ ~isra_bg2/scripts/rh#isree.baf~
   EXTEND_BOTTOM ~rh#is25.bcs~ ~isra_bg2/scripts/rh#is25ee.baf~

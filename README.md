@@ -249,7 +249,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 - Portrait: Lady Lesatho.
 - Playtesters: Skia, stinky_Ogre, Pretsal.
 - Additional help: A special thanks to AstroBryGuy for help with the OS-X installation, Kulyok for proofreading, and to K'aeloree and berelinde for advice, encouragement, and no small amount of help with banters!
-- Music: <a href=""http://www.jamendo.com/en/track/989070/arabian-revolution-action">Arabian Revolution</a> (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">Grégoire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+- Music: <a href="http://www.jamendo.com/en/track/989070/arabian-revolution-action">Arabian Revolution</a> (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">Grégoire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
 - Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 
 
@@ -283,6 +283,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 #### Version ??? ( March 2020)
 
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
+- Replaced `GAME_IS` conditions with variables checks to speed up install time.
 
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
 
