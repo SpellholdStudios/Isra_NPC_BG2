@@ -152,28 +152,44 @@ Isra will have several quests in Athkatla - one that begins when you first recru
 - Two-Handed Weapon Style **
 - Two Weapon Style **
 
+## 
+
 #### Biography
 
 > When asked about her past, Isra tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.
+
+## 
+
+#### NPC Relationships
+
+- **Aerie:** These two have a pretty close friendship.
+- **Anomen:** Anomen does not play nice with paladins. Isra isn't impressed by his behavior, but she's disinclined to step on Radiant Heart toes by calling him out on it. They'll get along better once he passes his test, but don't expect them to ever really be friends.
+- **Cernd:** Isra doesn't really understand the whole druid thing, and Cernd kind of enjoys trolling her. They sort of get along, but not wonderfully.
+- **Edwin:** This is the closest things get to actual violence. Isra absolutely loathes Edwin, who definitely pushes the envelop a bit in seeing how offensive he can be without losing his head.
+- **Haer'dalis:** These two get along really well. Their relationship is actually a bit on the flirty side, though Isra is too disturbed by his philosophy to ever let it go anywhere.
+- **Imoen:** They got along fine in BG1 and they will again here.
+- **Jaheira:** They care about each other, but they're both pretty terrible when it comes to communicating that properly. Despite the personality clash, they get along reasonably well.
+- **Jan:** Jan is... well, Jan. Isra isn't thrilled with him, though she doesn't get too bent out of shape by the prodding.
+- **Keldorn:** Isra doesn't have much of any experience with Tormites, and isn't really sure what to expect. He wins her over pretty quickly, though.
+- **Korgan:** Isra's a Sunite. His crudeness is not going to go over well at all. Neither will anything else about him. He's got some respect for her since she's not afraid to back things up with violence, but he'll still rile her up whenever possible.
+- **Mazzy:** These two will have a close friendship, though Mazzy is a little bit exasperated at times by some of the Sunite tendencies.
+- **Minsc:** They get along well, though Isra isn't quite so fond of Boo. One of the banters only triggers if she was around in BG1.
+- **Nalia:** They'll have a bit of trouble, though once they settle down, they'll mostly be fine. They've definitely got some things in common.
+- **Valygar:** Isra thinks Valygar is lonely and in need of a friend (and a god as well). Valygar thinks Isra is exhausting, though he doesn't have the heart to tell her so.
+- **Viconia:** They tolerate each other, though just barely. Viconia is less hostile than she'd be with a male paladin, but that doesn't say much.
+- **Yoshimo:** Yoshimo is a career thief, and Isra isn't too happy about that. They don't have any serious problems, though.
+
+BG2:EE content:
+
+- **Dorn:** Yeah, no. Don't mix blackguards and paladins. It will end violently.
+- **Hexxat:** See above. No violence this time, but Isra won't travel with her anymore than most of the good-aligned folk will.
+- **Neera:** They got along fine in BG1 and will again here.
+- **Rasaad:** Isra's really worried about his vendetta, but he's not really interested in advice.
 
 <div align="right"><a href="#top">Back to top</a></div>
 
 
 <hr>
-#### NPC Relationships
-
-There will be conflict, occasionally on the edge of violence, but you can keep him with any Bioware NPC without fearing a lethal outcome. Jaheira in particular is recommended, as her presence can significantly affect the epilogue. This is doubly true if you are romancing him.
-
-## 
-
-
-<div align="right"><a href="#top">Back to top</a></div>
-
-
-#### Classes
-
-Adrian was conceived of as a sorcerer, but his character and history lend themselves to the cleric/mage and mage/thief multiclasses as well. For this reason, both are included as alternative installation choices. Dialogue may vary in places to take this into account. Installing him as a sorcerer is still recommended, but both alternatives are internally consistent.
-
 
 
 ## <a name="romance" id="romance"></a>Romance
