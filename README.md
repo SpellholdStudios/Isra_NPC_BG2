@@ -284,6 +284,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
+- Fixed Isra portraits in EE games.
 
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
 
