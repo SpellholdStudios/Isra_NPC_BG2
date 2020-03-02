@@ -16,7 +16,7 @@
 **Mod Forum:** <a href="http://www.shsforums.net/forum/638-isra/">Isra NPC</a>  
 
 
-[Read the mod's readme](http://spellholdstudios.github.io/readmes/isra-bg2-readme-english.html).
+[Read the mod's readme](http://spellholdstudios.github.io/readmes/isra_bg2-readme-english.html).
 
 [Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/1070-isra-bg2-pc/).<br>
 
@@ -37,7 +37,7 @@ You can find her in the Den of the Seven Vales in Waukeen's Promenade, where she
 
 **Content:**
 - A new cavalier paladin NPC for BGII.
-- Content for SoA, ToB and BG2EE.
+- Content for SoA, ToB and BG2:EE.
 - Voicing and background music.
 - Banters with the original Bioware NPCs.
 - A romance for eligible male or female protagonists.
@@ -239,19 +239,17 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 ## <a name="credits" id="credits"></a>Credits and Acknowledgements
 
 **Author:** <a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella</a>  
-**WeiDU coding:** <a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella  
+**WeiDU coding:** <a href="http://www.shsforums.net/user/7955-rhaella/">Rhaella</a>  
 
 ## 
 
 #### Special Acknowledgements to:
 
-- A huge thanks to K'aeloree for always being there (and for putting up with a barrage of ridiculous questions). Additional thanks to MiLeah for her artwork and to all of my play-testers for their patience and enthusiasm. You guys are amazing.
 - <a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>)
 - Portrait: Lady Lesatho.
 - Playtesters: Skia, stinky_Ogre, Pretsal.
-- Additional Help: A special thanks to AstroBryGuy for help with the OS-X installation, Kulyok for proofreading, and to K'aeloree and berelinde for advice, encouragement, and no small amount of help with banters!
-Music:
-Arabian Revolution (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">Gregoire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+- Additional help: A special thanks to AstroBryGuy for help with the OS-X installation, Kulyok for proofreading, and to K'aeloree and berelinde for advice, encouragement, and no small amount of help with banters!
+- Music: <a href=""http://www.jamendo.com/en/track/989070/arabian-revolution-action">Arabian Revolution</a> (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">Grégoire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
 - Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 
 
@@ -281,6 +279,14 @@ Arabian Revolution (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourm
 
 
 ## <a name="versions" id="versions"></a>Version History
+
+#### Version ??? ( March 2020)
+
+- Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
+
+TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
+
+## 
 
 #### Version 3 (24 April 2018)
 
