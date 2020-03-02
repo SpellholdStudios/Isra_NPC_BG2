@@ -391,7 +391,7 @@ CHAIN RH#ALIM q13.2
 EXIT
 
 CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) !PartyHasItem("rh#ale")~ THEN RH#ALIM q13.3
-@150 /* Are ye deaf, <PRO_BOYGIRL>? I've got nothing else to say to ye. */
+@150 /* Are ye deaf, <PRO_GIRLBOY>? I've got nothing else to say to ye. */
 EXIT
 
 CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) PartyHasItem("rh#ale")~ THEN RH#ALIM q13.4

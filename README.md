@@ -286,7 +286,25 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed Isra portraits in EE games.
 
+- rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced <PRO_BOYGIRL> with <PRO_GIRLBOY> at entry @ 150)
+
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
+-oh6450.tra
+
+
+
+
+
+:: Isra_BG2 - Isra for BG2 v2.1
+
+:: PRO_BOYGIRL -> PRO_GIRLBOY correction
+:: - LINK NOT FOUND -
+
+:: Roxanne's looping dialogue fix
+:: http://www.shsforums.net/topic/58514-a-review-of-isra-21-was-posted-on-beamdog-forums/?p=585838
+
+:: added !GlobalLT("ENDOFBG1","GLOBAL",2) to Isra's non-UD pid in rh#isrj.d for EET compatibility
+:: https://github.com/BiGWorldProject/BiG-World-Fixpack/issues/11
 
 ## 
 

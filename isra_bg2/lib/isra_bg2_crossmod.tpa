@@ -5,7 +5,8 @@
 /* ---------------------- *
  *  Adrian-Isra Material  *
  * ---------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~rh#isr.dlg~ BEGIN
+//ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ AND FILE_EXISTS_IN_GAME ~rh#isr.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~rh#adr.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Adrian and Isra...~
 	COMPILE ~isra_bg2/crossmod/adrian.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -13,7 +14,7 @@ END
 /* -------------------- *
  *  Dace-Isra Material  *
  * -------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~t#dace.dlg~ AND FILE_EXISTS_IN_GAME ~rh#isr.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~t#dace.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Dace and Isra...~
 	COMPILE ~isra_bg2/crossmod/dace.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -21,7 +22,7 @@ END
 /* ------------------------------ *
  *  Isra-Kulyok's Coran Material  *
  * ------------------------------ */
-ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#coran25.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~bo#coran25.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Isra and Kulyok's Coran...~
 	COMPILE EVALUATE_BUFFER ~isra_bg2/crossmod/coran.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -29,7 +30,7 @@ END
 /* ----------------------------- *
  *  Isra-Kulyok's Tiax Material  *
  * ----------------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#tia25.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~bo#tia25.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Isra and Kulyok's Tiax...~
 	COMPILE ~isra_bg2/crossmod/tiax.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -37,7 +38,7 @@ END
 /* ---------------------------- *
  *  Isra-Kulyok's Xan Material  *
  * ---------------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~brh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~bo#xan25.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~bo#xan25.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Isra and Kulyok's Xan...~
 	COMPILE ~isra_bg2/crossmod/xan.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -45,7 +46,7 @@ END
 /* ----------------------- *
  *  Isra-Nephele Material  *
  * ----------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~rh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#neph.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~lk#neph.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Isra and Nephele...~
 	COMPILE ~isra_bg2/crossmod/nephele.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
@@ -53,7 +54,7 @@ END
 /* --------------------- *
  *  Isra-Ninde Material  *
  * --------------------- */
-ACTION_IF FILE_EXISTS_IN_GAME ~rh#isr.dlg~ AND FILE_EXISTS_IN_GAME ~lk#ni25.dlg~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~lk#ni25.dlg~ BEGIN
 	PRINT ~Adding SoA banters between Isra and Ninde...~
 	COMPILE ~isra_bg2/crossmod/ninde.d~ USING ~Isra_bg2/translations/%LANGUAGE%/crossmod.tra~
 END
