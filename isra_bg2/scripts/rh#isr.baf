@@ -1358,7 +1358,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("rh#IsraAttackedFamily","GLOBAL",1)
-		DisplayStringHead(Myself,@239 /* You would do such a thing!? */)
+		DisplayStringHead(Myself,@251 /* You would do such a thing!? */)
 		LeaveParty()
 		Enemy()
 END

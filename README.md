@@ -282,29 +282,25 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 #### Version ??? ( March 2020)
 
+- Replaced `AUTHOR` keyword with `SUPPORT`.
+
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
+- Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Fixed Isra portraits in EE games.
 
-- rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced <PRO_BOYGIRL> with <PRO_GIRLBOY> at entry @ 150)
-
+- rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
+- rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).
+- Fixed typos in .tra files.
+- Updated deprecated modding tools links.
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
--oh6450.tra
+- Removed useless files and folders (backup...).
+- Reorganized mod architecture tree: created folders to sort files according to their types.
+TODO - oh6450.tra  
+TODO - Updated OggDec to v1.9.7 and sox to v14.4.1.
+TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 
-
-
-
-
-:: Isra_BG2 - Isra for BG2 v2.1
-
-:: PRO_BOYGIRL -> PRO_GIRLBOY correction
-:: - LINK NOT FOUND -
-
-:: Roxanne's looping dialogue fix
-:: http://www.shsforums.net/topic/58514-a-review-of-isra-21-was-posted-on-beamdog-forums/?p=585838
-
-:: added !GlobalLT("ENDOFBG1","GLOBAL",2) to Isra's non-UD pid in rh#isrj.d for EET compatibility
-:: https://github.com/BiGWorldProject/BiG-World-Fixpack/issues/11
+- Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
 
