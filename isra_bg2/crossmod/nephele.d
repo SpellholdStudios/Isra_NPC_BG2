@@ -1,4 +1,5 @@
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Nephele",CD_STATE_NOTVALID)
@@ -15,6 +16,7 @@ DO ~SetGlobal("G#XB.IsraNepheleBanter1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Nephele",CD_STATE_NOTVALID)

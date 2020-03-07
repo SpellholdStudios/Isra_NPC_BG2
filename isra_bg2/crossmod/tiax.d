@@ -1,5 +1,6 @@
-// SoA
-
+/* ----- *
+ *  SoA  *
+ * ----- */
 CHAIN 
 IF ~InParty("rh#Isra2")
 See("rh#Isra2")
@@ -16,8 +17,10 @@ DO ~SetGlobal("G#XB.IsraTiaxSoABanter1","GLOBAL",1)~
 == BRH#ISR @171 /* <CHARNAME>, just... keep him away from me. Please. */
 EXIT
 
-// ToB
 
+/* ----- *
+ *  ToB  *
+ * ----- */
 CHAIN 
 IF ~InParty("rh#Isra2")
 See("rh#Isra2")

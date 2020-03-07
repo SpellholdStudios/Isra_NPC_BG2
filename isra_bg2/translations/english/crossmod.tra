@@ -1,3 +1,6 @@
+/* -------- *
+ *  Adrian  *
+ * -------- */
 @0    = ~A rather strange lifestyle for a Sunite, wouldn't you say? It's a wonder you can even function at all so far from your festhalls.~
 @1    = ~I can't help but suspect that you are far better acquainted with those festhalls than I.~
 @2    = ~You might be surprised. Your Sembian temples are lovely enough, I grant you, but I've always found the entertainment somewhat too... vapid and uninspired for my tastes.~
@@ -42,6 +45,11 @@
 @41   = ~Hmm, if I could find the time for it, perhaps.~
 @42   = ~I am sure you could. 'Twould be a more productive use of your time by far than that elven wine you are so fond of. And the tomes of necromancy.~
 @43   = ~Heh. And here we were having an almost pleasant conversation for a change.~
+
+
+/* ---------------- *
+ *  Kulyok's Coran  *
+ * ---------------- */
 @44   = ~And I am out of Elverquisst again. Just when an another old face shows by. But apologies, my lady: yours is a beautiful face, and when I say "old", by no means do I imply any wrinkles or anything of the sort. ...By Hanali, I'm digging my own grave here, am I?~
 @45   = ~A little bit, mayhap, but do go on. I am curious as how you are going to wriggle out of it again.~
 @46   = ~Believe me, I'm hanging by the skin of my teeth here. A bottle of Elverquisst *would* come handy, only I am out of coin, and naturally, you, a glorious paladin of Sune, would object to the more... shadowy means of getting the said coin. And my grave just got another two feet deeper.~
@@ -63,6 +71,11 @@
 @62   = ~I do not think Hanali looks kindly on abandoned children, Coran. What about Namara?~
 @63   = ~A low blow, my dear. But one day Hanali would bless Namara's first love, and her children, and hers. Sometimes this is enough, you know. And fathers are... overrated.~
 @64   = ~Your daughter still needs you. If you need to pray to Hanali tonight, Coran, pray to her for guidance. Mayhap you will hear at last what she has been trying to tell you all this time.~
+
+
+/* ------ *
+ *  Dace  *
+ * ------ */
 @65   = ~Izzy, darlin', d'ya ever think that maybe you go just a little bit overboard with these groomin' habits of yours? I'm half expectin' to find you with jewels woven into those braids one mornin'.~
 @66   = ~Jewels? That would hardly be practical on a battlefield.~
 @67   = ~Well, that's never seemed to stop you before--come on, honey... no need to go glowerin' like that. It's pretty enough, I'll admit. It justs seems an awful lot of effort for such a small thing.~
@@ -96,6 +109,11 @@
 @95   = ~I'd be happy to set one aside for you, darlin', soon as I get back to the far. Can't say anyone in the family's ever done much business with paladins, though. Isn't there some sorta weird mystical mumbo jumbo that goes on between you an' your horses?~
 @96   = ~So I have been told, though I've not yet experienced it for myself. I imagine I might be better off speaking with someone more versed in handling our needs--~
 @97   = ~No, no, no, darlin'--no snatchin' back the olive branch once it's already been offered. That'd be all kinds of rude, after all. You and I'll just have to head back to the farm once this is all over an' muddle through it best we can.~
+
+
+/* --------- *
+ *  Nephele  *
+ * --------- */
 @98   = ~Isra, dear, have you ever thought about perhaps settling down and finding a husband for yourself? At your age, I had a husband and a few children running around!~
 @99   = ~No... no, I have not, and I've no intention of doing otherwise.~
 @100  = ~But you would make such a lovely mother!~
@@ -115,6 +133,11 @@
 @114  = ~I'm sure.~
 @115  = ~Excuse me.~
 @116  = ~Of course.~
+
+
+/* ------- *
+ *  Ninde  *
+ * ------- */
 @117  = ~Isra, darling. I must say, it is nice to be traveling with someone with a touch of class once more--even if she is somewhat overly pious. Still, Sune... hmm. I can almost sympathize.~
 @118  = ~Can you? I have seen precious little evidence of that.~
 @119  = ~And here I thought my high regard for beauty had become all but legendary. As for you, my dear... I've never been terribly interested in bedding women before, but perhaps just this once--~
@@ -165,6 +188,11 @@
 @164  = ~Do you expect me to fear you, girl? Do you think that I would even still care how such a contest would play out? I don't. Not anymore. If you truly wish to challenge me, paladin, I would almost welcome it.~
 @165  = ~I do not believe you, Ninde. Not yet, at least.~
 @166  = ~Then I suggest you not trouble me again until you're prepared to do more than simply talk, hmm? I assure you, Isra... I will be waiting.~
+
+
+/* --------------- *
+ *  Kulyok's Tiax  *
+ * --------------- */
 @167  = ~Tiax will rule all, they said! Old companions of Tiax will be quartered, they said! No one will doubt the everlasting wrath of Tiax, they said, when they took the mighty Tiax to Spellhold to take his place among the greatest wizards and priests of his time!~
 @168  = ~And now what? Even some pansy-prancy paladin girl has better gear than me!~
 @169  = ~<CHARNAME> has given you excellent gear, Tiax. Not that you are likely to use it for anything worthwhile.~
@@ -175,6 +203,11 @@
 @174  = ~Cyric tried, and it brought him no good, Tiax knows. Tiax is clever! The real world may keep luring Tiax into its empty greyness, but Tiax will never submit!~
 @175  = ~So it would seem.~
 @176  = ~If the paladin girl behaves herself and brings Tiax his beer after dinner, Tiax will teach her the ways of Cyric, and show her the one true way to become His Chosen! But only after the Great Tiax, of course. For he will rule all!~
+
+
+/* -------------- *
+ *  Kulyok's Xan  *
+ * -------------- */
 @177  = ~Seventeen seconds.~ [o#xan000]
 @178  = ~I beg your pardon?~
 @179  = ~The braid that you spent half the morning on. It lasted exactly seventeen seconds in our latest skirmish. A new record, I believe.~

@@ -1,6 +1,9 @@
-// SoA
+/* ----- *
+ *  SoA  *
+ * ----- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("T#Dace",CD_STATE_NOTVALID)
@@ -21,6 +24,7 @@ DO ~SetGlobal("G#XB.DaceIsraBanter1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("T#Dace")
 See("T#Dace")
 !StateCheck("T#Dace",CD_STATE_NOTVALID)
@@ -40,6 +44,7 @@ DO ~SetGlobal("G#XB.DaceIsraBanter2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("T#Dace",CD_STATE_NOTVALID)
@@ -58,8 +63,10 @@ DO ~SetGlobal("G#XB.DaceIsraBanter3","GLOBAL",1)~
 == BRH#ISR @89 /* (sigh) */
 EXIT
 
-// ToB
 
+/* ----- *
+ *  ToB  *
+ * ----- */
 CHAIN IF ~InParty("T#Dace")
 See("T#Dace")
 !StateCheck("T#Dace",CD_STATE_NOTVALID)

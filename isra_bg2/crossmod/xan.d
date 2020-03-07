@@ -1,6 +1,9 @@
-// SoA
+/* ----- *
+ *  SoA  *
+ * ----- */
 
 // 1.
+// --
 CHAIN
 IF ~InParty("rh#Isra2")
 See("rh#Isra2")
@@ -22,6 +25,7 @@ DO ~SetGlobal("G#XB.IsraXanSoABanter1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN
 IF ~InParty("O#Xan")
 See("O#Xan")
@@ -41,6 +45,7 @@ DO ~SetGlobal("G#XB.IsraXanSoABanter2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN
 IF ~InParty("O#Xan")
 See("O#Xan")
@@ -66,8 +71,10 @@ DO ~SetGlobal("G#XB.IsraXanSoABanter3","GLOBAL",1)~
 == BO#XAN @204 /* (sigh) Don't ask. */
 EXIT
 
-// ToB
 
+/* ----- *
+ *  ToB  *
+ * ----- */
 CHAIN 
 IF ~InParty("rh#Isra2")
 See("rh#Isra2")

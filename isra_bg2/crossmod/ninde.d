@@ -1,6 +1,9 @@
-// SoA
+/* ----- *
+ *  SoA  *
+ * ----- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Ninde",CD_STATE_NOTVALID)
@@ -21,6 +24,7 @@ DO ~SetGlobal("G#XB.IsraNindeBanter1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Ninde",CD_STATE_NOTVALID)
@@ -42,6 +46,7 @@ DO ~SetGlobal("G#XB.IsraNindeBanter2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Ninde")
 See("Ninde")
 !StateCheck("Ninde",CD_STATE_NOTVALID)
@@ -66,9 +71,13 @@ DO ~SetGlobal("G#XB.IsraNindeBanter3","GLOBAL",1)~
 == BRH#ISR @144 /* And do not speak to me of shades of grey, Ninde. There is as little room for that in a Sharran's world as there is in mine. Blame others, if you haven't the strength to face your own failings, but don't expect me to listen. */
 EXIT
 
-// ToB
+
+/* ----- *
+ *  ToB  *
+ * ----- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Ninde",CD_STATE_NOTVALID)
@@ -101,6 +110,7 @@ CHAIN BLK#NI25 IsraNindeToBBanter#1.3
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Ninde")
 See("Ninde")
 !StateCheck("Ninde",CD_STATE_NOTVALID)
