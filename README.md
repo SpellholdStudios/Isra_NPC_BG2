@@ -287,17 +287,24 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
-- Fixed Isra portraits in EE games.
+- Added missing HANDLE_CHARSETS function to convert string entries for EE games (to prepare for possible translations).
 
 - rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
 - rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).
+
+- Fixed Isra portraits in EE games.
+
 - Fixed typos in .tra files.
+- Traified rh#isstr.baf.
 - Updated deprecated modding tools links.
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
 - Removed useless files and folders (backup...).
 - Reorganized mod architecture tree: created folders to sort files according to their types.
+
 TODO - oh6450.tra  
+
 TODO - Updated OggDec to v1.9.7 and sox to v14.4.1.
+
 TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 
 - Uploaded mod to official Spellhold Studios GitHub mirror account.

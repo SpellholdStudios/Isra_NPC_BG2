@@ -5,47 +5,48 @@
 /* ---------- *
  *  Isra NPC  *
  * ---------- */
-@2    = ~Isra~
-@3    = ~When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.~
+@1002 = ~Isra~
+@1003 = ~When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.~
 
-@5    = ~I'm truly honored to be in your company.~ [rh#is001]
-@6    = ~I don't care for some of the choices you've been making.~ [rh#is002]
-@7    = ~I shan't simply stand by and watch this any longer.~ [rh#is003]
-@8    = ~Enough! I shall be party to this no longer.~ [rh#is004]
-@9    = ~This is new... and not entirely unwelcome.~ [rh#is005]
-@10   = ~These hours are beginning to wear on me.~ [rh#is006]
-@11   = ~Would that we had some Lliirans amongst us to laugh away the tedium.~ [rh#is007]
-@12   = ~For the Firehair!~ [rh#is008]
-@13   = ~For all that is good!~ [rh#is009]
-@14   = ~For the glory of Sune!~ [rh#is010]
-
-
-@17   = ~A healer's aid, please!~ [rh#is013]
-@18   = ~As lovely as it is here, I'm beginning to miss civilization.~ [rh#is014]
-@19   = ~Ah, the city, in all of its magnificence... and infamy.~ [rh#is015]
-@20   = ~I wonder what lost marvels we might find hidden down here.~ [rh#is016]
-@21   = ~All things seem possible in the daylight.~ [rh#is017]
-@22   = ~'Tis a beautiful night... at least for the moment.~ [rh#is018]
-@23   = ~I hear you.~ [rh#is019]
-@24   = ~What do you need?~ [rh#is020]
-@25   = ~How may I help?~ [rh#is021]
-@26   = ~I'm ready.~ [rh#is022]
-@27   = ~Yes?~ [rh#is023]
-@28   = ~Yes, what is it?~ [rh#is024]
-@29   = ~Of course.~ [rh#is025]
-@30   = ~Very well.~ [rh#is026]
-@31   = ~As you wish.~ [rh#is027]
-@32   = ~I shall do as you say.~ [rh#is028]
-@33   = ~Aye, I thought so.~ [rh#is029]
-@34   = ~Certainly.~ [rh#is030]
-@35   = ~As you would have it.~ [rh#is031]
+@1005 = ~I'm truly honored to be in your company.~ [rh#is001]
+@1006 = ~I don't care for some of the choices you've been making.~ [rh#is002]
+@1007 = ~I shan't simply stand by and watch this any longer.~ [rh#is003]
+@1008 = ~Enough! I shall be party to this no longer.~ [rh#is004]
+@1009 = ~This is new... and not entirely unwelcome.~ [rh#is005]
+@1010 = ~These hours are beginning to wear on me.~ [rh#is006]
+@1011 = ~Would that we had some Lliirans amongst us to laugh away the tedium.~ [rh#is007]
+@1012 = ~For the Firehair!~ [rh#is008]
+@1013 = ~For all that is good!~ [rh#is009]
+@1014 = ~For the glory of Sune!~ [rh#is010]
 
 
-@38   = ~This does not work at all!~ [rh#is034]
-@39   = ~That's more than I can carry.~ [rh#is035]
-@40   = ~Hmm?~ [rh#is036]
-@41   = ~This should prove interesting.~ [rh#is037]
-@42   = ~My spell...~ [rh#is038]
+@1017 = ~A healer's aid, please!~ [rh#is013]
+@1018 = ~As lovely as it is here, I'm beginning to miss civilization.~ [rh#is014]
+@1019 = ~Ah, the city, in all of its magnificence... and infamy.~ [rh#is015]
+@1020 = ~I wonder what lost marvels we might find hidden down here.~ [rh#is016]
+@1021 = ~All things seem possible in the daylight.~ [rh#is017]
+@1022 = ~'Tis a beautiful night... at least for the moment.~ [rh#is018]
+@1023 = ~I hear you.~ [rh#is019]
+@1024 = ~What do you need?~ [rh#is020]
+@1025 = ~How may I help?~ [rh#is021]
+@1026 = ~I'm ready.~ [rh#is022]
+@1027 = ~Yes?~ [rh#is023]
+@1028 = ~Yes, what is it?~ [rh#is024]
+@1029 = ~Of course.~ [rh#is025]
+@1030 = ~Very well.~ [rh#is026]
+@1031 = ~As you wish.~ [rh#is027]
+@1032 = ~I shall do as you say.~ [rh#is028]
+@1033 = ~Aye, I thought so.~ [rh#is029]
+@1034 = ~Certainly.~ [rh#is030]
+@1035 = ~As you would have it.~ [rh#is031]
+
+
+@1038 = ~This does not work at all!~ [rh#is034]
+@1039 = ~That's more than I can carry.~ [rh#is035]
+@1040 = ~Hmm?~ [rh#is036]
+@1041 = ~This should prove interesting.~ [rh#is037]
+@1042 = ~My spell...~ [rh#is038]
+
 
 /* ----------- *
  *  Creatures  *

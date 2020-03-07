@@ -19,7 +19,7 @@ APPEND ~state.ids~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
 // Add Imoen's banter file if Fixpack isn't installed
 // --------------------------------------------------
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~cdbehbla.pro~ BEGIN
-	ACTION_IF (is_tob OR is_ee) BEGIN 
+	ACTION_IF (is_tob OR is_ee) BEGIN
 		COPY_EXISTING ~interdia.2da~ ~override~
 			SET_2DA_ENTRY 17 1 2 ~BIMOEN2~ // fixes ToB version
 		BUT_ONLY
@@ -59,10 +59,10 @@ BUT_ONLY
 // Audio
 // ---------------------------------------------
 COPY ~isra_bg2/audio/rh#blank.mus~ ~music~
-    
+
 COPY_EXISTING ~songlist.2da~ ~override~
 	SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
-    
+
 LAF HANDLE_AUDIO END
 
 
@@ -92,7 +92,7 @@ COMPILE ~isra_bg2/scripts/rh#isct4.baf~
 COMPILE ~isra_bg2/scripts/rh#isct5.baf~
 COMPILE ~isra_bg2/scripts/rh#isct6.baf~
 COMPILE ~isra_bg2/scripts/rh#isct7.baf~
-COMPILE ~isra_bg2/scripts/rh#isstr.baf~
+COMPILE ~isra_bg2/scripts/rh#isstr.baf~	USING ~adrian/translations/%s\setup.tra~
 COMPILE ~isra_bg2/scripts/rh#isme.baf~
 COMPILE ~isra_bg2/scripts/rh#isvmp.baf~
 COMPILE ~isra_bg2/scripts/rh#evend.baf~
@@ -197,10 +197,10 @@ END
  * ---------------------- */
 
 // Isra
-COPY ~isra_bg2/creatures/rh#isr.cre~	~override/rh#isr.cre~
-	 ~isra_bg2/creatures/rh#is25.cre~	~override/rh#is25.cre~
-	SAY NAME1 @2 /* Isra */
-	SAY NAME2 @2 /* Isra */
+COPY ~isra_bg2/creatures/rh#isr.cre~  ~override/rh#isr.cre~
+	 ~isra_bg2/creatures/rh#is25.cre~ ~override/rh#is25.cre~
+	SAY NAME1 @1002 /* Isra */
+	SAY NAME2 @1002 /* Isra */
 	PATCH_IF is_ee BEGIN
 		WRITE_ASCII 0x34 ~rh#isram~ #8   // small portrait
 		WRITE_ASCII 0x3c ~rh#isral~ #8   // medium portrait
@@ -208,51 +208,51 @@ COPY ~isra_bg2/creatures/rh#isr.cre~	~override/rh#isr.cre~
 		WRITE_ASCII 0x34 ~rh#isras~ #8   //small portrait
 		WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
 	END
-	WRITE_ASCIIE DIALOG			        ~%DEST_RES%~ #8
-	WRITE_ASCII DEATHVAR       			~rh#Isra2~ #32
-	WRITE_ASCII SCRIPT_OVERRIDE			~%DEST_RES%~ #8
-	SAY BIO @3 /* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
+	WRITE_ASCIIE DIALOG         ~%DEST_RES%~ #8
+	WRITE_ASCII DEATHVAR        ~rh#Isra2~ #32
+	WRITE_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	SAY BIO @1003						/* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
 	SAY MORALE ~~ []
-	SAY HAPPY @5					/* ~I'm truly honored to be in your company.~ [rh#is001] */ 
-	SAY UNHAPPY_ANNOYED @6			/* ~I don't care for some of the choices you've been making.~ [rh#is002] */ 
-	SAY UNHAPPY_SERIOUS @7			/* ~I shan't simply stand by and watch this any longer.~ [rh#is003] */ 
-	SAY UNHAPPY_BREAKING_POINT @8	/* ~Enough! I shall be party to this no longer.~ [rh#is004] */  
-	SAY LEADER @9					/* ~This is new... and not entirely unwelcome.~ [rh#is005] */ 
-	SAY TIRED @10					/* ~These hours are beginning to wear on me.~ [rh#is006] */ 
-	SAY BORED @11					/* ~Would that we had some Lliirans amongst us to laugh away the tedium.~ [rh#is007] */ 
-	SAY BATTLE_CRY1 @12				/* ~For the Firehair!~ [rh#is008] */ 
-	SAY BATTLE_CRY2 @13				/* ~For all that is good!~ [rh#is009] */ 
-	SAY BATTLE_CRY3 @14				/* ~For the glory of Sune!~ [rh#is010] */ 
+	SAY HAPPY @1005						/* ~I'm truly honored to be in your company.~ [rh#is001] */
+	SAY UNHAPPY_ANNOYED @1006			/* ~I don't care for some of the choices you've been making.~ [rh#is002] */
+	SAY UNHAPPY_SERIOUS @1007			/* ~I shan't simply stand by and watch this any longer.~ [rh#is003] */
+	SAY UNHAPPY_BREAKING_POINT @1008	/* ~Enough! I shall be party to this no longer.~ [rh#is004] */
+	SAY LEADER @1009					/* ~This is new... and not entirely unwelcome.~ [rh#is005] */
+	SAY TIRED @1010						/* ~These hours are beginning to wear on me.~ [rh#is006] */
+	SAY BORED @1011						/* ~Would that we had some Lliirans amongst us to laugh away the tedium.~ [rh#is007] */
+	SAY BATTLE_CRY1 @1012				/* ~For the Firehair!~ [rh#is008] */
+	SAY BATTLE_CRY2 @1013				/* ~For all that is good!~ [rh#is009] */
+	SAY BATTLE_CRY3 @1014				/* ~For the glory of Sune!~ [rh#is010] */
 	SAY BATTLE_CRY4 ~~ []
 	SAY BATTLE_CRY5 ~~ []
 	SAY DAMAGE ~~ [rh#is011]
 	SAY DYING ~~ [rh#is012]
-	SAY HURT @17					/* ~A healer's aid, please!~ [rh#is013] */ 
-	SAY AREA_FOREST @18				/* ~As lovely as it is here, I'm beginning to miss civilization.~ [rh#is014] */ 
-	SAY AREA_CITY @19				/* ~Ah, the city, in all of its magnificence... and infamy.~ [rh#is015] */ 
-	SAY AREA_DUNGEON @20			/* ~I wonder what lost marvels we might find hidden down here.~ [rh#is016] */ 
-	SAY AREA_DAY @21				/* ~All things seem possible in the daylight.~ [rh#is017] */ 
-	SAY AREA_NIGHT @22				/* ~'Tis a beautiful night... at least for the moment.~ [rh#is018] */ 
-	SAY SELECT_COMMON1 @23			/* ~I hear you.~ [rh#is019] */ 
-	SAY SELECT_COMMON2 @24			/* ~What do you need?~ [rh#is020] */ 
-	SAY SELECT_COMMON3 @25			/* ~How may I help?~ [rh#is021] */ 
-	SAY SELECT_COMMON4 @26			/* ~I'm ready.~ [rh#is022] */ 
-	SAY SELECT_COMMON5 @27			/* ~Yes?~ [rh#is023] */ 
-	SAY SELECT_COMMON6 @28			/* ~Yes, what is it?~ [rh#is024] */ 
-	SAY SELECT_ACTION1 @29			/* ~Of course.~ [rh#is025] */ 
-	SAY SELECT_ACTION2 @30			/* ~Very well.~ [rh#is026] */ 
-	SAY SELECT_ACTION3 @31			/* ~As you wish.~ [rh#is027] */ 
-	SAY SELECT_ACTION4 @32			/* ~I shall do as you say.~ [rh#is028] */ 
-	SAY SELECT_ACTION5 @33			/* ~Aye, I thought so.~ [rh#is029] */ 
-	SAY SELECT_ACTION6 @34			/* ~Certainly.~ [rh#is030] */ 
-	SAY SELECT_ACTION7 @35			/* ~As you would have it.~ [rh#is031] */ 
+	SAY HURT @1017						/* ~A healer's aid, please!~ [rh#is013] */
+	SAY AREA_FOREST @1018				/* ~As lovely as it is here, I'm beginning to miss civilization.~ [rh#is014] */
+	SAY AREA_CITY @1019					/* ~Ah, the city, in all of its magnificence... and infamy.~ [rh#is015] */
+	SAY AREA_DUNGEON @1020				/* ~I wonder what lost marvels we might find hidden down here.~ [rh#is016] */
+	SAY AREA_DAY @1021					/* ~All things seem possible in the daylight.~ [rh#is017] */
+	SAY AREA_NIGHT @1022				/* ~'Tis a beautiful night... at least for the moment.~ [rh#is018] */
+	SAY SELECT_COMMON1 @1023			/* ~I hear you.~ [rh#is019] */
+	SAY SELECT_COMMON2 @1024			/* ~What do you need?~ [rh#is020] */
+	SAY SELECT_COMMON3 @1025			/* ~How may I help?~ [rh#is021] */
+	SAY SELECT_COMMON4 @1026			/* ~I'm ready.~ [rh#is022] */
+	SAY SELECT_COMMON5 @1027			/* ~Yes?~ [rh#is023] */
+	SAY SELECT_COMMON6 @1028			/* ~Yes, what is it?~ [rh#is024] */
+	SAY SELECT_ACTION1 @1029			/* ~Of course.~ [rh#is025] */
+	SAY SELECT_ACTION2 @1030			/* ~Very well.~ [rh#is026] */
+	SAY SELECT_ACTION3 @1031			/* ~As you wish.~ [rh#is027] */
+	SAY SELECT_ACTION4 @1032			/* ~I shall do as you say.~ [rh#is028] */
+	SAY SELECT_ACTION5 @1033			/* ~Aye, I thought so.~ [rh#is029] */
+	SAY SELECT_ACTION6 @1034			/* ~Certainly.~ [rh#is030] */
+	SAY SELECT_ACTION7 @1035			/* ~As you would have it.~ [rh#is031] */
 	SAY CRITICAL_HIT ~~ [rh#is032]
 	SAY CRITICAL_MISS ~~ [rh#is033]
-	SAY TARGET_IMMUNE @38			/* ~This does not work at all!~ [rh#is034] */ 
-	SAY INVENTORY_FULL @39			/* ~That's more than I can carry.~ [rh#is035] */ 
-	SAY SELECT_RARE1 @40			/*  ~Hmm?~ [rh#is036] */ 
-	SAY SELECT_RARE2 @41			/* ~This should prove interesting.~ [rh#is037] */ 
-	SAY SPELL_DISRUPTED @42			/* ~My spell...~ [rh#is038] */ 
+	SAY TARGET_IMMUNE @1038				/* ~This does not work at all!~ [rh#is034] */
+	SAY INVENTORY_FULL @1039			/* ~That's more than I can carry.~ [rh#is035] */
+	SAY SELECT_RARE1 @1040				/* ~Hmm?~ [rh#is036] */
+	SAY SELECT_RARE2 @1041				/* ~This should prove interesting.~ [rh#is037] */
+	SAY SPELL_DISRUPTED @1042			/* ~My spell...~ [rh#is038] */
 	SAY SET_A_TRAP ~~ []
 	SAY HIDDEN_IN_SHADOWS ~~ []
 	SAY PICKED_POCKET ~~ []
@@ -294,7 +294,7 @@ COPY_EXISTING ~noblew2.cre~ ~override/rh#rana.cre~
 	WRITE_BYTE 0x32 0		// hair color
 	WRITE_BYTE 0x27b 34		// alignment: true neutral
 BUT_ONLY
-    
+
 // Quentin Jysstev
 COPY_EXISTING ~gnoblem1.cre~ ~override/rh#quent.cre~
 	SAY NAME1 @47 /* Quentin */
@@ -306,7 +306,7 @@ COPY_EXISTING ~gnoblem1.cre~ ~override/rh#quent.cre~
 	WRITE_BYTE 0x32 4		// hair color
 	WRITE_ASCII SCRIPT_DEFAULT  ~~ #8
 BUT_ONLY
-  
+
 // Thugs
 COPY_EXISTING ~bmugg1.cre~ ~override/rh#thug1.cre~
 			  ~bmugg1.cre~ ~override/rh#thug2.cre~
@@ -377,7 +377,7 @@ COPY_EXISTING ~yusef.cre~ ~override/rh#alim.cre~
 	REMOVE_CRE_ITEM ~chan02~
 	REMOVE_CRE_ITEM ~shld04~
 BUT_ONLY
-  
+
 // Ghislain
 COPY_EXISTING ~yusef.cre~ ~override/rh#ghsln.cre~
 	SAY NAME1 @58 /* Ghislain */
@@ -433,11 +433,11 @@ COPY_EXISTING ~noblew2.cre~ ~override/rh#cora.cre~
 	WRITE_BYTE 0x32 3		// hair color
 	WRITE_BYTE 0x27b 33		// alignment: neutral good
 BUT_ONLY
-  
+
 // Vampire Isra
 COPY ~isra_bg2/creatures/rh#isvmp.cre~ ~override/rh#isvmp.cre~
-	SAY NAME1 @2 /* Isra */
-	SAY NAME2 @2
+	SAY NAME1 @1002 /* Isra */
+	SAY NAME2 @1002
 	PATCH_IF is_ee BEGIN
 		WRITE_ASCII 0x34 ~rh#isram~ #8   // small portrait
 		WRITE_ASCII 0x3c ~rh#isral~ #8   // medium portrait
@@ -468,7 +468,7 @@ COPY_EXISTING ~cadril.cre~ ~override/rh#evend.cre~
 	REMOVE_CRE_ITEM ~plat01~
 	REMOVE_CRE_ITEM ~shld03~
 BUT_ONLY
- 
+
 // Ilian
 COPY_EXISTING ~scsarles.cre~ ~override/rh#ilian.cre~
 	SAY NAME1 @66 /* Ilian */
@@ -479,7 +479,7 @@ COPY_EXISTING ~scsarles.cre~ ~override/rh#ilian.cre~
 	WRITE_ASCIIE SCRIPT_DEFAULT	~%DEST_RES%~ #8
 	WRITE_BYTE 0x27b 50 // alignment: chaotic neutral
 BUT_ONLY
-    
+
 // Wraith Scene
 COPY_EXISTING ~noblew2.cre~ ~override/rh#rana2.cre~
 	SAY NAME1 @45 /* Rana */
@@ -516,7 +516,7 @@ COPY ~isra_bg2/items/rh#isbdy.itm~ ~override~
 	SAY NAME2 @71
 	SAY DESC @72 /* Isra was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be. */
 BUT_ONLY
-  
+
 // Green Dragon Scale
 COPY ~isra_bg2/Items/rh#mail.itm~ ~override~
 	SAY NAME1 @73
@@ -536,7 +536,7 @@ COPY_EXISTING ~scrlhp.itm~ ~override/rh#lttr.itm~
 	SAY NAME1 @75
 	SAY NAME2 @75
 	SAY DESC @76 /* This note is plain, though a chalky, sulfuric residue clings to it. Perhaps its author was in a laboratory of some sort. It reads:
-  
+
 Jysstev,
 
 I am not as easily defied as you might wish. Comply with my wishes or your wife will suffer the consequences.
@@ -549,7 +549,7 @@ COPY_EXISTING ~book25.itm~ ~override/rh#docu1.itm~
 	SAY NAME1 @77
 	SAY NAME2 @77
 	SAY DESC @78 /* This is a copy of a ledger listing the most recent transactions of the late Gelion Deymiare, a Cowled Wizard who apparently dealt heavily in the illegal trade of magical items. */
-  
+
 // Quentin's Financial Statements
 COPY_EXISTING ~book25.itm~ ~override/rh#docu2.itm~
 	SAY NAME1 @79
