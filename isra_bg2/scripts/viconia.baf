@@ -4,7 +4,7 @@ IF
 	Global("ViconiaRomanceActive","GLOBAL",1)
 	Global("rh#IsraViconiaRomance","GLOBAL",0)
 THEN
-  RESPONSE #100
-  	RealSetGlobalTimer("rh#IsraViconiaTimer","GLOBAL",1800)
-	SetGlobal("rh#IsraViconiaRomance","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraViconiaTimer","GLOBAL",1800)
+		SetGlobal("rh#IsraViconiaRomance","GLOBAL",1)
 END

@@ -2,9 +2,9 @@ IF
     GlobalGT("rh#IsraQuestTwo","GLOBAL",0)
 	Global("rh#IsraJysstevEstate","GLOBAL",3)
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraJysstevEstate","GLOBAL",4)
-	ActionOverride("rh#rana",DestroySelf())
-	ActionOverride("rh#quent",DestroySelf())
-	Continue()
+	RESPONSE #100
+		SetGlobal("rh#IsraJysstevEstate","GLOBAL",4)
+		ActionOverride("rh#rana",DestroySelf())
+		ActionOverride("rh#quent",DestroySelf())
+		Continue()
 END

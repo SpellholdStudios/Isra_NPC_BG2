@@ -1,17 +1,18 @@
-// ---------------------------------------------
-// Initial Go-To
-// ---------------------------------------------
+/* --------------- *
+ *  Initial Go-To  *
+ * --------------- */
 
 IF
-    NumTimesTalkedTo(0)
+	NumTimesTalkedTo(0)
 THEN
-  RESPONSE #100
-    Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END
 
-// ---------------------------------------------
-// Dialogue Track
-// ---------------------------------------------
+
+/* ---------------- *
+ *  Dialogue Track  *
+ * ---------------- */
 
 IF	
 	InParty("rh#Isra2")
@@ -25,10 +26,10 @@ IF
 		Global("rh#IsraTalksToB","GLOBAL",3)
     	Global("rh#IsraTalksToB","GLOBAL",7)
 THEN
-  RESPONSE #100
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END
 
 IF	
@@ -46,16 +47,17 @@ IF
     	Global("rh#IsraTalksToB","GLOBAL",11)
     	Global("rh#IsraFinalTalk","GLOBAL",2)
 THEN
-  RESPONSE #100
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END
 
 // incrementing
+// ------------
 
 // 2.
-
+// --
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -67,12 +69,12 @@ IF
     RealGlobalTimerExpired("rh#IsraTalksToBTimer","GLOBAL")
     Global("rh#IsraTalksToB","GLOBAL",2)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
 END
 
 // 3.
-
+// --
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -85,12 +87,12 @@ IF
     RealGlobalTimerExpired("rh#IsraTalksToBTimer","GLOBAL")
     Global("rh#IsraTalksToB","GLOBAL",4)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
 END
 
 // 4.
-
+// --
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -103,12 +105,12 @@ IF
     GlobalGT("METBAL","GLOBAL",0)
  	Global("rh#IsraTalksToB","GLOBAL",6)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
 END
 
 // 5, 6
-
+// ----
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -125,12 +127,12 @@ IF
     	Global("rh#IsraTalksToB","GLOBAL",8)
     	Global("rh#IsraTalksToB","GLOBAL",10)
 THEN
-  RESPONSE #100
+	RESPONSE #100
 	IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
 END
 
 // final talk
-
+// ----------
 IF
 	InParty("rh#Isra2")
 	See(Player1)
@@ -143,9 +145,9 @@ IF
 	Global("ChallengesDone","GLOBAL",1)
 	Global("rh#IsraFinalTalk","GLOBAL",0)
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraFinalTalk","GLOBAL",1)
-	RealSetGlobalTimer("rh#IsraFinalTalkTimer","GLOBAL",30)
+	RESPONSE #100
+		SetGlobal("rh#IsraFinalTalk","GLOBAL",1)
+		RealSetGlobalTimer("rh#IsraFinalTalkTimer","GLOBAL",30)
 END
 
 IF
@@ -161,21 +163,22 @@ IF
 	Global("rh#IsraFinalTalk","GLOBAL",1)
 	RealGlobalTimerExpired("rh#IsraFinalTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraFinalTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#IsraFinalTalk","GLOBAL",2)
 END
 
 IF
     !Global("rh#IsraRomanceActive","GLOBAL",2)
 	Global("rh#IsraTalksToB","GLOBAL",4)
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraTalksToB","GLOBAL",6)
+	RESPONSE #100
+		SetGlobal("rh#IsraTalksToB","GLOBAL",6)
 END
 
-// ---------------------------------------------
-// Plot Related Dialogue
-// ---------------------------------------------
+
+/* ----------------------- *
+ *  Plot Related Dialogue  *
+ * ----------------------- */
 
 IF	
 	InParty("rh#Isra2")
@@ -190,12 +193,12 @@ IF
 		Global("rh#IsraChallengesTalk","GLOBAL",2)
 		Global("rh#IsraDraconis","GLOBAL",1)
 THEN
-  RESPONSE #100
-	Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END
 
 // Wraith
-
+// ------
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -206,12 +209,12 @@ IF
     Global("rh#IsraRomanceActive","GLOBAL",2)
     Global("rh#IsraWraith","GLOBAL",2)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraWraith","GLOBAL",1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraWraith","GLOBAL",1)
 END
 
 // Oasis
-
+// -----
 IF
 	InParty("rh#Isra2")
 	See(Player1)
@@ -224,12 +227,12 @@ IF
 	GlobalGT("TethyrBattleStart","GLOBAL",0)
 	Global("rh#IsraOasis","GLOBAL",0)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#IsraOasis","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#IsraOasis","GLOBAL",1)
 END
 
 // Third Challenge
-
+// ---------------
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -241,9 +244,9 @@ IF
 	GlobalGT("BeginChallenge3","GLOBAL",2)
 	Global("rh#IsraChallengesTalk","GLOBAL",0)
 THEN
-  RESPONSE #100
-	RealSetGlobalTimer("rh#IsraTalksChallengeTimer","GLOBAL",60)
-	SetGlobal("rh#IsraChallengesTalk","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraTalksChallengeTimer","GLOBAL",60)
+		SetGlobal("rh#IsraChallengesTalk","GLOBAL",1)
 END
 	
 IF	
@@ -257,12 +260,12 @@ IF
 	RealGlobalTimerExpired("rh#IsraTalksChallengeTimer","GLOBAL")
 	Global("rh#IsraChallengesTalk","GLOBAL",1)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#IsraChallengesTalk","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#IsraChallengesTalk","GLOBAL",2)
 END
 
 // Draconis
-
+// --------
 IF	
 	InParty("rh#Isra2")
 	See(Player1)
@@ -274,13 +277,14 @@ IF
     Dead("bazdra02")
     Global("rh#IsraDraconis","GLOBAL",0)
 THEN
-  RESPONSE #100
+	RESPONSE #100
 	IncrementGlobal("rh#IsraDraconis","GLOBAL",1)
 END
 
-// ---------------------------------------------
-// Reputational & Alignment Issues
-// ---------------------------------------------
+
+/* --------------------------------- *
+ *  Reputational & Alignment Issues  *
+ * --------------------------------- */
 
 IF	
 	InParty("rh#Isra2")
@@ -294,9 +298,9 @@ IF
 		Global("rh#IsraReputationBreak","GLOBAL",1)
 		Global("rh#IsraPCEvil","GLOBAL",1)
 		Global("rh#IsraFallenPally","GLOBAL",1)
- THEN
-RESPONSE #100
-	StartDialogueNoSet(Player1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 
 IF
@@ -304,8 +308,8 @@ IF
     !ReputationGT(Player1,9)
 	Global("rh#IsraLowReputation","GLOBAL",0)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#IsraLowReputation","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#IsraLowReputation","GLOBAL",1)
 END
 
 IF
@@ -313,8 +317,8 @@ IF
     !ReputationGT(Player1,5)
 	Global("rh#IsraReputationBreak","GLOBAL",0)
 THEN
-  RESPONSE #100
-	SetGlobal("rh#IsraReputationBreak","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("rh#IsraReputationBreak","GLOBAL",1)
 END
 
 
@@ -323,35 +327,36 @@ IF
 	AreaCheck("AR4000")
 	Alignment(Player1,MASK_EVIL)
 	Global("rh#IsraPCEvil","GLOBAL",0)
- THEN
-RESPONSE #100
-	SetGlobal("rh#IsraPCEvil","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#IsraPCEvil","GLOBAL",1)
 END
 
 // if you never got her paladinhood back
-
+// -------------------------------------
 IF
 	InParty(Myself)
 	AreaCheck("AR4000")
 	Global("rh#IsraVampire","GLOBAL",6)
 	GlobalLT("rh#IsraPaladin","GLOBAL",6)
 	Global("rh#IsraFallenPally","GLOBAL",0)
- THEN
-RESPONSE #100
-	SetGlobal("rh#IsraFallenPally","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#IsraFallenPally","GLOBAL",1)
 END
 
-// ---------------------------------------------
-// Flirts
-// ---------------------------------------------
+
+/* -------- *
+ *  Flirts  *
+ * -------- */
 
 IF 
 	Global("rh#IsraStartFlirts","GLOBAL",0)
 	Global("rh#IsraRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100
-	SetGlobal("rh#IsraStartFlirts","GLOBAL",1)
-	RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#IsraStartFlirts","GLOBAL",1)
+		RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)
 END
 
 IF
@@ -364,9 +369,9 @@ IF
 	!Global("rh#IsraFlirtsDisabled","GLOBAL",1)
 	Global("rh#IsraTimeForFlirt","GLOBAL",0)
 	Global("rh#IsraRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100	
-	SetGlobal("rh#IsraTimeForFlirt","GLOBAL",1)
+THEN
+	RESPONSE #100	
+		SetGlobal("rh#IsraTimeForFlirt","GLOBAL",1)
 END
 
 IF
@@ -379,21 +384,22 @@ IF
 	!Global("rh#IsraFlirtsDisabled","GLOBAL",1)
 	Global("rh#IsraTimeForFlirt","GLOBAL",1)
 	Global("rh#IsraRomanceActive","GLOBAL",2)
- THEN
-RESPONSE #100
-	Dialogue(Player1)
+THEN
+	RESPONSE #100
+		Dialogue(Player1)
 END
 
-// IF HOSTILE
 
+// IF HOSTILE
+// ----------
 IF
 	Allegiance(Myself,ENEMY)
 	!InParty(Myself)
 	Global("rh#NPCFight","LOCALS",0)
 THEN
-  RESPONSE #100
-	ChangeAIScript("rh#isrx",CLASS)
-	ChangeAIScript("useitem",GENERAL)
-	ChangeAIScript("",DEFAULT)
-	SetGlobal("rh#NPCFight","LOCALS",1)
+	RESPONSE #100
+		ChangeAIScript("rh#isrx",CLASS)
+		ChangeAIScript("useitem",GENERAL)
+		ChangeAIScript("",DEFAULT)
+		SetGlobal("rh#NPCFight","LOCALS",1)
 END

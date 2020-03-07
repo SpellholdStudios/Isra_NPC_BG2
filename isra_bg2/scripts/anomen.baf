@@ -5,7 +5,7 @@ IF
 	Global("AnomenRomanceActive","GLOBAL",1)
 	Global("rh#IsraAnomenRomance","GLOBAL",0)
 THEN
-  RESPONSE #100
-  	RealSetGlobalTimer("rh#IsraAnomenTimer","GLOBAL",1800)
-	SetGlobal("rh#IsraAnomenRomance","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraAnomenTimer","GLOBAL",1800)
+		SetGlobal("rh#IsraAnomenRomance","GLOBAL",1)
 END

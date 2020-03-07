@@ -6,6 +6,6 @@ IF
 	!StateCheck("rh#Isra2",CD_STATE_NOTVALID)
 	See("rh#Isra2")
 THEN
-RESPONSE #100
-	Dialogue("rh#Isra2")
+	RESPONSE #100
+		Dialogue("rh#Isra2")
 END

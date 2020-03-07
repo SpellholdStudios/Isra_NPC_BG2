@@ -2,7 +2,7 @@ IF
     Allegiance(Myself,ENEMY)
     Global("rh#enemies","LOCALS",0)
 THEN
-  RESPONSE #100
-    SetGlobal("rh#enemies","LOCALS",1)
-    Attack(NearestEnemyOf(Myself))
+	RESPONSE #100
+		SetGlobal("rh#enemies","LOCALS",1)
+		Attack(NearestEnemyOf(Myself))
 END

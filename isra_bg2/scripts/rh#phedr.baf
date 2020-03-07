@@ -2,6 +2,6 @@ IF
 	NumTimesTalkedTo(0)
 	InMyArea(Player1)
 THEN
-RESPONSE #100
-	Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END

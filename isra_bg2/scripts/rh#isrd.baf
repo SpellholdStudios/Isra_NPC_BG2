@@ -1,6 +1,6 @@
 // 5.
-
-IF	
+// --
+IF
 	InParty("rh#Isra2")
 	See(Player1)
     !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -24,16 +24,16 @@ IF
     	AreaCheck("AR2010")
 	Global("rh#IsraTalks","GLOBAL",9)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END
 
 // 15, 18
-
-IF	
+// ------
+IF
 	InParty("rh#Isra2")
 	See(Player1)
     !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -62,16 +62,16 @@ IF
 		Global("rh#IsraTalks","GLOBAL",29)
     	Global("rh#IsraTalks","GLOBAL",35)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraTalks","GLOBAL",1)
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraTalks","GLOBAL",1)
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END
 
 // 26.
-
-IF	
+// ---
+IF
 	InParty("rh#Isra2")
 	See(Player1)
     !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -85,16 +85,16 @@ IF
 	ReputationGT(Player1,13)
 	AreaCheck("AR2202")
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END
 
 // Spellhold
-
-IF	
+// ---------
+IF
 	InParty("rh#Isra2")
 	See(Player1)
     !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -106,9 +106,9 @@ IF
     !Global("rh#IsraRomanceActive","GLOBAL",2)
 	Global("rh#IsraSpellhold","GLOBAL",0)
 THEN
-  RESPONSE #100
-	IncrementGlobal("rh#IsraSpellhold","GLOBAL",1)
-  	PlaySong(0)
-    PlaySound("rh#isong")
-	Dialogue(Player1)
+	RESPONSE #100
+		IncrementGlobal("rh#IsraSpellhold","GLOBAL",1)
+		PlaySong(0)
+		PlaySound("rh#isong")
+		Dialogue(Player1)
 END

@@ -1,5 +1,5 @@
 // romance conflict
-
+// ----------------
 IF
 	InParty("rh#Isra2")
 	InParty("Neera")
@@ -9,9 +9,9 @@ IF
 	GlobalGT("NeeraLovetalks","GLOBAL",14)
 	GlobalGT("rh#IsraTalks","GLOBAL",22)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#IsraNeeraRomanceTimer","GLOBAL",1200)
-	SetGlobal("rh#IsraNeeraRomance","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraNeeraRomanceTimer","GLOBAL",1200)
+		SetGlobal("rh#IsraNeeraRomance","GLOBAL",1)
 END
 
 IF
@@ -28,8 +28,8 @@ IF
 	Global("rh#IsraRomanceActive","GLOBAL",1)
 	RealGlobalTimerExpired("rh#IsraNeeraRomanceTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraNeeraRomance","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#IsraNeeraRomance","GLOBAL",2)
 END
 
 IF
@@ -45,6 +45,6 @@ IF
 	Global("NeeraRomanceActive","GLOBAL",1)
 	Global("rh#IsraRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-	Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END

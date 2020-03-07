@@ -13,9 +13,9 @@ IF
 		Global("rh#IsraAerie2","GLOBAL",1)
 	Global("rh#IsraAerie4","GLOBAL",0)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#IsraAerieTalkTimer","GLOBAL",600)
-	SetGlobal("rh#IsraAerie4","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraAerieTalkTimer","GLOBAL",600)
+		SetGlobal("rh#IsraAerie4","GLOBAL",1)
 END
 
 IF
@@ -29,8 +29,8 @@ IF
 	Global("rh#IsraAerie4","GLOBAL",1)
 	RealGlobalTimerExpired("rh#IsraAerieTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraAerie4","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#IsraAerie4","GLOBAL",2)
 END
 
 IF
@@ -44,12 +44,12 @@ IF
 	Global("rh#IsraAerie4","GLOBAL",2)
 	RealGlobalTimerExpired("rh#IsraAerieTalkTimer","GLOBAL")
 THEN
-RESPONSE #100
-	Dialogue("rh#Isra2")
+	RESPONSE #100
+		Dialogue("rh#Isra2")
 END
 
 // romance conflict
-
+// ----------------
 IF
 	InParty("rh#Isra2")
 	InParty("Aerie")
@@ -59,9 +59,9 @@ IF
 	GlobalGT("LoveTalk","LOCALS",13)
 	GlobalGT("rh#IsraTalks","GLOBAL",16)
 THEN
-RESPONSE #100
-	RealSetGlobalTimer("rh#IsraAerieRomanceTimer","GLOBAL",1200)
-	SetGlobal("rh#IsraAerieRomance","GLOBAL",1)
+	RESPONSE #100
+		RealSetGlobalTimer("rh#IsraAerieRomanceTimer","GLOBAL",1200)
+		SetGlobal("rh#IsraAerieRomance","GLOBAL",1)
 END
 
 IF
@@ -78,8 +78,8 @@ IF
 	Global("rh#IsraRomanceActive","GLOBAL",1)
 	RealGlobalTimerExpired("rh#IsraAerieRomanceTimer","GLOBAL")
 THEN
-RESPONSE #100
-	SetGlobal("rh#IsraAerieRomance","GLOBAL",2)
+	RESPONSE #100
+		SetGlobal("rh#IsraAerieRomance","GLOBAL",2)
 END
 
 IF
@@ -95,6 +95,6 @@ IF
 	Global("AerieRomanceActive","GLOBAL",1)
 	Global("rh#IsraRomanceActive","GLOBAL",1)
 THEN
-RESPONSE #100
-	Dialogue(Player1)
+	RESPONSE #100
+		Dialogue(Player1)
 END
