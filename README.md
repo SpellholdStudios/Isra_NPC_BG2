@@ -12,8 +12,7 @@
 
 
 **Author:** Rhaella  
-**Mod Website:** <a href="http://www.spellholdstudios.net/ie/isra">Spellhold Studios</a>  
-**Mod Forum:** <a href="http://www.shsforums.net/forum/638-isra/">Isra NPC</a>  
+**Mod Website and Forum:** <a href="http://www.shsforums.net/forum/638-isra/">Isra NPC</a>  
 
 
 [Read the mod's readme](http://spellholdstudios.github.io/readmes/isra_bg2-readme-english.html).
@@ -283,11 +282,10 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 #### Version ??? ( March 2020)
 
 - Replaced `AUTHOR` keyword with `SUPPORT`.
-
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
-- Added missing HANDLE_CHARSETS function to convert string entries for EE games (to prepare for possible translations).
+- Added missing `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
 
 - rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
 - rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).
