@@ -60,8 +60,8 @@ LANGUAGE ~English~
 /* =============== *
  *  Isra for BGII  *
  * =============== */
-BEGIN @0 /* Isra for BGII */
-REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal installed. */
+BEGIN @0								 /* Isra for BGII */
+REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal or BG2:EE installed to install Isra NPC for BGII mod. */
 
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
@@ -69,7 +69,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 /* ======================= *
  *  Isra Crossmod Content  *
  * ======================= */
-BEGIN ~Crossmod Content~
-REQUIRE_COMPONENT ~isra_bg2.tp2~ ~0~ ~Please install Isra before additional content~
+BEGIN @2								/* Isra Crossmod Content */
+REQUIRE_COMPONENT ~isra_bg2.tp2~ ~0~ @3	// ~Please install Isra NPC for BGII main component before additional content.~
 
 INCLUDE ~%MOD_FOLDER%/lib/isra_bg2_crossmod.tpa~

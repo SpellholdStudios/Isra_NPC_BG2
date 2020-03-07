@@ -1,5 +1,7 @@
 @0    = ~Isra for BGII~
-@1    = ~You must have Throne of Bhaal installed.~
+@1    = ~You must have Throne of Bhaal or BG2:EE installed to install Isra NPC for BGII mod.~
+@2    = ~Isra Crossmod Content~
+@3    = ~Please install Isra NPC for BGII main component before additional content.~
 
 
 /* ---------- *
@@ -75,6 +77,7 @@
 @64   = ~Corinna Ghadir~
 @65   = ~Sir Evendur~
 @66   = ~Ilian~
+
 
 /* ------- *
  *  Items  *

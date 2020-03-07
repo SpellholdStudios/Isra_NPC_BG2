@@ -293,7 +293,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 - Fixed Isra portraits in EE games.
 
 - Fixed typos in .tra files.
-- Traified rh#isstr.baf.
+- Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
 - Updated deprecated modding tools links.
 TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
 - Removed useless files and folders (backup...).
