@@ -38,25 +38,30 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~bimoen2.dlg~ BEGIN
 END
 
 
-// fixing kit.ids; creature corrections are down in the creature section
+/* ---------------- *
+ *  Fixing kit.ids  *
+ * ---------------- */
 COPY_EXISTING ~kit.ids~ ~override~
-  REPLACE_TEXTUALLY ~.*\bGODHELM\b~                ~0x4014 GODHELM~
-  REPLACE_TEXTUALLY ~.*\bGODLATHANDER\b~           ~0x4015 GODLATHANDER~
-  BUT_ONLY_IF_IT_CHANGES
+	REPLACE_TEXTUALLY ~^.+[ %TAB%]\(GODHELM[ %TAB%%LNL%%MNL%%WNL%]+\)~                ~0x4014 \1~
+	REPLACE_TEXTUALLY ~^.+[ %TAB%]\(GODLATHANDER[ %TAB%%LNL%%MNL%%WNL%]+\)~           ~0x4015 \1~
+BUT_ONLY
 
-// fixing area file
-COPY_EXISTING ar1005.are ~override~
+
+/* -------------------------- *
+ *  Fixing ar1005.are script  *
+ * -------------------------- */
+COPY_EXISTING ~ar1005.are~ ~override~
 	WRITE_ASCII AREA_SCRIPT ar1005 #8
 BUT_ONLY
+
 
 // ---------------------------------------------
 // Audio
 // ---------------------------------------------
-
 COPY ~isra_bg2/audio/rh#blank.mus~ ~music~
     
 COPY_EXISTING ~songlist.2da~ ~override~
-  SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
+	SET_2DA_ENTRY 0 2 3 ~rh#blank.mus~
     
 LAF HANDLE_AUDIO END
 
@@ -180,10 +185,10 @@ APPEND ~mastarea.2da~ ~RH#IS3  value~ UNLESS ~RH#IS3~
  *  Installing portraits  *
  * ---------------------- */
 ACTION_IF is_ee BEGIN
-	COPY ~isra_bg2/images/rh#isral.bmp~ ~override~
-	COPY ~isra_bg2/images/rh#isral.bmp~ ~override/rh#isram.bmp~
+	COPY ~isra_bg2/portraits/rh#isral.bmp~ ~override~
+	COPY ~isra_bg2/portraits/rh#isral.bmp~ ~override/rh#isram.bmp~
 END ELSE BEGIN
-	COPY ~isra_bg2/images~ ~override~
+	COPY ~isra_bg2/portraits~ ~override~
 END
 
 
@@ -199,14 +204,13 @@ COPY ~isra_bg2/creatures/rh#isr.cre~	~override/rh#isr.cre~
 	PATCH_IF is_ee BEGIN
 		WRITE_ASCII 0x34 ~rh#isram~ #8   // small portrait
 		WRITE_ASCII 0x3c ~rh#isral~ #8   // medium portrait
-		WRITE_ASCII SCRIPT_OVERRIDE		~rh#is25~ #8
 	END ELSE BEGIN
-		WRITE_ASCII 0X34 ~rh#isras~ #8   //small portrait
+		WRITE_ASCII 0x34 ~rh#isras~ #8   //small portrait
 		WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
-		WRITE_ASCII SCRIPT_OVERRIDE		~rh#isr~ #8
 	END
-	WRITE_ASCIIE DIALOG			         ~%DEST_RES%~ #8
-	WRITE_ASCII DEATHVAR       			 ~rh#Isra2~ #32
+	WRITE_ASCIIE DIALOG			        ~%DEST_RES%~ #8
+	WRITE_ASCII DEATHVAR       			~rh#Isra2~ #32
+	WRITE_ASCII SCRIPT_OVERRIDE			~%DEST_RES%~ #8
 	SAY BIO @3 /* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
 	SAY MORALE ~~ []
 	SAY HAPPY @5					/* ~I'm truly honored to be in your company.~ [rh#is001] */ 
@@ -265,7 +269,7 @@ BUT_ONLY
 
 // Alia Ghadir
 COPY_EXISTING ~sartem01.cre~  ~override/rh#alia.cre~
-			   ~sartem01.cre~ ~override/rh#alia2.cre~
+			  ~sartem01.cre~ ~override/rh#alia2.cre~
 	SAY NAME1 @43 /* Alia */
 	SAY NAME2 @44 /* Alia Ghadir */
 	WRITE_ASCII DIALOG           ~rh#Alia~ #8
@@ -438,7 +442,7 @@ COPY ~isra_bg2/creatures/rh#isvmp.cre~ ~override/rh#isvmp.cre~
 		WRITE_ASCII 0x34 ~rh#isram~ #8   // small portrait
 		WRITE_ASCII 0x3c ~rh#isral~ #8   // medium portrait
 	END ELSE BEGIN
-		WRITE_ASCII 0X34 ~rh#isras~ #8   //small portrait
+		WRITE_ASCII 0x34 ~rh#isras~ #8   //small portrait
 		WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
 	END
 	WRITE_ASCII DIALOG           ~rh#isvmp~ #8
@@ -493,21 +497,21 @@ BUT_ONLY
  * ------------------ */
 
 // Ghadir Family Ring
-COPY ~isra_bg2/Items/rh#isrng.itm~ ~override~
+COPY ~isra_bg2/items/rh#isrng.itm~ ~override~
 	SAY NAME1 @67
 	SAY NAME2 @67
 	SAY DESC @68 /* Of Calishite origin, this ring has belonged to Isra's family for generations. It grants her a +1 bonus to all saving throws and a +1 armor class bonus. */
 BUT_ONLY
 
 // Mantle of Roses
-COPY ~isra_bg2/Items/rh#cloak.itm~ ~override~
+COPY ~isra_bg2/items/rh#cloak.itm~ ~override~
 	SAY NAME1 @69
 	SAY NAME2 @69
 	SAY DESC @70 /* This cloak, woven by a priestess of Sune, was intended as a gift for <CHARNAME> of Candlekeep. It grants its wear a +1 bonus to Charisma as well as immunity to confusion. */
 BUT_ONLY
 
 // Isra's Body
-COPY ~isra_bg2/Items/rh#isbdy.itm~ ~override~
+COPY ~isra_bg2/items/rh#isbdy.itm~ ~override~
 	SAY NAME1 @71
 	SAY NAME2 @71
 	SAY DESC @72 /* Isra was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be. */
@@ -589,11 +593,10 @@ REPLACE ~99999~ @88 /* After their victory at the Throne of Bhaal, Isra and <CHA
 COPY ~isra_bg2/epilogue/rh#isra.2da~ ~override/rh#isra6.2da~
 REPLACE ~99999~ @89 /* After <CHARNAME>'s ascension, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though saddened by her former lover's departure, she found a degree of solace in her work, and soon became quite popular amongst the Tethyrian aristocracy... at least until relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. Though she would remember <CHARNAME> fondly, Isra was never one to live in memory alone, and her various romances became a favorite topic of Athkatla's gossips in the years to come. */
 
-APPEND ~pdialog.2da~
-  ~rh#isra2 rh#isrp rh#isrj rh#isrd rh#is25p rh#is25j rh#is25d rh#is25~
-UNLESS ~rh#isra2~
+/* ----------------- *
+ *  Appending files  *
+ * ----------------- */
+APPEND ~interdia.2da~ ~rh#isra2 brh#isr brh#is25~ UNLESS ~rh#isra2~
 
-APPEND ~interdia.2da~
-  ~rh#isra2 brh#isr brh#is25~
-UNLESS ~rh#isra2~
+APPEND ~pdialog.2da~ ~rh#isra2 rh#isrp rh#isrj rh#isrd rh#is25p rh#is25j rh#is25d rh#is25~ UNLESS ~rh#isra2~
 
