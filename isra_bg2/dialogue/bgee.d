@@ -1,6 +1,6 @@
-// ---------------------------------------------
-// Dorn
-// ---------------------------------------------
+/* ------ *
+ *  Dorn  *
+ * ------ */
 
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraDornSoA","GLOBAL",1)~ THEN RH#ISRJ dorn
 @0 /* My <PRO_LADYLORD>, this... this beast that you have taken into your company-- */
@@ -32,7 +32,7 @@ DO ~SetGlobal("KICKEDOUT","LOCALS",1) LeaveParty() Enemy() Attack("rh#Isra2")~
 EXIT
 
 // ToB
-
+// ---
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraDornToB","GLOBAL",1)~ THEN RH#IS25J dorn
 @0 /* My <PRO_LADYLORD>, this... this beast that you have taken into your company-- */
 DO ~SetGlobal("rh#IsraDornToB","GLOBAL",2)~
@@ -62,9 +62,10 @@ CHAIN DORN25J rh#dorn3
 DO ~SetGlobal("KICKEDOUT","LOCALS",1) LeaveParty() Enemy() Attack("rh#Isra2")~ 
 EXIT
 
-// ---------------------------------------------
-// Hexxat
-// ---------------------------------------------
+
+/* -------- *
+ *  Hexxat  *
+ * -------- */
 
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraHexxat","GLOBAL",1)~ THEN RH#ISRJ hexxat
 @14 /* No. I will not work with this... this thing, <CHARNAME>. */
@@ -97,7 +98,7 @@ END
 	++ @27 /* I'm sorry, Hexxat. You're the one who has to leave. */ EXTERN HEXXATJ hexxat2
 
 // ToB
-
+// ---
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraHexxatToB","GLOBAL",1)~ THEN RH#IS25J hexxat
 @14 /* No. I will not work with this... this thing, <CHARNAME>. */
 DO ~SetGlobal("rh#IsraHexxatToB","GLOBAL",2)~ 
@@ -128,11 +129,13 @@ END
 	++ @21 /* Isra, if you can't accept her, you have no place here. */ EXTERN RH#IS25J hexxat1
 	++ @27 /* I'm sorry, Hexxat. You're the one who has to leave. */ EXTERN HEXXA25J hexxat2
 
-// ---------------------------------------------
-// Neera
-// ---------------------------------------------
+
+/* ------- *
+ *  Neera  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Neera",CD_STATE_NOTVALID)
@@ -151,6 +154,7 @@ DO ~SetGlobal("rh#IsraNeera1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Neera",CD_STATE_NOTVALID)
@@ -170,6 +174,7 @@ DO ~SetGlobal("rh#IsraNeera2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Neera",CD_STATE_NOTVALID)
@@ -190,7 +195,7 @@ DO ~SetGlobal("rh#IsraNeera3","GLOBAL",1)~
 EXIT
 
 // ToB
-
+// ---
 CHAIN IF ~InParty("Neera")
 See("Neera")
 !StateCheck("Neera",CD_STATE_NOTVALID)
@@ -210,7 +215,7 @@ DO ~SetGlobal("rh#IsraNeeraToB","GLOBAL",1)~
 EXIT
 
 // romance conflict
-
+// ----------------
 CHAIN IF ~Global("rh#IsraNeeraRomance","GLOBAL",2)~ THEN NEERAJ c5
 @58 /* You and Isra seem to be spending a lot of time together these days. */
 DO ~SetGlobal("rh#IsraNeeraRomance","GLOBAL",3)~
@@ -238,13 +243,15 @@ IF ~~ DO ~SetGlobal("NeeraRomanceActive","GLOBAL",3)~ EXIT
 END
 END
 
-// ---------------------------------------------
-// Rasaad
-// ---------------------------------------------
+
+/* -------- *
+ *  Rasaad  *
+ * -------- */
 
 // SoA
-
+// ---
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Rasaad",CD_STATE_NOTVALID)
@@ -264,6 +271,7 @@ DO ~SetGlobal("rh#IsraRasaad1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Rasaad")
 See("Rasaad")
 !StateCheck("Rasaad",CD_STATE_NOTVALID)
@@ -283,6 +291,7 @@ DO ~SetGlobal("rh#IsraRasaad2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Rasaad")
 See("Rasaad")
 !StateCheck("Rasaad",CD_STATE_NOTVALID)
@@ -306,7 +315,7 @@ DO ~SetGlobal("rh#IsraRasaad3","GLOBAL",1)~
 EXIT
 
 // ToB
-
+// ---
 CHAIN IF ~InParty("Rasaad")
 See("Rasaad")
 !StateCheck("Rasaad",CD_STATE_NOTVALID)
@@ -325,7 +334,7 @@ DO ~SetGlobal("rh#IsraRasaadToB","GLOBAL",2)~
 EXIT
 
 // romance conflict
-
+// ----------------
 CHAIN IF ~Global("rh#IsraRasaadRomance","GLOBAL",2)~ THEN RH#ISRJ c6
 @102 /* May I speak with you a moment, <CHARNAME>? */
 DO ~SetGlobal("rh#IsraRasaadRomance","GLOBAL",3)~

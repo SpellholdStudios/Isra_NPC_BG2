@@ -9,8 +9,8 @@ BEGIN RH#QUENT
 // ---------------------------------------------
 
 CHAIN IF ~Global("rh#IsraSevenVales","GLOBAL",1)~ THEN RH#ISR den1
-@0 /* You cannot expect me to believe that you know nothing of this matter, Alia. */ 
-DO ~SetGlobal("rh#IsraSevenVales","GLOBAL",2)~ 
+@0 /* You cannot expect me to believe that you know nothing of this matter, Alia. */
+DO ~SetGlobal("rh#IsraSevenVales","GLOBAL",2)~
 == RH#ALIA @1 /* What I know isn't important. The fact that you're even wasting your time on this... you're a knight now, Isra. Surely you have more important things to worry about. */
 == RH#ISR @2 /* She is my sister also. */
 == RH#ALIA @3 /* Yes, and it took you how many years to remember that? */
@@ -28,7 +28,7 @@ EXIT
 
 CHAIN IF ~OR(2) Global("rh#IsraSevenVales","GLOBAL",3) Global("rh#IsraSevenVales","GLOBAL",4)~ THEN RH#ALIA den2
 @13 /* I do hope you enjoyed the show. */
-DO ~SetGlobal("rh#IsraSevenVales","GLOBAL",5)~ 
+DO ~SetGlobal("rh#IsraSevenVales","GLOBAL",5)~
 END
 	+ ~!Alignment(Player1,MASK_EVIL)~ + @14 /* I'm sorry to intrude. Isra was a friend of mine up north. */ + den2.1
 	++ @15 /* Maybe it's not my place, but is there anything I can do to help? */ + den2.2
@@ -66,8 +66,8 @@ CHAIN IF ~Global("rh#IsraRanaAttacked","GLOBAL",1)~ THEN RH#RANA govt1
 @24 /* Wait! This is... this is just a big misunderstanding-- */
 = @25 /* You there! Help me, please! */
 == RH#THUG1 @26 /* Dammit! That blasted wizard won't be happy about complications. Kill them all! */
-DO ~SetGlobal("rh#IsraRanaAttacked","GLOBAL",2) 
-ActionOverride("rh#thug2",Enemy()) 
+DO ~SetGlobal("rh#IsraRanaAttacked","GLOBAL",2)
+ActionOverride("rh#thug2",Enemy())
 Enemy()~
 EXIT
 
@@ -86,7 +86,7 @@ DO ~SetGlobal("rh#IsraRanaEscort","GLOBAL",1)
 AddJournalEntry(@33 /* A Family Affair
 
 I have agreed to escort Rana Jysstev, a noblewoman I rescued from several thugs, to her estate. Perhaps someone there will be willing to explain exactly why she is being threatened. */,QUEST)
-StartCutSceneMode() 
+StartCutSceneMode()
 StartCutScene("rh#isct4")~
 EXIT
 
@@ -96,7 +96,7 @@ DO ~SetGlobal("rh#IsraRanaEscort","GLOBAL",1)
 AddJournalEntry(@33 /* A Family Affair
 
 I have agreed to escort Rana Jysstev, a noblewoman I rescued from several thugs, to her estate. Perhaps someone there will be willing to explain exactly why she is being threatened. */,QUEST)
-StartCutSceneMode() 
+StartCutSceneMode()
 StartCutScene("rh#isct4")~
 EXIT
 
@@ -106,11 +106,11 @@ DO ~EscapeAreaDestroy(5)
 
 EraseJournalEntry(@19 /* A Family Affair
 
-I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */) 
+I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@22 /* A Family Affair
 
-I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */) 
+I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */)
 
 AddJournalEntry(@36 /* A Family Affair
 
@@ -143,19 +143,19 @@ EXIT
 
 // 2.
 CHAIN IF ~Global("rh#IsraJysstevEstate","GLOBAL",2) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISR jyss2.1
-@51 /* <CHARNAME>? By the gods, it is you. I am sorry... after last night's hectic ride from Crimmor, I can hardly think clearly. */ 
+@51 /* <CHARNAME>? By the gods, it is you. I am sorry... after last night's hectic ride from Crimmor, I can hardly think clearly. */
 = @52 /* I don't know why you're in Athkatla, but thank Sune that you are. My sister... obviously all is not well here. */
-DO ~SetGlobal("rh#IsraJysstevEstate","GLOBAL",3)~ 
+DO ~SetGlobal("rh#IsraJysstevEstate","GLOBAL",3)~
 END
 	+ ~!InParty("Dorn")~ + @53 /* Isra, if you need any help, you only have to ask. */ + jyss2.3
 	+ ~!InParty("Dorn")~ + @54 /* What exactly is going on here? */ + jyss2.4
 	+ ~InParty("Dorn")~ + @53 /* Isra, if you need any help, you only have to ask. */ + jyss2.5
 	+ ~InParty("Dorn")~ + @54 /* What exactly is going on here? */ + jyss2.5
 	++ @55 /* Right. Well, good luck with that. See you around sometime. */ + jyss2.8
-	
+
 CHAIN IF ~Global("rh#IsraJysstevEstate","GLOBAL",2) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISR jyss2.2
-@56 /* You have my heartfelt gratitude, my <PRO_LADYLORD>. Had you not been here... I don't care to even think about the likely outcome. */ 
-DO ~SetGlobal("rh#IsraJysstevEstate","GLOBAL",3)~ 
+@56 /* You have my heartfelt gratitude, my <PRO_LADYLORD>. Had you not been here... I don't care to even think about the likely outcome. */
+DO ~SetGlobal("rh#IsraJysstevEstate","GLOBAL",3)~
 END
 	+ ~!Alignment(Player1,MASK_EVIL) !InParty("Dorn")~ + @57 /* If you need any further help, you only have to ask. */ + jyss2.3
 	+ ~!Alignment(Player1,MASK_EVIL) !InParty("Dorn")~ + @54 /* What exactly is going on here? */ + jyss2.4
@@ -183,11 +183,11 @@ CHAIN RH#ISR jyss2.6
 DO ~SetGlobal("rh#IsraHelpRefused","GLOBAL",1)
 EraseJournalEntry(@19 /* A Family Affair
 
-I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */) 
+I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@22 /* A Family Affair
 
-I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */) 
+I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@33 /* A Family Affair
 
@@ -202,11 +202,11 @@ CHAIN RH#ISR jyss2.7
 @64 /* Nothing you need concern yourself with any further, my <PRO_LADYLORD>. Your assistance is appreciated. */
 DO ~SetGlobal("rh#IsraHelpRefused","GLOBAL",1)EraseJournalEntry(@19 /* A Family Affair
 
-I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */) 
+I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@22 /* A Family Affair
 
-I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */) 
+I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@33 /* A Family Affair
 
@@ -238,7 +238,7 @@ END
 	++ @75 /* I really don't have the time right now. */ EXTERN RH#ISR jyss2.12
 
 CHAIN RH#ISR jyss2.11
-@76 /* I'm glad to hear it. */ 
+@76 /* I'm glad to hear it. */
 DO ~SetGlobal("rh#IsraJoined","GLOBAL",1) JoinParty()~
 END
 IF ~~ EXTERN RH#QUENT jyss2.13
@@ -251,7 +251,7 @@ CHAIN RH#QUENT jyss2.13
 @78 /* Then it is settled. */
 = @79 /* <CHARNAME>, this is one of the letters that we received. The initials GD... it is not much, but perhaps they will lead you to whomever is responsible for these attacks. */
 = @80 /* Thank you, and the gods be with you. */
-DO ~SetGlobalTimer("rh#IsraQuestOneReminderTimer","GLOBAL",SEVEN_DAYS) 
+DO ~SetGlobalTimer("rh#IsraQuestOneReminderTimer","GLOBAL",SEVEN_DAYS)
 SetGlobal("rh#IsraQuestOne","GLOBAL",1)
 GiveItemCreate("rh#lttr",Player1,1,0,0)
 
@@ -274,7 +274,7 @@ CHAIN IF ~OR(2) Global("rh#IsraHelpRefused","GLOBAL",1) InParty("Dorn")~ THEN RH
 EXIT
 
 CHAIN IF ~Global("rh#IsraJysstevEstate","GLOBAL",3) Global("rh#IsraQuestOne","GLOBAL",0)~ THEN RH#ISR questrestart
-@85 /* How may I help you? */ 
+@85 /* How may I help you? */
 END
 	+ ~!Alignment(Player1,MASK_EVIL)~ + @86 /* I've changed my mind about getting involved. */ + jyss2.4
 	+ ~Alignment(Player1,MASK_EVIL)~ + @86 /* I've changed my mind about getting involved. */ + jyss2.6
@@ -311,8 +311,8 @@ BEGIN RH#PHEDR
 BEGIN RH#GELIO
 
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestOne","GLOBAL",2) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ q1a
-@92 /* This is not exactly how I would have wished for you to meet my family, though had you not been there... I do not care to even think about it, <CHARNAME>. */ 
-= @93 /* I only just arrived in Athkatla myself, and not a moment too early, apparently. When I heard word of my sister's predicament... 'twill be some time before the stables in Crimmor lend me another horse, I'm afraid. */ 
+@92 /* This is not exactly how I would have wished for you to meet my family, though had you not been there... I do not care to even think about it, <CHARNAME>. */
+= @93 /* I only just arrived in Athkatla myself, and not a moment too early, apparently. When I heard word of my sister's predicament... 'twill be some time before the stables in Crimmor lend me another horse, I'm afraid. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",3)~
 END
 	++ @94 /* You didn't kill the poor thing, I hope. */ + q1.1
@@ -320,7 +320,7 @@ END
 	++ @96 /* At least now I know you weren't exaggerating the dysfunctional family. */ + q1.3
 
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestOne","GLOBAL",2) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ q1b
-@97 /* I should thank you in advance, my <PRO_LADYLORD>, and apologize for the inconvenience. My family troubles... really, 'tis good of you to involve yourself. */ 
+@97 /* I should thank you in advance, my <PRO_LADYLORD>, and apologize for the inconvenience. My family troubles... really, 'tis good of you to involve yourself. */
 = @98 /* Forgive me my discourtesy... I should at least introduce myself properly. I am Isra Ghadir, of the Order of the Ruby Rose. */
 = @99 /* My duties do not often bring me into Athkatla, but when I heard word of my sister's predicament... 'twill be some time before the stables in Crimmor lend me another horse, I'm afraid. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",3)~
@@ -329,7 +329,7 @@ END
 	++ @100 /* It's a pleasure to meet you, my lady. */ + q1.4
 	++ @101 /* The Ruby Rose? What's that? */ + q1.5
 	+ ~!Class(Player1,PALADIN_ALL)~ + @102 /* Order? Duties? Gods, did I accidentally just let a paladin into my party? */ + q1.6
-	
+
 APPEND RH#ISRJ
 
 IF ~~ q1.1
@@ -370,14 +370,14 @@ END
 
 // 2.
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestOne","GLOBAL",4)~ THEN RH#ISRJ q2
-@110 /* These men... I am certain I've seen them before. */ 
+@110 /* These men... I am certain I've seen them before. */
 = @111 /* Oh, yes. They used to frequent the Den of the Seven Vales. I can guess all too well now how they obtained their drinking money. */
 = @112 /* Perhaps we should visit Patricia in the tavern... she may know more about them. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",5)
 
 AddJournalEntry(@113 /* A Family Affair
 
-Isra believes that Rana's attackers may have once frequented the Den of the Seven Vales. Hopefully the innkeeper can tell me who they were. */,QUEST)	
+Isra believes that Rana's attackers may have once frequented the Den of the Seven Vales. Hopefully the innkeeper can tell me who they were. */,QUEST)
 
 ActionOverride("rh#rat",DestroySelf())~
 EXIT
@@ -398,7 +398,7 @@ END
 	++ @118 /* They attacked someone. I want to know why. */ EXTERN SEVBAR01 q2.2
 	++ @119 /* Had they mentioned anything strange recently? */ EXTERN SEVBAR01 q2.3
 	++ @120 /* Do you know if they were working for someone? */ EXTERN SEVBAR01 q2.3
-	
+
 CHAIN SEVBAR01 q2.2
 @121 /* Did they? That's none too surprisin'. */
 END
@@ -439,7 +439,7 @@ CHAIN IF ~GlobalLT("rh#IsraQuestOne","GLOBAL",7)~ THEN RH#PHEDR q3x
 EXIT
 
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",7)~ THEN RH#PHEDR q3
-@132 /* I couldn't help but overhear your inquiry, <PRO_SIRMAAM>. I assume you have some... grievance with this particular Cowled Wizard? */ 
+@132 /* I couldn't help but overhear your inquiry, <PRO_SIRMAAM>. I assume you have some... grievance with this particular Cowled Wizard? */
 = @133 /* By the looks of that note he's left you, it would certainly seem that you do. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",8)~
 END
@@ -498,7 +498,7 @@ IF ~~ q3.9
  = @151 /* I can show you to his house, if you wish it. */
 	++ @152 /* I would appreciate that. */ + q3.10
 	++ @153 /* I'm not ready. Later, perhaps. */ + q3.11
-END	
+END
 
 IF ~~ q3.10
  SAY @154 /* Very well. */
@@ -506,7 +506,7 @@ IF ~~ DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",9)
 AddJournalEntry(@155 /* A Family Affair
 
 Phedra, a Cowled Wizard who overheard my short conversation with Corneil, has proved somewhat more helpful. GD is apparently Gelion Deymiare, a conjurer of some skill. Phedra is willing to take me to his home in Athkatla. She seems to bear a grudge against him as well. */,QUEST)
-StartCutSceneMode() 
+StartCutSceneMode()
 StartCutScene("rh#isct5")~ EXIT
 END
 
@@ -518,7 +518,7 @@ Phedra, a Cowled Wizard who overheard my short conversation with Corneil, has pr
 END
 
 IF ~Global("rh#IsraQuestOne","GLOBAL",8)~ THEN BEGIN q3.12
- SAY @157 /* I did not expect to see you again so soon. */ 
+ SAY @157 /* I did not expect to see you again so soon. */
 	++ @158 /* Could you take me back to his house now? */ + q3.13
 	++ @159 /* I'm still considering your offer. */ + q3.14
 END
@@ -526,7 +526,7 @@ END
 IF ~~ q3.13
  SAY @154 /* Very well. */
 IF ~~ DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",9)
-StartCutSceneMode() 
+StartCutSceneMode()
 StartCutScene("rh#isct5")~ EXIT
 END
 
@@ -537,18 +537,18 @@ END
 END
 
 // Phedra takes you to Gelion's house
-
+// ----------------------------------
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",9)~ THEN RH#PHEDR q4.1
-@161 /* If I'm not mistaken, Gelion should be upstairs. Speak with me again once you've done what you came for. */ 
+@161 /* If I'm not mistaken, Gelion should be upstairs. Speak with me again once you've done what you came for. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",10)~
 EXIT
 
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",10) !Dead("rh#gelion")~ THEN RH#PHEDR q4.2
-@162 /* Take your sweet time. Hopefully he won't notice. */ 
+@162 /* Take your sweet time. Hopefully he won't notice. */
 EXIT
 
 // Fighting Gelion
-
+// ---------------
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",10)~ THEN RH#GELIO q5.1
 @163 /* You have made a terrible mistake by intruding upon me here, <PRO_GIRLBOY>. What do you mean by this? */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",11)~
@@ -556,7 +556,7 @@ END
 	++ @164 /* I want you to stop harassing the Jysstevs. */ + q5.2
 	++ @165 /* I mean to kill you, naturally. */ + q5.3
 	++ @166 /* Sorry, I'll be going now. */ + q5.4
-	
+
 CHAIN RH#GELIO q5.2
 @167 /* I should have expected them to grow so bold. I shall deal with you first, and then your masters. */
 DO ~Enemy()
@@ -564,32 +564,32 @@ AddJournalEntry(@168 /* A Family Affair
 
 I have slain the wizard Gelion Deymiare. Whatever business he had with the Jysstevs is still a mystery, though he will trouble them no more. */,QUEST)~
 EXIT
-	
+
 CHAIN RH#GELIO q5.3
 @169 /* Jysstev and his whore sent you, didn't they? */
 END
 IF ~~ EXTERN RH#GELIO q5.2
-	
+
 CHAIN RH#GELIO q5.4
 @170 /* Wait one moment... Jysstev and his whore sent you, didn't they? */
 END
 IF ~~ EXTERN RH#GELIO q5.2
 
 // Returning to Phedra
-
+// -------------------
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",11) !Dead("rh#gelion")~ THEN RH#PHEDR q5.5
-@171 /* You cannot mean to leave this half finished. */ 
+@171 /* You cannot mean to leave this half finished. */
 EXIT
 
 CHAIN IF ~Dead("rh#gelion") OR(2) Global("rh#IsraQuestOne","GLOBAL",10) Global("rh#IsraQuestOne","GLOBAL",11)~ THEN RH#PHEDR q5.6
-@172 /* He is dead, then? Yes... yes, I imagine he would have otherwise followed you downstairs in a fury. Well, that is one less rival to worry myself over. */ 
+@172 /* He is dead, then? Yes... yes, I imagine he would have otherwise followed you downstairs in a fury. Well, that is one less rival to worry myself over. */
 = @173 /* Come, I'll return you to the Government District now. We won't speak of this again. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",12)
-StartCutSceneMode() 
+StartCutSceneMode()
 StartCutScene("rh#isct6")~ EXIT
 
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",12)~ THEN RH#PHEDR q5.7
-@174 /* It has been a pleasure working with you, <CHARNAME>. Forgive me if I now make myself scarce. */ 
+@174 /* It has been a pleasure working with you, <CHARNAME>. Forgive me if I now make myself scarce. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",13) EscapeAreaDestroy(5)
 AddJournalEntry(@175 /* A Family Affair
 
@@ -598,7 +598,7 @@ Phedra has gone her own way, and I doubt I will see her again. All that remains 
 EXIT
 
 // Returning to the Jysstevs
-
+// -------------------------
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",13) InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN RH#RANA q6.1
 @177 /* Have you learned anything? */
 == RH#ISRJ @178 /* Aye, we have. A Cowled Wizard named Gelion Deymiare was behind the attack. What he wanted with you, however, I could not say. */
@@ -621,14 +621,14 @@ END
 	++ @183 /* I hope you weren't adverse to the situation ending violently. */ EXTERN RH#RANA q6.5
 	++ @184 /* Does the name Gelion Deymiare mean anything to you? */ EXTERN RH#RANA q6.6
 	++ @185 /* It was a Cowled Wizard. What he wanted with you, I'm not sure. */ EXTERN RH#RANA q6.7
-	
+
 CHAIN IF ~Global("rh#IsraQuestOne","GLOBAL",13)~ THEN RH#QUENT q6.4
 @181 /* You've returned. With good news, I hope? */
 END
 	++ @183 /* I hope you weren't adverse to the situation ending violently. */ EXTERN RH#RANA q6.5
 	++ @184 /* Does the name Gelion Deymiare mean anything to you? */ EXTERN RH#RANA q6.6
 	++ @185 /* It was a Cowled Wizard. What he wanted with you, I'm not sure. */ EXTERN RH#RANA q6.7
-	
+
 CHAIN RH#RANA q6.5
 @186 /* No... no, not at all. */
 END
@@ -651,11 +651,11 @@ DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",14) AddexperienceParty(21250) GiveGoldF
 
 EraseJournalEntry(@19 /* A Family Affair
 
-I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */) 
+I ran across Isra in the Den of Seven Vales, though she did not seem to notice me. She appears to have become embroiled in a bit of intrigue involving her sister and the powerful Jysstev family. I'll have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@22 /* A Family Affair
 
-I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */) 
+I seem to have stumbled upon a bit of intrigue involving the powerful Jysstev family. I will have to consider visiting their estate in the Government District if I want to learn more. */)
 
 EraseJournalEntry(@33 /* A Family Affair
 
@@ -679,7 +679,7 @@ I have asked Corneil, a Cowled Wizard in the government building, if he knows wh
 
 EraseJournalEntry(@155 /* A Family Affair
 
-Phedra, a Cowled Wizard who overheard my short conversation with Corneil, has proved somewhat more helpful. GD is apparently Gelion Deymiare, a conjurer of some skill. Phedra is willing to take me to his home in Athkatla. She seems to bear a grudge against him as well. */)	
+Phedra, a Cowled Wizard who overheard my short conversation with Corneil, has proved somewhat more helpful. GD is apparently Gelion Deymiare, a conjurer of some skill. Phedra is willing to take me to his home in Athkatla. She seems to bear a grudge against him as well. */)
 
 EraseJournalEntry(@168 /* A Family Affair
 
@@ -704,12 +704,12 @@ EXIT
 
 CHAIN IF WEIGHT #-1 ~GlobalGT("rh#IsraQuestOne","GLOBAL",0) GlobalLT("rh#IsraQuestOne","GLOBAL",14) Global("SarlesSpawn","GLOBAL",0)~ THEN SCQAR qar1
 @194 /* Your business is with my cousin, peasant, not with myself. */
-DO ~SetNumTimesTalkedTo(0)~ 
+DO ~SetNumTimesTalkedTo(0)~
 EXIT
 
 CHAIN IF WEIGHT #-1 ~GlobalGT("rh#IsraQuestOne","GLOBAL",0) GlobalLT("rh#IsraQuestOne","GLOBAL",14) Global("SarlesSpawn","GLOBAL",0) !Global("JanLissaPlot","GLOBAL",8) !Global("JanLissaPlot","GLOBAL",9)~ THEN SCLJYSS lady1
 @195 /* Goodness, you must be the adventurers that Rana and Quentin have hired... how very odd. */
-DO ~SetNumTimesTalkedTo(0)~ 
+DO ~SetNumTimesTalkedTo(0)~
 EXIT
 
 CHAIN IF WEIGHT #-1 ~GlobalGT("rh#IsraJysstevEstate","GLOBAL",0) !Global("rh#IsraJysstevButler","GLOBAL",1)~ THEN SCBUTLER butler1
@@ -726,9 +726,9 @@ CHAIN SCBUTLER butler2
 EXIT
 
 // Isra's post quest comments
-
+// --------------------------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestOne","GLOBAL",15)~ THEN RH#ISRJ q7
-@199 /* I should thank you for your help, my <PRO_LADYLORD>. Intrigue is not exactly where my own talents lie. */ 
+@199 /* I should thank you for your help, my <PRO_LADYLORD>. Intrigue is not exactly where my own talents lie. */
 = @200 /* I might have preferred more... concrete answers, but I know as well as any that Athkatla seldom provides them. */
 DO ~SetGlobal("rh#IsraQuestOne","GLOBAL",16)~
 END

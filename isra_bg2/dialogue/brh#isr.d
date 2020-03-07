@@ -1,8 +1,11 @@
 BEGIN BRH#ISR
 
-// Aerie
+/* ------- *
+ *  Aerie  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Aerie",CD_STATE_NOTVALID)
@@ -24,6 +27,7 @@ DO ~SetGlobal("rh#IsraAerie1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Aerie")
 See("Aerie")
 !StateCheck("Aerie",CD_STATE_NOTVALID)
@@ -53,6 +57,7 @@ DO ~SetGlobal("rh#IsraAerie2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Aerie",CD_STATE_NOTVALID)
@@ -72,6 +77,7 @@ DO ~SetGlobal("rh#IsraAerie3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraAerie4","GLOBAL",2)~ THEN AERIEJ rh#IsraAerie4
 @35 /* Isra, are you--are you alright? */
 DO ~SetGlobal("rh#IsraAerie4","GLOBAL",3)~
@@ -91,6 +97,7 @@ DO ~SetGlobal("rh#IsraAerie4","GLOBAL",3)~
 EXIT
 
 // 5.
+// --
 CHAIN IF ~InParty("Aerie")
 See("Aerie")
 !StateCheck("Aerie",CD_STATE_NOTVALID)
@@ -113,9 +120,12 @@ DO ~SetGlobal("rh#IsraAerie5","GLOBAL",1)~
 == BRH#ISR @59 /* (sigh) As you wish. */
 EXIT
 
-// Anomen
+/* -------- *
+ *  Anomen  *
+ * -------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("Anomen")
 See("Anomen")
 !StateCheck("Anomen",CD_STATE_NOTVALID)
@@ -136,6 +146,7 @@ DO ~SetGlobal("rh#IsraAnomen1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Anomen",CD_STATE_NOTVALID)
@@ -158,6 +169,7 @@ DO ~SetGlobal("rh#IsraAnomen2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Anomen")
 See("Anomen")
 !StateCheck("Anomen",CD_STATE_NOTVALID)
@@ -177,6 +189,7 @@ DO ~SetGlobal("rh#IsraAnomen3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Anomen",CD_STATE_NOTVALID)
@@ -201,6 +214,7 @@ DO ~SetGlobal("rh#IsraAnomen4","GLOBAL",1)~
 EXIT
 
 // Surayah conflict
+// ----------------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraSurayah","GLOBAL",1)~ THEN RH#ISRJ surayah
 @96 /* I was leery enough of this mad plan before, but cold-blooded murder-- */
 DO ~IncrementGlobal("rh#IsraSurayah","GLOBAL",1)~
@@ -224,9 +238,12 @@ DO ~LeaveParty()
 EscapeArea()~
 EXIT
 
-// Cernd
+/* ------- *
+ *  Cernd  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Cernd",CD_STATE_NOTVALID)
@@ -246,6 +263,7 @@ DO ~SetGlobal("rh#IsraCernd1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Cernd",CD_STATE_NOTVALID)
@@ -290,9 +308,13 @@ DO ~SetGlobal("rh#IsraCernd3","GLOBAL",1)~
 == BRH#ISR @133 /* Wonderful. */
 EXIT
 
-// Edwin
+
+/* ------- *
+ *  Edwin  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
@@ -312,6 +334,7 @@ DO ~SetGlobal("rh#IsraEdwin1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
@@ -330,6 +353,7 @@ DO ~SetGlobal("rh#IsraEdwin2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Edwin")
 See("Edwin")
 !StateCheck("Edwin",CD_STATE_NOTVALID)
@@ -349,9 +373,13 @@ DO ~SetGlobal("rh#IsraEdwin3","GLOBAL",1)~
 == BEDWIN @154 /* Gah! Shut up, woman! */
 EXIT
 
-// Haer'dalis
+
+/* ------------ *
+ *  Haer'dalis  *
+ * ------------ */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Haerdalis",CD_STATE_NOTVALID)
@@ -375,6 +403,7 @@ DO ~SetGlobal("rh#IsraHaerdalis1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Haerdalis")
 See("Haerdalis")
 !StateCheck("Haerdalis",CD_STATE_NOTVALID)
@@ -399,6 +428,7 @@ DO ~SetGlobal("rh#IsraHaerdalis2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Haerdalis",CD_STATE_NOTVALID)
@@ -425,6 +455,7 @@ DO ~SetGlobal("rh#IsraHaerdalis3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("Haerdalis")
 See("Haerdalis")
 !StateCheck("Haerdalis",CD_STATE_NOTVALID)
@@ -450,9 +481,13 @@ DO ~SetGlobal("rh#IsraHaerdalis4","GLOBAL",1)~
 == BRH#ISR @208 /* Aye, that much is clear enough to anybody. */
 EXIT
 
-// Imoen
+
+/* ------- *
+ *  Imoen  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
@@ -473,6 +508,7 @@ DO ~SetGlobal("rh#IsraImoen1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Imoen2")
 See("Imoen2")
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
@@ -501,6 +537,7 @@ DO ~SetGlobal("rh#IsraImoen2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Imoen2")
 See("Imoen2")
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
@@ -520,6 +557,7 @@ DO ~SetGlobal("rh#IsraImoen3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Imoen2",CD_STATE_NOTVALID)
@@ -542,9 +580,13 @@ DO ~SetGlobal("rh#IsraImoen4","GLOBAL",1)~
 == BRH#ISR @245 /* (smile) I shall try to keep that in mind. */
 EXIT
 
-// Jaheira
+
+/* --------- *
+ *  Jaheira  *
+ * --------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
@@ -565,6 +607,7 @@ DO ~SetGlobal("rh#IsraJaheira1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Jaheira")
 See("Jaheira")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
@@ -583,6 +626,7 @@ DO ~SetGlobal("rh#IsraJaheira2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
@@ -610,6 +654,7 @@ DO ~SetGlobal("rh#IsraJaheira3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("Jaheira")
 See("Jaheira")
 !StateCheck("Jaheira",CD_STATE_NOTVALID)
@@ -631,9 +676,13 @@ DO ~SetGlobal("rh#IsraJaheira4","GLOBAL",1)~
 == BRH#ISR @276 /* Aye, as you wish. */
 EXIT
 
-// Jan
+
+/* ----- *
+ *  Jan  *
+ * ----- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Jan",CD_STATE_NOTVALID)
@@ -657,6 +706,7 @@ DO ~SetGlobal("rh#IsraJan1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Jan",CD_STATE_NOTVALID)
@@ -677,9 +727,13 @@ DO ~SetGlobal("rh#IsraJan2","GLOBAL",1)~
 == BRH#ISR @297 /* Apparently not, Jan. Apparently not. */
 EXIT
 
-// Keldorn
+
+/* --------- *
+ *  Keldorn  *
+ * --------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)
@@ -698,6 +752,7 @@ DO ~SetGlobal("rh#IsraKeldorn","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)
@@ -716,6 +771,7 @@ DO ~SetGlobal("rh#IsraKeldorn","GLOBAL",2)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)
@@ -739,6 +795,7 @@ DO ~SetGlobal("rh#IsraKeldorn","GLOBAL",3)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)
@@ -761,6 +818,7 @@ DO ~SetGlobal("rh#IsraKeldorn4","GLOBAL",1)~
 EXIT
 
 // 5.
+// --
 CHAIN IF ~InParty("Keldorn")
 See("Keldorn")
 !StateCheck("Keldorn",CD_STATE_NOTVALID)
@@ -782,9 +840,13 @@ DO ~SetGlobal("rh#IsraKeldorn5","GLOBAL",1)~
 == BKELDOR @343 /* That is beside the point. */
 EXIT
 
-// Korgan
+
+/* -------- *
+ *  Korgan  *
+ * -------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Korgan",CD_STATE_NOTVALID)
@@ -801,6 +863,7 @@ DO ~SetGlobal("rh#IsraKorgan1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Korgan")
 See("Korgan")
 !StateCheck("Korgan",CD_STATE_NOTVALID)
@@ -819,6 +882,7 @@ DO ~SetGlobal("rh#IsraKorgan2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Korgan",CD_STATE_NOTVALID)
@@ -834,9 +898,13 @@ DO ~SetGlobal("rh#IsraKorgan3","GLOBAL",1)~
 == BKORGAN @360 /* Aye, and that might yet prove interestin', though I've better things to kill fer now than ye. */
 EXIT
 
-// Mazzy
+
+/* ------- *
+ *  Mazzy  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Mazzy",CD_STATE_NOTVALID)
@@ -860,6 +928,7 @@ DO ~SetGlobal("rh#IsraMazzy1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Mazzy")
 See("Mazzy")
 !StateCheck("Mazzy",CD_STATE_NOTVALID)
@@ -882,6 +951,7 @@ DO ~SetGlobal("rh#IsraMazzy2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Mazzy",CD_STATE_NOTVALID)
@@ -905,6 +975,7 @@ DO ~SetGlobal("rh#IsraMazzy3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("Mazzy")
 See("Mazzy")
 !StateCheck("Mazzy",CD_STATE_NOTVALID)
@@ -928,9 +999,13 @@ DO ~SetGlobal("rh#IsraMazzy4","GLOBAL",1)~
 == BMAZZY @407 /* I... oh, never mind. Perhaps we should simply continue on. */
 EXIT
 
-// Minsc
+
+/* ------- *
+ *  Minsc  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("Minsc")
 See("Minsc")
 !StateCheck("Minsc",CD_STATE_NOTVALID)
@@ -955,6 +1030,7 @@ DO ~SetGlobal("rh#IsraMinsc1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Minsc",CD_STATE_NOTVALID)
@@ -978,6 +1054,7 @@ DO ~SetGlobal("rh#IsraMinsc2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Minsc")
 See("Minsc")
 !StateCheck("Minsc",CD_STATE_NOTVALID)
@@ -995,9 +1072,13 @@ DO ~SetGlobal("rh#IsraMinsc3","GLOBAL",1)~
 == BRH#ISR @437 /* (laugh) 'Twould seem that he disagrees. Good luck, my friend. I fear that you may need it. */
 EXIT
 
-// Nalia
+
+/* ------- *
+ *  Nalia  *
+ * ------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Nalia",CD_STATE_NOTVALID)
@@ -1019,6 +1100,7 @@ DO ~SetGlobal("rh#IsraNalia1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Nalia")
 See("Nalia")
 !StateCheck("Nalia",CD_STATE_NOTVALID)
@@ -1048,6 +1130,7 @@ DO ~SetGlobal("rh#IsraNalia2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Nalia",CD_STATE_NOTVALID)
@@ -1073,6 +1156,7 @@ DO ~SetGlobal("rh#IsraNalia3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("Nalia")
 See("Nalia")
 !StateCheck("Nalia",CD_STATE_NOTVALID)
@@ -1093,9 +1177,13 @@ DO ~SetGlobal("rh#IsraNalia4","GLOBAL",1)~
 == BNALIA @486 /* Oh... ohh. I see. That makes considerably more sense. Now, if you'll excuse me, I think I would prefer to pretend that this conversation never happened at all. */
 EXIT
 
-// Valygar
+
+/* --------- *
+ *  Valygar  *
+ * --------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("Valygar")
 See("Valygar")
 !StateCheck("Valygar",CD_STATE_NOTVALID)
@@ -1115,6 +1203,7 @@ DO ~SetGlobal("rh#IsraValygar1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Valygar",CD_STATE_NOTVALID)
@@ -1139,6 +1228,7 @@ DO ~SetGlobal("rh#IsraValygar2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Valygar")
 See("Valygar")
 !StateCheck("Valygar",CD_STATE_NOTVALID)
@@ -1161,6 +1251,7 @@ DO ~SetGlobal("rh#IsraValygar3","GLOBAL",1)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Valygar",CD_STATE_NOTVALID)
@@ -1183,9 +1274,13 @@ DO ~SetGlobal("rh#IsraValygar4","GLOBAL",1)~
 == BVALYGA @527 /* (sigh) It never is, is it? */
 EXIT
 
-// Viconia
+
+/* --------- *
+ *  Viconia  *
+ * --------- */
 
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Viconia",CD_STATE_NOTVALID)
@@ -1209,6 +1304,7 @@ DO ~SetGlobal("rh#IsraViconia1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Viconia")
 See("Viconia")
 !StateCheck("Viconia",CD_STATE_NOTVALID)
@@ -1225,6 +1321,7 @@ DO ~SetGlobal("rh#IsraViconia2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Viconia",CD_STATE_NOTVALID)
@@ -1241,9 +1338,13 @@ DO ~SetGlobal("rh#IsraViconia3","GLOBAL",1)~
 == BVICONI @550 /* As long as you take care of that unsightly mess before it starts to smell, you are quite welcome to do as you please. */
 EXIT
 
-// Yoshimo
+
+/* --------- *
+ *  Yoshimo  *
+ * --------- */
 	
 // 1.
+// --
 CHAIN IF ~InParty("rh#Isra2")
 See("rh#Isra2")
 !StateCheck("Yoshimo",CD_STATE_NOTVALID)
@@ -1266,6 +1367,7 @@ DO ~SetGlobal("rh#IsraYoshimo1","GLOBAL",1)~
 EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("Yoshimo")
 See("Yoshimo")
 !StateCheck("Yoshimo",CD_STATE_NOTVALID)
@@ -1285,6 +1387,7 @@ DO ~SetGlobal("rh#IsraYoshimo2","GLOBAL",1)~
 EXIT
 
 // 3.
+// --
 CHAIN IF ~InParty("Yoshimo")
 See("Yoshimo")
 !StateCheck("Yoshimo",CD_STATE_NOTVALID)

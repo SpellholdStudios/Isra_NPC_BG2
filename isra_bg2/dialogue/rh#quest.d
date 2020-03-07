@@ -62,8 +62,9 @@ ActionOverride("rh#Alia2",EscapeAreaDestroy(5))
 SetGlobal("rh#IsraJoined","GLOBAL",0) LeaveParty() EscapeArea()~ 
 EXIT
 
-// 2. Taren Zoar
 
+// 2. Taren Zoar
+// -------------
 CHAIN IF ~Global("rh#IsraQuestTwo","GLOBAL",2) OR(2) !InParty("rh#Isra2") StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN RH#TAREN q9x
 @24 /* I am very busy, citizen. If you require something, you may speak with Chief Inspector Brega. */
 EXIT
@@ -212,8 +213,9 @@ CHAIN RH#TAREN q9.18
 @95 /* Very well. Come back when you have learned more. */
 EXIT
 
-// 3. Post meeting comments
 
+// 3. Post meeting comments
+// ------------------------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestTwo","GLOBAL",4)~ THEN RH#ISRJ q10
 @96 /* I must admit, I had not expected that to go quite so smoothly. */ 
 DO ~SetGlobal("rh#IsraQuestTwo","GLOBAL",5)
@@ -262,8 +264,9 @@ IF ~~ EXIT
 END
 END
  
+ 
 // 4. Jysstev Estate
-
+// -----------------
 CHAIN IF WEIGHT #-1 ~InParty("rh#Isra2") Global("rh#QarTalks","GLOBAL",1)~ THEN SCQAR q11
 @110 /* Lady Isra, I had thought you above boorish gloating. Has your father's common blood finally run true in the end? */
 DO ~SetGlobal("rh#QarTalks","GLOBAL",2)~
@@ -304,8 +307,9 @@ AddJournalEntry(@125 /* Another Day in Athkatla
 Qar Jysstev was very unhappy to see Isra, though he was willing to share his cousin's financial records... if only to get us out of his house. */,QUEST)~ 
 EXIT
 
-// 5. Isra comments on Qar
 
+// 5. Isra comments on Qar
+// -----------------------
 CHAIN IF WEIGHT #-1 ~Global("rh#QarTalks","GLOBAL",3)~ THEN RH#ISRJ q12
 @126 /* I am sorry you had to see that, <CHARNAME>. My relationship with the Jysstevs has always been... tumultuous. */ 
 DO ~SetGlobal("rh#QarTalks","GLOBAL",4)~
@@ -360,8 +364,9 @@ IF ~~ EXIT
 END
 END
 
-// 6. Jail
 
+// 6. Jail
+// -------
 EXTEND_BOTTOM PRISONK1 0
 + ~Global("rh#IsraQuestTwo","GLOBAL",5)~ + @139 /* I'm here to speak with Alim al-Makram. */ + q13
 END
@@ -370,8 +375,9 @@ CHAIN PRISONK1 q13
 @140 /* Are you? Well, ain't that nice. You can find him through that door, the cell on the far right. */
 EXIT
 
-// Alim al-Makram
 
+// Alim al-Makram
+// --------------
 CHAIN IF ~Global("rh#AlimTalks","GLOBAL",1)~ THEN RH#ALIM q13.1
 @141 /* Yeah? What do ye want? */
 DO ~AddJournalEntry(@142 /* Another Day in Athkatla
@@ -399,8 +405,9 @@ CHAIN IF ~GlobalGT("rh#AlimTalks","GLOBAL",1) PartyHasItem("rh#ale")~ THEN RH#AL
 DO ~TakePartyItem("rh#ale")~
 EXIT
 
-// Sea Bounty
 
+// Sea Bounty
+// ----------
 EXTEND_BOTTOM THUMB 0
 	+ ~Global("rh#AlimTalks","GLOBAL",2)~ + @152 /* If you've got any Bitter Black Ale in stock, Alim al-Makram wants some. */ + q13.5
 	+ ~Global("rh#AlimTalks","GLOBAL",2)~ + @153 /* Do you know anything about a smuggler called Alim al-Makram? */ + q13.6
@@ -433,8 +440,9 @@ AddJournalEntry(@160 /* Another Day in Athkatla
 The Thumb has told me that a friend of Alim al-Makram is currently staying in the tavern. I suspect he could tell me more about Alim's dealings. */,QUEST)~
 EXIT
 
-// Ghislain
 
+// Ghislain
+// --------
 CHAIN IF ~!Global("rh#AlimTalks","GLOBAL",3)~ THEN RH#GHSLN q13.9
 @161 /* You're blocking the view, friend. */
 EXIT
@@ -504,8 +512,9 @@ Ghislain did not offer much information, though he did suggest that Alim was in 
 EscapeAreaDestroy(5)~
 EXIT
 
-// 7. Isra comments on Ghislain
 
+// 7. Isra comments on Ghislain
+// ----------------------------
 CHAIN IF WEIGHT #-1 ~Global("rh#AlimTalks","GLOBAL",5)~ THEN RH#ISRJ q14
 @188 /* I would speak with Alim again, but I cannot imagine that he would share anything more than he already has. If he is lying about Quentin, his motives may be... different than I had assumed. */ 
 DO ~SetGlobal("rh#AlimTalks","GLOBAL",6)~
@@ -552,8 +561,9 @@ IF ~~ EXIT
 END
 END
 
-// 8. Morning, time to visit Crytrappers
 
+// 8. Morning, time to visit Crytrappers
+// -------------------------------------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestTwo","GLOBAL",6)~ THEN RH#ISRJ q15
 @199 /* Good morrow, <CHARNAME>. I... have had a chance to look through all of these documents now. For better or for worse. */ 
 DO ~SetGlobal("rh#IsraQuestTwo","GLOBAL",7)~
@@ -699,8 +709,9 @@ SetGlobal("rh#IsraJoined","GLOBAL",0) LeaveParty() EscapeArea()~ EXIT
 END
 END
 
-// 9. Lamia Crytrapper
 
+// 9. Lamia Crytrapper
+// -------------------
 CHAIN IF ~Global("rh#IsraQuestTwo","GLOBAL",9)~ THEN RH#LAMIA q16
 @238 /* Isra, dear, you should have told me that you meant to drop by. I'm afraid that this isn't the best time for company. */
 == RH#ISRJ @239 /* I won't be very long. I... I'm afraid I have some questions of a financial nature. */
@@ -720,8 +731,9 @@ CHAIN IF ~GlobalGT("rh#IsraQuestTwo","GLOBAL",9)~ THEN RH#LAMIA q16b
 @247 /* I don't have time for anything else, I'm afraid. I'm expected back in Crimmor shortly. */
 EXIT
 
-// 10. Rana
 
+// 10. Rana
+// --------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestTwo","GLOBAL",10)~ THEN RH#RANA q17
 @248 /* Isra, what are you doing here-- */
 = @249 /* Oh. Oh, by the gods, you... you *know*, don't you? */
@@ -755,8 +767,9 @@ EscapeAreaMove("AR0709",412,768,9)
 SetInterrupt(TRUE)~
 EXIT
 
-// 11. Rejoining
 
+// 11. Rejoining
+// -------------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestTwo","GLOBAL",11)~ THEN RH#ISRP q18
 @270 /* <CHARNAME>... I'm glad to see you again. This has been... by Sune, words could not hope to describe it. Even if she were released tomorrow-- */ 
 = @271 /* I would rather not think of it for once. I trust you are ready to continue on again? */
@@ -942,8 +955,9 @@ Our investigations into charges of smuggling against Quentin Jysstev have come t
 EscapeArea()~
 EXIT
 
-// reminders
 
+// reminders
+// ---------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraQuestOneReminder","GLOBAL",1)~ THEN RH#ISRJ reminder1
 @281 /* My <PRO_LADYLORD>, I hope I needn't remind you that you had agreed to investigate my sister's current dilemma? */
 DO ~SetGlobalTimer("rh#IsraQuestOneReminderTimer","GLOBAL",SEVEN_DAYS) 

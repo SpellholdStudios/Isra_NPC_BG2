@@ -34,7 +34,7 @@ IF ~~ j6
  SAY @12 /* I... see. 'Twould seem that I have little enough choice in the matter. */
 IF ~~ EXIT
 END
- 
+
 IF ~NumTimesTalkedToGT(0)~ j7
  SAY @13 /* You've returned, I see. And hopefully with more favorable news than the last time... have you any need of me yet? */
   	++ @14 /* I do. I'd like you to join me. */ + j5

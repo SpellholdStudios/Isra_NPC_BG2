@@ -1,10 +1,11 @@
 BEGIN RH#IS25J
 
-// ---------------------------------------------
-// Dialogue Track
-// ---------------------------------------------
+/* ---------------- *
+ *  Dialogue Track  *
+ * ---------------- */
 
 // 1. (upon rest)
+// --------------
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",1)~ THEN RH#IS25J t1
 @0 /* You look... weary, <CHARNAME>. I had hoped that our time in Suldanessellar would refresh you, but that does not appear to be the case. */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
@@ -191,6 +192,7 @@ END
 END
 
 // 2.
+// --
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",3) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#IS25J t2a
 @58 /* Do you recall the day we met, <CHARNAME>? The artist Prism, hiding outside of Nashkel, his final masterpiece... you must still remember it. */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
@@ -401,6 +403,7 @@ END
 END
 
 // 3.
+// --
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",5)~ THEN RH#IS25J t3
 @126 /* I am beginning to fear that I have been a fool. A fool and a poor servant as well, mayhap. Sometimes, my love, I cannot help but think that you are both punishment and reward. */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
@@ -557,6 +560,7 @@ END
 END
 
 // 4.
+// --
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",7)~ THEN RH#IS25J t4
 @176 /* I do not normally speak in riddles, but just this once... tell me, <CHARNAME>, if you knew a battle was lost before it was even begun, would you be willing to fight it anyway? */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
@@ -727,6 +731,7 @@ END
 END
 
 // 5.
+// --
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",9)~ THEN RH#IS25J t5
 @230 /* I thought this quest near its end once before, prior to leaving for Spellhold. Now, however... I cannot imagine it continuing much longer. */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)
@@ -984,6 +989,7 @@ END
 END
 
 // 6.
+// --
 CHAIN IF ~Global("rh#IsraTalksToB","GLOBAL",11)~ THEN RH#IS25J t6
 @319 /* After this, whatever might come next... I expect to at least have the chance to show you around my home. A short time to rest is now long overdue. */ 
 DO ~IncrementGlobal("rh#IsraTalksToB","GLOBAL",1)~ 
@@ -1108,6 +1114,7 @@ END
 END
 
 // 7.
+// --
 CHAIN IF ~Global("rh#IsraFinalTalk","GLOBAL",2)~ THEN RH#IS25J t7
 @359 /* I have never been so reluctant to accept a challenge as I am right now. After this, assuming there will even be an afterward... */ 
 = @360 /* Give me your hand, <CHARNAME>, if only for a moment. */
@@ -1247,11 +1254,13 @@ IF ~~ EXIT
 END
 END
 
-// ---------------------------------------------
-// Plot Related Dialogue
-// ---------------------------------------------
+
+/* ----------------------- *
+ *  Plot Related Dialogue  *
+ * ----------------------- */
 
 // Master Wraith
+// -------------
 EXTEND_BOTTOM HGWRA01 18
 IF ~Global("rh#IsraRomanceActive","GLOBAL",2) InParty("rh#Isra2") 
 !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ DO ~SetGlobal("rh#IsraWraith","GLOBAL",1)~ EXTERN HGWRA01 wraith1
@@ -1374,6 +1383,7 @@ END
 END
 
 // Saradush
+// --------
 CHAIN IF ~Global("rh#IsraSaradush","GLOBAL",1)~ THEN RH#IS25J p2
 @445 /* I imagine that the Time of Troubles must have felt very much like this... desperate, haunted nights, and a morning drenched in blood. */ 
 DO ~SetGlobal("rh#IsraSaradush","GLOBAL",2)~
@@ -1469,6 +1479,7 @@ END
 END
 
 // Oasis
+// -----
 CHAIN IF ~Global("rh#IsraOasis","GLOBAL",1)~ THEN RH#IS25J p3
 @479 /* Jamis Tombelthen... I recall hearing the name more than once in Eshpurta when matters in Tethyr were at their worst. */
 = @480 /* I... never imagined that I might meet him like this, though. */
@@ -1538,6 +1549,7 @@ END
 END
 
 // After Third Challenge
+// ---------------------
 CHAIN IF ~Global("rh#IsraChallengesTalk","GLOBAL",2)~ THEN RH#IS25J p4
 @500 /* These challenges, <CHARNAME>... 'tis becoming increasingly obvious what they are meant to test. */ 
 DO ~IncrementGlobal("rh#IsraChallengesTalk","GLOBAL",1)~
@@ -1623,6 +1635,7 @@ END
 END
 
 // Draconis
+// --------
 CHAIN IF ~Global("rh#IsraDraconis","GLOBAL",1)~ THEN RH#IS25J p5
 @527 /* Half a lifetime spent preparing to battle these creatures... you would think that I would actually be able to recognize one by now. */
 DO ~SetGlobal("rh#IsraDraconis","GLOBAL",2)~
@@ -1661,7 +1674,7 @@ END
 END
 
 // Reputational & Alignment Issues
-
+// -------------------------------
 CHAIN IF ~Global("rh#IsraLowReputation","GLOBAL",1)~ THEN RH#IS25J rep1
 @537 /* <CHARNAME>, I should like to warn you that I don't care for some of the decisions that you have been making. I trust that you will rectify matters as quickly as possible? */
 DO ~SetGlobal("rh#IsraLowReputation","GLOBAL",2)~
@@ -1704,9 +1717,10 @@ EXIT
 
 APPEND RH#IS25J
 
-// ---------------------------------------------
-// Flirts
-// ---------------------------------------------
+
+/* -------- *
+ *  Flirts  *
+ * -------- */
 
 IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1)~ THEN BEGIN fl1
  SAY @549 /* (A small smile playing across her lips, Isra approaches you, each step radiating quiet, unconscious confidence.) */
@@ -1903,9 +1917,10 @@ IF ~~ EXIT
 END
 END
 
-// ---------------------------------------------
-// Interjections
-// ---------------------------------------------
+
+/* --------------- *
+ *  Interjections  *
+ * --------------- */
 
 I_C_T AMLICH01 10 vongoethe
 == RH#IS25J IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
@@ -2037,8 +2052,9 @@ CHAIN SARVOLO volo2
 == RH#IS25J @615 /* You are too kind, sir. */
 EXTERN SARVOLO 9
 
-// Watcher's Keep
 
+// Watcher's Keep
+// --------------
 I_C_T GORAPP1 10 rh#gorapp1
 == RH#IS25J IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN 
 @617 /* I have no objection to challenging the fiend, though sealing the prison may indeed prove the wiser course of action. */
@@ -2065,8 +2081,9 @@ I_C_T GORDEMO 1 demo
 @620 /* Be careful, <CHARNAME>. There is... something... here, something almost too ancient to be named... */
 END
 
-// Solar
 
+// Solar
+// -----
 EXTEND_BOTTOM FINSOL01 27
 IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") Global("rh#IsraRomanceActive","GLOBAL",2) Global("rh#IsraSolarChoice","GLOBAL",0)~ DO ~SetGlobal("rh#IsraSolarChoice","GLOBAL",1)~ EXTERN RH#IS25J solar1
 IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) InMyArea("rh#Isra2") !Global("rh#IsraRomanceActive","GLOBAL",2) GlobalLT("PPEvilChoices","GLOBAL",2) Alignment(Player1,MASK_GOOD) Global("rh#IsraSolarChoice","GLOBAL",0)~ DO ~SetGlobal("rh#IsraSolarChoice","GLOBAL",1)~ EXTERN RH#IS25J solar2
@@ -2129,9 +2146,10 @@ CHAIN RH#IS25J solar5
 END
 COPY_TRANS FINSOL01 32
 
-// ---------------------------------------------
-// Player Initiated Dialogue
-// ---------------------------------------------
+
+/* --------------------------- *
+ *  Player Initiated Dialogue  *
+ * --------------------------- */
 
 APPEND RH#IS25J
 

@@ -3,6 +3,7 @@
 // ---------------------------------------------
 
 // 1a.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",2) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t1a
 @0 /* I'm afraid I have been somewhat too absorbed in my own affairs to give much thought to yours. This wizard you are pursuing... Irenicus, you called him? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -133,6 +134,7 @@ END
 END
 
 // 1b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",2) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t1b
 @0 /* I'm afraid I have been somewhat too absorbed in my own affairs to give much thought to yours. This wizard you are pursuing... Irenicus, you called him? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -253,6 +255,7 @@ END
 END
  
 // 2a. 
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",4) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t2a
 @77 /* I cannot help but regret leaving for Amn so abruptly. After Sarevok's defeat, I had simply assumed that you were finally out of danger. Had I imagined otherwise... */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -361,6 +364,7 @@ END
 END
  
 // 2b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",4) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t2b1
 @112 /* My <PRO_LADYLORD>, would I be correct in assuming that you are the same <CHARNAME> that prevented war with Baldur's Gate? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -494,6 +498,7 @@ END
 END
 
 // 3a.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",6) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t3a
 @155 /* I apologize for my recent... preoccupation, <CHARNAME>. I'm sure my anxieties are doing little for your own peace of mind. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -677,6 +682,7 @@ END
 END
 
 // 3b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",6) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t3b
 @212 /* I must say, my <PRO_LADYLORD>, you seem to have adapted remarkably well to the pace of life in Athkatla. Mayhap that should not surprise me, but I would never have believed that you were actually raised in a library. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -798,6 +804,7 @@ END
 END
 
 // 4a.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",8) Global("rh#IsraWasInBGI","GLOBAL",1) Global("rh#IsraRomanceActive","GLOBAL",1)~ THEN RH#ISRJ t4a
 @250 /* The month of Mirtul... oh, <CHARNAME>, finding you again now of all times seems such a cruel twist. We missed the Greengrass festivities by mere days. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -891,6 +898,7 @@ END
 END
 
 // 4b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",8) Global("rh#IsraWasInBGI","GLOBAL",1) !Global("rh#IsraRomanceActive","GLOBAL",1)~ THEN RH#ISRJ t4b
 @279 /* The month of Mirtul... we missed the Greengrass festivities by mere days, my <PRO_LADYLORD>. That seems a cruel twist of fate. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -959,6 +967,7 @@ END
 END
 
 // 4c.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",8) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t4c
 @292 /* I must confess, my <PRO_LADYLORD>, I know that you were forced into this life, but I cannot imagine you doing anything else. */ 
 = @293 /* Would you have rather preferred a simpler existence instead? */
@@ -1186,6 +1195,7 @@ END
 END
 
 // 5a. (upon rest in an inn)
+// -------------------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",10) Global("rh#IsraWasInBGI","GLOBAL",1) Global("rh#IsraRomanceActive","GLOBAL",1)~ THEN RH#ISRJ t5a
 @365 /* Come, sit with me a while, <CHARNAME>. I would have you near me this evening. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -1411,6 +1421,7 @@ END
 END
 
 // 5b. (upon rest in an inn)
+// -------------------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",10) Global("rh#IsraWasInBGI","GLOBAL",1) !Global("rh#IsraRomanceActive","GLOBAL",1)~ THEN RH#ISRJ t5b
 @441 /* Would you care to sit with me a while, <CHARNAME>? Your company... I would appreciate it this evening. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -1557,6 +1568,7 @@ END
 END
 
 // 5c.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",10) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t5c
 @486 /* 'Tis always such a welcome surprise to find true talent in establishments such as this, my <PRO_LADYLORD>. I trust you enjoyed the last performance. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -1708,6 +1720,7 @@ END
 END
 
 // 6a.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",12) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t6a
 @522 /* Have you ever seen anything that simply made you stop and think of Imoen for a brief moment? A girl's laughter, mayhap, or a thousand other possibilities, I imagine. */ 
 DO ~RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700) IncrementGlobal("rh#IsraTalks","GLOBAL",1)~
@@ -1871,6 +1884,7 @@ END
 END
 
 // 6b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",12) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t6b
 @574 /* I wish that I could tell you more about the Cowled Wizards, my <PRO_LADYLORD>. Or anything, truly. I have several friends within the Athkatlan government, but even they have little to share. */ 
 = @575 /* Your friend... I try not to worry overmuch about her, but I do not care for being so very in the dark. */
@@ -1989,6 +2003,7 @@ END
 END
 
 // 7. outside in Athkatla or Trademeet
+// -----------------------------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",14)~ THEN RH#ISRJ t7
 @605 /* Oh, <CHARNAME>, do you hear that music? Somebody must be entertaining with Lliirans to<DAYNIGHT>... I would know that song anywhere. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -2161,6 +2176,7 @@ END
 END
 
 // 8.
+// --
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",16)~ THEN RH#ISRJ t8
 @662 /* <CHARNAME>, I am beginning to think that I might have left you with a somewhat uneven impression of a Sunite knighting. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -2330,6 +2346,7 @@ END
 END
 
 // 9a.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",18) Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t9a
 @718 /* 'Tis strange to think how little time has actually passed since we were in Baldur's Gate. So much has changed, it almost seems like another lifetime. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1) RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700)~
@@ -2508,6 +2525,7 @@ END
 END
 
 // 9b.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",18) !Global("rh#IsraWasInBGI","GLOBAL",1)~ THEN RH#ISRJ t9b
 @772 /* I have... heard several rumors, <CHARNAME>. Rather, I heard them some time ago, but it never seemed an appropriate subject to broach. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1) RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700)~
@@ -2659,6 +2677,7 @@ END
 END
 
 // 10.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",20)~ THEN RH#ISRJ t10
 @823 /* You have been in Amn for some time now, <CHARNAME>, certainly long enough to have formed an opinion. Might I ask what you think of it? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1) RealSetGlobalTimer("rh#IsraQuestTimer","GLOBAL",2700)~
@@ -2836,6 +2855,7 @@ END
 END
 
 // 11.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",22)~ THEN RH#ISRJ t11
 @880 /* This is a poor time to be indulging in regret, I know, but Rana... she and I were close once, as difficult as it may be to believe it now. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -2993,6 +3013,7 @@ END
 END
 
 // 12.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",24)~ THEN RH#ISRJ t12
 @932 /* I never said exactly what happened at the courts, did I? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -3156,6 +3177,7 @@ END
 END
 
 // 13.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",26)~ THEN RH#ISRJ t13
 @985 /* We see so much death these days, I wish-- */ 
 = @986 /* What I wish doesn't matter. Still, 'tis an understatement to say that it can grow wearying. */
@@ -3315,6 +3337,7 @@ END
 END
 
 // 14a. 
+// ----
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",28) Global("rh#IsraRomanceActive","GLOBAL",2)~ THEN RH#ISRJ t14a
 @1039 /* Would you walk with me a while, <CHARNAME>? I would speak with you for a moment. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -3441,6 +3464,7 @@ END
 END
 
 // 14b. 
+// ----
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",28) Global("rh#IsraRomanceActive","GLOBAL",1)~ THEN RH#ISRJ t14b
 @1078 /* Would you walk with me a while, my <PRO_LADYLORD>? I would speak with you for a moment. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -3567,6 +3591,7 @@ END
 END
 
 // 14c.
+// ----
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",28)~ THEN RH#ISRJ t14c
 @1103 /* It cannot be too much longer until we get to the bottom of this. Do you mean to remain in Amn afterward? */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -3686,6 +3711,7 @@ END
 END
 
 // 15. upon rest
+// -------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",30)~ THEN RH#ISRJ t15
 @1138 /* I am almost glad there is so little entertainment this evening, <CHARNAME>. For once, I would simply rather think. And talk, mayhap. */ 
 DO ~RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700) IncrementGlobal("rh#IsraTalks","GLOBAL",1)~
@@ -3912,6 +3938,7 @@ END
 END
 
 // 16.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",32)~ THEN RH#ISRJ t16
 @1212 /* Our conversation from the other night, <CHARNAME>... mayhap I should not be surprised to find myself thinking of it again. Sometimes I am fonder of introspection than I should be. */ 
 DO ~RealSetGlobalTimer("rh#IsraTalksTimer","GLOBAL",2700) IncrementGlobal("rh#IsraTalks","GLOBAL",1)~
@@ -4124,6 +4151,7 @@ END
 END
 
 // 17.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",34)~ THEN RH#ISRJ t17
 @1277 /* You look thoughtful to<DAYNIGHT>, my <PRO_LADYLORD>. It suits you. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -4412,6 +4440,7 @@ END
 END
 
 // 18. upon rest
+// -------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",36)~ THEN RH#ISRJ t18
 @1351 /* I-- by the gods, <CHARNAME>, I'm sorry. I... didn't realize that you were still bathing. */ 
 = @1352 /* I... I can come back later. If you would prefer it, that is. */
@@ -4644,6 +4673,7 @@ END
 END
 
 // 19. in Athkatla, outdoors
+// -------------------------
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",38)~ THEN RH#ISRJ t19
 @1423 /* Sometimes I wish we had a temple of our own within Athkatla. The Heartwarders in Crimmor have been talking about establishing one for years, but somehow those plans always fall through. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -4863,7 +4893,7 @@ END
 END
 
 // 20. city only
-
+// -------------
 BEGIN RH#ISME
 
 CHAIN IF ~Global("rh#IsraMessenger","GLOBAL",1)~ THEN RH#ISME messenger
@@ -5095,6 +5125,7 @@ END
 END
 
 // 21.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",42)~ THEN RH#ISRJ t21
 @1566 /* I believe I promised you a story, <CHARNAME>. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)
@@ -5324,6 +5355,7 @@ END
 END
 
 // 22.
+// ---
 CHAIN IF ~Global("rh#IsraTalks","GLOBAL",44)~ THEN RH#ISRJ t22
 @1644 /* The other day... I do not share that story very often. I seldom care to even think about it, truth be told. */ 
 DO ~IncrementGlobal("rh#IsraTalks","GLOBAL",1)~
@@ -5473,11 +5505,13 @@ IF ~~ EXIT
 END
 END
 
+
 // ---------------------------------------------
 // Post-Spellhold Romance Track
 // ---------------------------------------------
 
 // 23.
+// ---
 CHAIN IF ~Global("rh#IsraSpellholdTalks","GLOBAL",2)~ THEN RH#ISRJ t23
 @1685 /* <CHARNAME>, you-- I'm almost afraid to ask what he did to you. */ 
 DO ~IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)~
@@ -5583,6 +5617,7 @@ END
 END
 
 // 24.
+// ---
 CHAIN IF ~Global("rh#IsraSpellholdTalks","GLOBAL",5)~ THEN RH#ISRJ t24
 @1722 /* For a moment I let myself believe that it would truly be that simple. That we would wrest back your soul and this quest would finally be at an end. */ 
 = @1723 /* 'Twould seem that fate is never quite so kind. */
@@ -5658,6 +5693,7 @@ END
 END
 
 // 25.
+// ---
 CHAIN IF ~Global("rh#IsraSpellholdTalks","GLOBAL",7)~ THEN RH#ISRJ t25
 @1745 /* Hold still a moment, <CHARNAME>. You look-- well, I would say you look tired, but that is nothing out of the ordinary. */ 
 DO ~IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)
@@ -5782,6 +5818,7 @@ END
 END
 
 // 26. upon rest
+// -------------
 CHAIN IF ~Global("rh#IsraSpellholdTalks","GLOBAL",9)~ THEN RH#ISRJ t26
 @1788 /* Sit with me, my-- Veldrin, while we have even a moment's privacy. I wanted to... hmm. */ 
 DO ~IncrementGlobal("rh#IsraSpellholdTalks","GLOBAL",1)~
@@ -5906,6 +5943,7 @@ END
 END
 
 // 27.
+// ---
 CHAIN IF ~Global("rh#IsraAthkatlaTalk","GLOBAL",2)~ THEN RH#ISRJ t27
 @1826 /* By Sune, I never imagined that Athkatla could be such a welcome sight. */ 
 DO ~IncrementGlobal("rh#IsraAthkatlaTalk","GLOBAL",1)~
@@ -6043,6 +6081,7 @@ END
 END
 
 // 28.
+// ---
 CHAIN IF ~Global("rh#IsraPaladin","GLOBAL",7)~ THEN RH#ISRJ t28
 @1870 /* I should thank you again, <CHARNAME>. What Bodhi did... were you anyone else, I doubt you would be able to imagine it, but I suspect that you can. */ 
 DO ~SetGlobal("rh#IsraPaladin","GLOBAL",8)~
@@ -6193,12 +6232,13 @@ IF ~~ EXIT
 END
 END
 
+
 // ---------------------------------------------
 // Scenery Dialogue
 // ---------------------------------------------
 
 // Ophals in Waukeen's Promenade
-
+// -----------------------------
 EXTEND_BOTTOM NOBLEM3 0
 IF ~InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ DO ~SetGlobal("rh#IsraOphals","GLOBAL",1)~ EXTERN NOBLEW3 1
 END
@@ -6260,7 +6300,7 @@ END
 END
 
 // Radiant Heart
-
+// -------------
 CHAIN IF ~Global("rh#IsraRadiantHeart","GLOBAL",1)~ THEN RH#ISRJ i2
 @1937 /* I had forgotten how beautiful these halls were. My memories of the place... well, they could stand to be somewhat more pleasant. */
 DO ~SetGlobal("rh#IsraRadiantHeart","GLOBAL",2)~ 
@@ -6329,7 +6369,7 @@ CHAIN KELDORJ i2.10
 EXIT
 
 // Umar Hills, Shade Lord
-
+// ----------------------
 CHAIN IF ~Global("rh#IsraShadeLord","GLOBAL",2)~ THEN RH#ISRJ i3
 @1959 /* I cannot decide whether or not to consider this a victory. I am in no mood for celebrating, at least. */
 DO ~SetGlobal("rh#IsraShadeLord","GLOBAL",3)~ 
@@ -6392,7 +6432,7 @@ END
 END
 
 // Windspear Hills, Firkraag
-
+// -------------------------
 ADD_TRANS_ACTION GARREN BEGIN 39 40 41 42 END 
 BEGIN END
 ~SetGlobal("rh#IsraFirkraag","GLOBAL",3)~
@@ -6486,7 +6526,7 @@ END
 END
 
 // Working for Aran
-
+// ----------------
 CHAIN IF ~Global("rh#IsraShadowThieves","GLOBAL",1)~ THEN RH#ISRJ i5
 @2005 /* I knew it would come to this eventually, but I did not want to believe it. */
 = @2006 /* Shadow Thieves, <CHARNAME>? Are you certain there were no other options? */
@@ -6516,7 +6556,7 @@ END
 END
 
 // Brynnlaw
-
+// --------
 CHAIN IF ~Global("rh#IsraBrynnlaw","GLOBAL",2)~ THEN RH#ISRJ i6
 @2014 /* By Sune, that... establishment was utterly revolting. I won't validate it by calling it a festhall, whatever it purported to be. */
 = @2015 /* Though it shouldn't surprise me that these tyrants take more pleasure in suffering than in anything real. */ 
@@ -6626,7 +6666,7 @@ END
 END
 
 // Soullessness, Upon Rest in Chapter 5. Friendship only.
-
+// ------------------------------------------------------
 CHAIN IF ~Global("rh#IsraSpellhold","GLOBAL",1)~ THEN RH#ISRJ i7
 @2046 /* <CHARNAME>, you-- I can't imagine what this must be like for you. */ 
 = @2047 /* Is there anything I can do to help? Pardon me for being frank, but you look terrible. */
@@ -6681,7 +6721,7 @@ END
 END
 
 // Adalon 
-
+// ------
 CHAIN IF ~Global("rh#IsraAdalon","GLOBAL",2)~ THEN RH#ISRJ i8
 @2065 /* I have seen dragons before, but metallic ones... how absurd it is to first meet one in the Underdark! Of all the creatures we could come across here, I was not expecting that at all. */
 DO ~SetGlobal("rh#IsraAdalon","GLOBAL",3)~
@@ -6755,7 +6795,7 @@ END
 END
 
 // Phaere & Solaufein
-
+// ------------------
 CHAIN IF ~Global("rh#IsraPhaere","GLOBAL",2)~ THEN RH#ISRJ i9
 @2086 /* I would almost pity her, you know. Phaere. What she might have been, had circumstances allowed it. What they both might have been. */
 DO ~SetGlobal("rh#IsraPhaere","GLOBAL",3)~
@@ -6818,7 +6858,7 @@ END
 END
 
 // Phaere Innuendo
-
+// ---------------
 CHAIN IF ~Global("rh#IsraPhaereInnuendo1","GLOBAL",1)~ THEN RH#ISRJ i10
 @2105 /* Are you quite mad, <CHARNAME>? What were you thinking, encouraging that... that vile creature? */
 DO ~SetGlobal("rh#IsraPhaereInnuendo1","GLOBAL",2)~
@@ -6871,7 +6911,7 @@ END
 END
 
 // Elhan. Friendship only.
-
+// -----------------------
 CHAIN IF ~Global("rh#IsraElhan","GLOBAL",2)~ THEN RH#ISRJ i11
 @2121 /* By Sune, 'tis good to see the sky again... and to finally have a task that is unlikely to drive me half mad with fury. */
 DO ~SetGlobal("rh#IsraElhan","GLOBAL",3)~
@@ -6909,7 +6949,7 @@ END
 END
 
 // Low Reputation
-
+// --------------
 CHAIN IF ~Global("rh#IsraLowReputation","GLOBAL",1)~ THEN RH#ISRJ rep1
 @2130 /* <CHARNAME>, I should like to warn you that I don't care for some of the decisions that you have been making. I trust that you will rectify matters as quickly as possible? */
 DO ~SetGlobal("rh#IsraLowReputation","GLOBAL",2)~
@@ -6936,12 +6976,13 @@ CHAIN IF ~Global("rh#IsraReputationBreak","GLOBAL",1)~ THEN RH#ISRJ rep5
 DO ~SetGlobal("rh#IsraReputationBreak","GLOBAL",2) SetGlobal("rh#IsraJoined","GLOBAL",0) LeaveParty() EscapeArea()~ 
 EXIT
 
+
 // ---------------------------------------------
 // Romance Conflicts
 // ---------------------------------------------
 
 // Viconia
-
+// -------
 CHAIN IF ~Global("rh#IsraViconiaRomance","GLOBAL",2)~ THEN RH#ISRJ c1
 @2138 /* <CHARNAME>, might I have a brief word? Privately? */
 DO ~SetGlobal("rh#IsraViconiaRomance","GLOBAL",3)~
@@ -7011,7 +7052,7 @@ END
 END
 
 // Anomen
-
+// ------
 CHAIN IF ~Global("rh#IsraAnomenRomance","GLOBAL",2)~ THEN RH#ISRJ c2
 @2138 /* <CHARNAME>, might I have a brief word? Privately? */
 DO ~SetGlobal("rh#IsraAnomenRomance","GLOBAL",3)~
@@ -7055,7 +7096,7 @@ END
 END
 
 // Aerie
-
+// -----
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraAerieRomance","GLOBAL",2)~ THEN AERIEJ c3
 @2173 /* <CHARNAME>, do you... do you have a moment? I wanted to ask you something. */
 DO ~IncrementGlobal("rh#IsraAerieRomance","GLOBAL",1)~
@@ -7124,7 +7165,7 @@ END
 END
 
 // Jaheira
-
+// -------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraJaheiraRomance","GLOBAL",2)~ THEN JAHEIRAJ c4
 @2195 /* I expect to one day find that you have accidentally drowned yourself in that new perfume of yours, child. */
 DO ~IncrementGlobal("rh#IsraJaheiraRomance","GLOBAL",1)~
@@ -7142,18 +7183,20 @@ DO ~IncrementGlobal("rh#IsraJaheiraRomance","GLOBAL",1)~
 EXIT
 
 // Breakup
-
+// -------
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraRomanceBreakup","GLOBAL",1)~ THEN RH#ISRJ c5
 @2207 /* <CHARNAME>, I thought that this would work, but I'm beginning to believe that I was mistaken. I'll remain at your side, but more than that... */
 = @2208 /* I'm sorry. */
 DO ~SetGlobal("rh#IsraRomanceBreakup","GLOBAL",2)~
 EXIT
 
+
 // ---------------------------------------------
 // Flirts
 // ---------------------------------------------
 
 // Morning After
+// -------------
 CHAIN IF ~Global("rh#IsraMorning","GLOBAL",1)~ THEN RH#ISRJ fl1
 @2209 /* <CHARNAME>... mmm, good morrow, my love. */ 
 DO ~SetGlobal("rh#IsraMorning","GLOBAL",2)~ 
@@ -7227,6 +7270,7 @@ IF ~~ EXIT
 END
 
 // Post-Quest Flirts
+// -----------------
 IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1)
 Global("rh#IsraQuestTwo","GLOBAL",13) GlobalLT("rh#IsraTalks","GLOBAL",27)~ fl2
  SAY @2231 /* (You momentarily find your attention drawn to Isra.) */
@@ -7290,6 +7334,7 @@ IF ~~ EXIT
 END
 
 // Uncommitted Flirts
+// ------------------
 IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("rh#IsraRomanceActive","GLOBAL",1)
 GlobalGT("rh#IsraTalks","GLOBAL",26)~ fl3
  SAY @2246 /* (Isra has always treated you considerately, but sometimes you wonder if there might be something more.) */
@@ -7342,6 +7387,7 @@ IF ~~ EXIT
 END
 
 // Committed Flirts, Chapter 4
+// ---------------------------
 IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("chapter","GLOBAL",%bg2_chapter_4%) Global("rh#IsraRomanceActive","GLOBAL",2)~ THEN BEGIN fl4a
  SAY @2255 /* (A small smile playing across her lips, Isra approaches you, each step radiating quiet, unconscious confidence.) */
   	IF ~RandomNum(8,1)~ DO ~SetGlobal("rh#IsraTimeForFlirt","GLOBAL",0) RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)~ + fl4.2
@@ -7360,6 +7406,7 @@ IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("chapter","GLOBAL",%bg2_chap
 END
 
 // Committed Flirts
+// ----------------
 IF ~Global("rh#IsraTimeForFlirt","GLOBAL",1) Global("rh#IsraRomanceActive","GLOBAL",2)~ THEN BEGIN fl4
  SAY @2255 /* (A small smile playing across her lips, Isra approaches you, each step radiating quiet, unconscious confidence.) */
  	IF ~RandomNum(20,1)~ DO ~SetGlobal("rh#IsraTimeForFlirt","GLOBAL",0) RealSetGlobalTimer("rh#IsraFlirtTimer","GLOBAL",1800)~ + fl4.1
@@ -7613,12 +7660,13 @@ IF ~~ EXIT
 END
 END
 
+
 // ---------------------------------------------
 // Family Interjections
 // ---------------------------------------------
 
 // Alia
-
+// ----
 CHAIN IF ~GlobalLT("rh#IsraAliaTalks","GLOBAL",3) See("rh#Isra2") InParty("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID) Global("rh#IsraQuestTwo","GLOBAL",13)~ THEN RH#ALIA alia3
 @2309 /* I did warn you not to get involved. */
 DO ~SetGlobal("rh#IsraAliaTalks","GLOBAL",3)~
@@ -7729,7 +7777,7 @@ CHAIN IF ~GlobalGT("rh#IsraQuestOne","GLOBAL",13)~ THEN RH#QUENT quentin
 EXIT
 
 // Corinna Ghadir
-
+// --------------
 BEGIN RH#CORA
 
 CHAIN IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN RH#CORA corinna
@@ -7779,12 +7827,13 @@ CHAIN IF ~OR(3) !InParty("rh#Isra2") !InMyArea("rh#Isra2") StateCheck("rh#Isra2"
 @2384 /* I have nothing to say to you, <SIRMAAM>. */
 EXIT
 
+
 // ---------------------------------------------
 // Interjections
 // ---------------------------------------------
 
 // Slums
-
+// -----
 CHAIN IF WEIGHT #-1 ~InParty("rh#Isra2") IsGabber("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)   Global("rh#IsraSalvanas","GLOBAL",0)~ THEN SALVANAS rh#isra_salvanas
 @2385 /* Ah, gentle lady, your beauty sets my very soul afire! */
 DO ~SetGlobal("rh#IsraSalvanas","GLOBAL",1)~ 
@@ -7824,7 +7873,7 @@ DO ~SetGlobal("rh#IsraGlad2","GLOBAL",1)~
 EXIT
 
 // Docks
-
+// -----
 CHAIN IF WEIGHT #-1 ~CombatCounter(0) See("rh#Isra2") InParty("rh#Isra2") !See([ENEMY]) !StateCheck("rh#Isra2",CD_STATE_NOTVALID) RandomNum(2,1) Global("rh#IsraCelvan","AR0300",0)~ THEN CELVAN rh#isra_celvan
 @2398 /* There once was a lady so classy,
 all thought her an elegant lassie.
@@ -7909,7 +7958,7 @@ I_C_T ANOMENJ 158 rh#isra_anomenbeggar
 END
 
 // Temples
-
+// -------
 I_C_T CSGAAL 3 rh#isra_gaal
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2418 /* What mad blasphemy is this!? */
@@ -7965,7 +8014,7 @@ DO ~SetGlobal("rh#IsraPostul6","GLOBAL",1)~
 EXIT
 
 // Bridge
-
+// ------
 I_C_T INSPECT 46 rh#isra_inspect
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2433 /* Loath as I am to intrude upon an official investigation, Athkatla's forces have seemed rather... beleaguered as of late. Perhaps we should look into this, <CHARNAME>. */
@@ -8019,7 +8068,7 @@ I_C_T YUSUF 2 rh#isra_surayahcomment
 END
 
 // Waukeen's Promenade
-
+// -------------------
 CHAIN IF WEIGHT #-1 ~CombatCounter(0) See("rh#Isra2") InParty("rh#Isra2") !See([ENEMY]) !StateCheck("rh#Isra2",CD_STATE_NOTVALID) RandomNum(2,1) !Global("rh#IsraQuestOne","GLOBAL",5) Global("rh#IsraPatricia","GLOBAL",0)~ THEN SEVBAR01 rh#isra_sevbar1
 @2448 /* Hullo, Miss Isra. I hadn't realized ye was still in Athkatla... never thought the place agreed with ye that much. */
 DO ~SetGlobal("rh#IsraPatricia","GLOBAL",1)~
@@ -8050,7 +8099,7 @@ DO ~SetGlobal("rh#IsraNobleW1","GLOBAL",1)~
 EXIT
 
 // Government District
-
+// -------------------
 I_C_T VICG1 3 rh#isra_vicburning
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2461 /* This is not justice, <CHARNAME>. These men are no nobler than their victim... not if they are invoking Beshaba's name. */
@@ -8119,7 +8168,7 @@ DO ~SetGlobal("rh#IsraOriana","GLOBAL",1)~
 EXIT
 
 // Graveyard
-
+// ---------
 I_C_T TIRDIR 1 rh#isra_bodhi1
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2480 /* Extortion and worse... what do you know of these people, friend? */
@@ -8127,6 +8176,7 @@ I_C_T TIRDIR 1 rh#isra_bodhi1
 END
 
 // Bodhi Refusal
+// -------------
 I_C_T BODHI 1 rh#isra_bodhi1
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2482 /* I do not like this, <CHARNAME>. This... woman... positively reeks of evil. Don't make the mistake of treating with her! */
@@ -8161,7 +8211,7 @@ I_C_T WELLYN 7 rh#isra_wellyn3
 END
 
 // City Gates
-
+// ----------
 I_C_T CROTHF02 5 rh#isra_tiiroaulava1
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2487 /* Important? Love should not be about feeling important, my lady. */
@@ -8179,11 +8229,13 @@ I_C_T CROBAR01 1 rh#isra_crookedcrane
 == CROBAR01 @2491 /* You'd get used to it quick enough. */
 END
 
+
 // ---------------------------------------------
 // Trademeet
 // ---------------------------------------------
 
 // Gypsy
+// -----
 EXTEND_BOTTOM TRGYP02 2
 IF ~!InPartySlot(LastTalkedToBy,0)
     Name("rh#Isra2",LastTalkedToBy)~ THEN GOTO rh#isra_gypsy
@@ -8221,6 +8273,7 @@ I_C_T TRFUED05 2 rh#isra_alibakkar
 @2500 /* Commoner? I doubt the Lurraxols of Murann would appreciate their kinswoman being called common. */
 == TRFUED05 @2501 /* What the fools in Murann think is of little consequence here. */
 END
+
 
 // ---------------------------------------------
 // Umar Hills
@@ -8261,6 +8314,7 @@ LeaveParty()
 EscapeArea()~
 == VALYGAR @2509 /* Have at you! */
 END
+
 
 // ---------------------------------------------
 // Windspear Hills
@@ -8315,6 +8369,7 @@ LeaveParty()
 Enemy()~
 END
 
+
 // ---------------------------------------------
 // Brynnlaw
 // ---------------------------------------------
@@ -8354,6 +8409,7 @@ I_C_T IMOEN2 22 rh#isra_immy2
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2525 /* <CHARNAME>! I would sooner leave myself than abandon her here. */
 END
+
 
 // ---------------------------------------------
 // Slayer Changes
@@ -8402,6 +8458,7 @@ CHAIN RH#ISRJ slayer3.2
 @2537 /* <CHARNAME>, you would have killed me, had I let you. I... */
 = @2538 /* 'Twould be wiser to sleep apart, I think... at least for a time. Though I rather doubt that I shall be sleeping well at all in the near future. */
 EXIT
+
 
 // ---------------------------------------------
 // Underdark
@@ -8459,6 +8516,7 @@ IF ~~ phaere2
 END
 END
 
+
 // ---------------------------------------------
 // Bodhi Abduction
 // ---------------------------------------------
@@ -8488,7 +8546,7 @@ UNSOLVED_JOURNAL @2558 /* The Final Battle with Bodhi.
 Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and stealing from me the one person that is dearest to my heart: Isra.  Before she vanished and unleashed more of her undead creations upon me, Bodhi warned me that if I continue I will lose even more than I thought possible.  I cannot give up on the Rhynn Lanthorn... but now the life and immortal soul of the one I love is at stake, as well! */ EXIT
 
 //Bodhi abduction: Oghma
-
+// ---------------------
 ADD_TRANS_TRIGGER IMNBOOK1 0
 ~OR(2)
 !Global("RevealUmar","GLOBAL",1)
@@ -8522,7 +8580,7 @@ END
 END
 
 // Bodhi abduction: Elhan
-
+// ----------------------
 EXTEND_BOTTOM C6ELHAN2 70
 	+ ~PartyHasItem("rh#isbdy")~ + @2563 /* Elhan! I've the half vampire body of Isra here because of you! You'll tell me now! */ + 76
 END
@@ -8538,6 +8596,7 @@ END
 // Final battle
 
 // Bodhi section 2
+// ---------------
 ADD_TRANS_TRIGGER C6BODHI 21 ~!Global("rh#IsraVampire","GLOBAL",2)~ DO 0
 
 INTERJECT C6BODHI 21 rh#isra_bodhinap3
@@ -8577,6 +8636,7 @@ SAY @2575 /* What... do you wish of me, mistress? */
 IF ~~ EXTERN C6BODHI bodhinap6
 END
 
+
 // ---------------------------------------------
 // Chapters 6 & 7
 // ---------------------------------------------
@@ -8605,6 +8665,7 @@ I_C_T PLAYER1 16 rh#isra_irenicusdead
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN 
 @2580 /* Oh, has victory ever been as glorious as this, or as dearly bought... */
 END
+
 
 // ---------------------------------------------
 // Tree of Life
@@ -8643,6 +8704,7 @@ COPY_TRANS PLAYER1 33
 END
 END
 
+
 // ---------------------------------------------
 // Hell
 // ---------------------------------------------
@@ -8671,6 +8733,7 @@ I_C_T HELLJON 10 rh#isra_helljon4
 == RH#ISRJ IF ~InParty("rh#Isra2") InMyArea("rh#Isra2") !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN
 @2592 /* In Sune's name, wizard, your depravities stop here! */ 
 END
+
 
 // ---------------------------------------------
 // Player Initiated Dialogue

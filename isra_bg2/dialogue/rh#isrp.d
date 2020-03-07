@@ -1,12 +1,12 @@
 BEGIN RH#ISRP
 
 IF ~Global("rh#IsraJoined","GLOBAL",1)~ p1
- SAY @0 /* You truly wish to part company, <CHARNAME>? */ 
+ SAY @0 /* You truly wish to part company, <CHARNAME>? */
  	+ ~!Global("Chapter","GLOBAL",%bg2_chapter_4%) !Global("Chapter","GLOBAL",%bg2_chapter_5%) !Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @1 /* For the moment, yes. */ + p2
   	+ ~OR(3) Global("Chapter","GLOBAL",%bg2_chapter_4%) Global("Chapter","GLOBAL",%bg2_chapter_5%) Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @1 /* For the moment, yes. */ + p3
  	++ @2 /* Sorry, no. I'd rather not. */ + p4
 END
- 
+
 IF ~~ p2
  SAY @3 /* I see. Should you change your mind, I intend to visit the Temple of Lathander at least briefly before leaving the city. Perhaps you can find me there. */
 IF ~~ DO ~SetGlobal("rh#IsraJoined","GLOBAL",0) EscapeAreaMove("AR0902",761,1060,13)~ EXIT
@@ -23,7 +23,7 @@ IF ~~ DO ~JoinParty()~ EXIT
 END
 
 IF ~Global("rh#IsraJoined","GLOBAL",0)~ p5
- SAY @6 /* Hello, <CHARNAME>. I'm pleased to see you again. */ 
+ SAY @6 /* Hello, <CHARNAME>. I'm pleased to see you again. */
 	++ @7 /* Would you care to join up with me again? */ + p6
 	++ @8 /* Hello, Isra. I was just checking to see how you were. */ + p7
 END
@@ -69,7 +69,7 @@ UNSOLVED_JOURNAL @15 /* The Final Battle with Bodhi.
 Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and stealing from me the one person that is dearest to my heart: Isra.  Before she vanished and unleashed more of her undead creations upon me, Bodhi warned me that if I continue I will lose even more than I thought possible.  I cannot give up on the Rhynn Lanthorn... but now the life and immortal soul of the one I love is at stake, as well! */ EXIT
 
 //Bodhi abduction: Oghma
-
+// ---------------------
 ADD_TRANS_TRIGGER IMNBOOK1 0
 ~OR(2)
 !Global("RevealUmar","GLOBAL",1)
@@ -103,7 +103,7 @@ END
 END
 
 // Bodhi abduction: Elhan
-
+// ----------------------
 EXTEND_BOTTOM C6ELHAN2 70
 	+ ~PartyHasItem("rh#isbdy")~ + @20 /* Elhan! I've the half vampire body of Isra here because of you! You'll tell me now! */ + 76
 END
@@ -119,6 +119,7 @@ END
 // Final battle
 
 // Bodhi section 2
+// ---------------
 ADD_TRANS_TRIGGER C6BODHI 21 ~!Global("rh#IsraVampire","GLOBAL",2)~ DO 0
 
 INTERJECT C6BODHI 21 bodhinap3
@@ -161,7 +162,7 @@ END
 APPEND RH#ISRP
 
 IF WEIGHT #-1 ~OR(2) Global("rh#IsraVampire","GLOBAL",3) Global("rh#IsraVampire","GLOBAL",4)~ THEN BEGIN v1
- SAY @33 /* <CHARNAME>? I-- by the gods, my head... */ 
+ SAY @33 /* <CHARNAME>? I-- by the gods, my head... */
 IF ~~ DO ~ChangeAIScript("rh#isr",OVERRIDE) SetGlobal("rh#IsraVampire","GLOBAL",5)
 EraseJournalEntry(@15 /* The Final Battle with Bodhi.
 
@@ -248,6 +249,7 @@ Unfortunately, Isra's time as a vampire has had an unexpected side effect: she h
 END
 END
 
+
 // ---------------------------------------------
 // A Song Yet to be Sung
 // ---------------------------------------------
@@ -256,6 +258,7 @@ BEGIN RH#EVEND
 BEGIN RH#ILIAN
 
 // 1.
+// --
 CHAIN IF ~Global("rh#IsraPaladin","GLOBAL",1) InParty("rh#Isra2")
 !StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN RH#EVEND pal1
 @61 /* Isra. I came as soon as I heard. Shall I assume that your... predicament... has not improved? */
@@ -267,8 +270,8 @@ END
 	++ @65 /* She was turned against her will. Whatever evil she did can surely be forgiven? */ + pal1.1
 	++ @66 /* This is my fault, not hers. Bodhi took her because of me. */ + pal1.1
 	++ @67 /* You're insane to hold this against her. She didn't have a choice. */ + pal1.1
-	
-CHAIN RH#EVEND pal1.1	
+
+CHAIN RH#EVEND pal1.1
 @68 /* I see. You love her, do you not? */
 == RH#ISRJ @69 /* Really, sir-- */
 == RH#EVEND @70 /* 'Tis a simple enough question, Isra. */
@@ -318,6 +321,7 @@ DO ~AddJournalEntry(@89 /* A Song Yet to be Sung
 Isra's mentor, Sir Evendur, has set us a strange task for her reinvestiture. We are to meet a bard by the name of Ilian in the Mithrest Inn and share our story with him. */,QUEST)~ EXIT
 
 // 2.
+// --
 CHAIN IF ~InParty("rh#Isra2") Global("rh#IsraPaladin","GLOBAL",2)~ THEN RH#ILIAN pal2
 @94 /* Well, well... what exquisite company I find myself in this fair eve. Pugney, my friend, can I trouble you for another round of wine? */
 DO ~SetGlobal("rh#IsraPaladin","GLOBAL",3)~
@@ -340,7 +344,7 @@ CHAIN RH#ILIAN pal2.1
 DO ~AddJournalEntry(@108 /* A Song Yet to be Sung
 
 We have met with Ilian... a garrulous man, to say the least. The evening was long indeed, but he seemed pleased with the tale at last. It still needs some polish, he says, but he has instructed us to inform Sir Evendur in the morning regardless. */,QUEST)
-RestParty()~ 
+RestParty()~
 EXIT
 
 CHAIN RH#ILIAN pal2.2
@@ -359,13 +363,15 @@ END
 IF ~~ EXTERN RH#ILIAN pal2.1
 
 // 3.
+// --
 CHAIN IF WEIGHT #-1 ~Global("rh#IsraPaladin","GLOBAL",4)~ THEN RH#ISRJ pal3
-@112 /* Ahh... you are awake. Good. Might we return to the temple of Lathander now? */  
+@112 /* Ahh... you are awake. Good. Might we return to the temple of Lathander now? */
 = @113 /* Forgive me for being restless, but I would prefer to put this nightmare behind me as quickly as possible. */
 DO ~SetGlobal("rh#IsraPaladin","GLOBAL",5)~
 EXIT
 
 // 4.
+// --
 CHAIN IF ~Global("rh#IsraPaladin","GLOBAL",5)~ THEN RH#EVEND pal4
 @114 /* Shall I assume that you have spoken with Ilian? */
 == RH#ISRJ @115 /* For the few hours during which he was sober enough to listen, aye. */
@@ -404,11 +410,12 @@ EscapeAreaDestroy(5)~
 EXIT
 
 // 5.
+// --
 CHAIN IF ~InParty("rh#Isra2") Global("rh#IsraPaladin","GLOBAL",2)~ THEN RH#EVEND pal5
 @127 /* I believe that Ilian is expecting you. */
 EXIT
 
-CHAIN IF ~OR(2) !InParty("rh#Isra2") !InMyArea("rh#Isra2")  
+CHAIN IF ~OR(2) !InParty("rh#Isra2") !InMyArea("rh#Isra2")
 StateCheck("rh#Isra2",CD_STATE_NOTVALID)~ THEN RH#EVEND pal6
 @128 /* Leave me be. I am expecting someone. */
 EXIT
