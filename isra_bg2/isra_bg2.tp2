@@ -17,6 +17,10 @@ ALWAYS
 		OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
 
 
+		// Variable used by function GW_FIND_DLG_RESPONSE_STRING to find after which transition Isra will be recalled by Fate Spirit.
+		OUTER_SET fatesp_string = 65017			// ~Bring me Imoen, the thief/mage.~
+
+
 		/* eet compatibility */
 		ACTION_IF is_eet BEGIN
 			OUTER_SET bg2_chapter = 12

@@ -1,6 +1,6 @@
 // FATE SPIRIT
 
-EXTEND_TOP FATESP 6
+EXTEND_TOP FATESP %fatesp_state_isra% #%fatesp_transition_isra%
 + ~!Dead("rh#Isra2") !InMyArea("rh#Isra2") CheckStatGT(Player1,12,CHR) Alignment(Player1,MASK_GOOD) Global("rh#IsraSummoned","GLOBAL",0)~ + @0 /* Bring me my lover, Isra. */ 
 	DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
 	Wait(2)

@@ -159,7 +159,8 @@ ACTION_IF is_eet BEGIN
 			clean_ToB_DV = "rh#isra"
 	END
 END ELSE BEGIN
-	COMPILE ~isra_bg2/dialogue/rh#fatesp.d~ USING ~isra_bg2/translations/%LANGUAGE%/rh#is25.tra~
+	INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
+	COMPILE EVALUATE_BUFFER ~isra_bg2/dialogue/rh#fatesp.d~ USING ~isra_bg2/translations/%LANGUAGE%/rh#is25.tra~
 END
 
 
