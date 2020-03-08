@@ -1,0 +1,1 @@
+Implement Isra BG1 ==> BG2 full continuity "a la Ajantis mod" (DV rh#isra ==> rh#isra2)
