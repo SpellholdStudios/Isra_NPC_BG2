@@ -2,6 +2,14 @@
  *         MAIN COMPONENT INSTALLATION         *
  * =========================================== */
 
+
+/* -------------------------------- *
+ *    Loads macros and functions    *
+ * -------------------------------- */
+
+INCLUDE ~%MOD_FOLDER%/lib/gw_functions.tpa~ // Loads macros and functions library dealing with specific EE items descriptions.
+
+
 /* -------------------------------------------------------------------------------------------------- *
  *   	ADDs CamDawg's custom IsValidForPartyDialogue state used throughout isra. Thanks Cam!         *
  * -------------------------------------------------------------------------------------------------- *
@@ -256,13 +264,13 @@ COPY ~isra_bg2/creatures/rh#isr.cre~  ~override/rh#isr.cre~
 	SAY SET_A_TRAP ~~ []
 	SAY HIDDEN_IN_SHADOWS ~~ []
 	SAY PICKED_POCKET ~~ []
-	PATCH_IF is_ee BEGIN
+	PATCH_IF ("%SOURCE_RES%" STRING_COMPARE_CASE ~rh#isr~ = 0) BEGIN
+		ADD_CRE_ITEM ~plat01~ #0 #0 #0 ~NONE~ ~armor~
+		ADD_CRE_ITEM ~sw2h02~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~ EQUIP
+	END ELSE BEGIN
 		ADD_CRE_ITEM ~plat14~ #0 #0 #0 ~NONE~ ~armor~
 		ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~NONE~ ~weapon1~ EQUIP
 		ADD_CRE_ITEM ~sw1h73~ #0 #0 #0 ~NONE~ ~shield~
-	END ELSE BEGIN
-		ADD_CRE_ITEM ~plat01~ #0 #0 #0 ~NONE~ ~armor~
-		ADD_CRE_ITEM ~sw2h02~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~ EQUIP
 	END
 	ADD_CRE_ITEM ~rh#isrng~ #0 #0 #0 ~NONE~ ~lring~
 BUT_ONLY
@@ -521,14 +529,7 @@ BUT_ONLY
 COPY ~isra_bg2/Items/rh#mail.itm~ ~override~
 	SAY NAME1 @73
 	SAY NAME2 @73
-	SAY DESC @74 /* Dragon Scale armor is light of weight, strong, and resistant to acid. Because of these properties it is much sought after, but finding, let alone slaying, a powerful ancient dragon is near impossible. It is usually easier to search for an existing suit, such as this one. One should be careful wearing it near dragons, however, particularly green ones.
-
-STATISTICS:
-
-Bonuses: +50% Acid Resistance
-Armor Class: -1
-Weight: 30
-Requires: 8 Strength */
+	LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@74" END
 BUT_ONLY
 
 // Letter

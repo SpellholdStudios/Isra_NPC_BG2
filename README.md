@@ -178,6 +178,8 @@ Isra will have several quests in Athkatla - one that begins when you first recru
 - **Viconia:** They tolerate each other, though just barely. Viconia is less hostile than she'd be with a male paladin, but that doesn't say much.
 - **Yoshimo:** Yoshimo is a career thief, and Isra isn't too happy about that. They don't have any serious problems, though.
 
+&nbsp;
+
 BG2:EE content:
 
 - **Dorn:** Yeah, no. Don't mix blackguards and paladins. It will end violently.
@@ -283,15 +285,18 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
-- Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
+- Commented code as much as possible.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
+
+- Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
 
 - rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
 - rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).
 
 - Fixed Isra portraits in EE games.
 
+- Updated setup.tra file for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
 - Fixed typos in .tra files.
 - Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
 - Updated deprecated modding tools links.
@@ -307,6 +312,12 @@ TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's 
 
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
 
+- <ins>Mantle of Roses (rh#cloak.itm)</ins>:
+  - Fixed item description: added missing weight (3).
+  - Removed Enchantment value (was 2).
+  - Added missing opcodes for a full Immunity to Confusion effects: op#296 Protection from Specific Animation (SPCONFUS), op#267 (protection from string = 14782 *Confused* - 14791 *Rigid Thinking*), op#169 (Immunity Special Effect Icon = 2 Rigid Thinking, 3 Confused, 47 Chaos).
+
+ 
 ## 
 
 #### Version 3 (24 April 2018)

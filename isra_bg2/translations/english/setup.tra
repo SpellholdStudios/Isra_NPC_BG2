@@ -83,10 +83,26 @@
  *  Items  *
  * ------- */
 @67   = ~Ghadir Family Ring~
-@68   = ~Of Calishite origin, this ring has belonged to Isra's family for generations. It grants her a +1 bonus to all saving throws and a +1 armor class bonus.~
+@68   = ~Of Calishite origin, this ring has belonged to Isra's family for generations. It grants her a +1 bonus to all saving throws and a +1 armor class bonus.
+
+STATISTICS:
+
+Equipped abilities:
+- Armor Class: +1
+- Saving Throws: +1
+
+Weight: 0~
 
 @69   = ~Mantle of Roses~
-@70   = ~This cloak, woven by a priestess of Sune, was intended as a gift for <CHARNAME> of Candlekeep. It grants its wear a +1 bonus to Charisma as well as immunity to confusion.~
+@70   = ~This cloak, woven by a priestess of Sune, was intended as a gift for <CHARNAME> of Candlekeep. It grants its wearer a +1 bonus to Charisma as well as immunity to confusion.
+
+STATISTICS:
+
+Equipped abilities:
+- Charisma: +1
+- Immunity to confusion
+
+Weight: 3~
 
 @71   = ~Isra's Body~
 @72   = ~Isra was captured by Bodhi and infected with vampirism, forcing you to slay her. There may be some way to revive her, though you don't know what it would be.~
@@ -96,10 +112,26 @@
 
 STATISTICS:
 
-Bonuses: +50% Acid Resistance
-Armor Class: -1
+Equipped abilities:
+- Acid Resistance: +50%
+
+Armor Class: -1 (-4 vs. slashing, -2 vs. piercing and missile)
+Requires:
+ 8 Strength
+
 Weight: 30
-Requires: 8 Strength~
+
+Not usable by:
+ Bard
+ Mage
+ Thief
+ Monk
+ Barbarian
+ Shapeshifter
+ Archer
+ Beastmaster
+ Stalker
+ Kensai~
 
 @75   = ~Letter~
 @76   = ~This note is plain, though a chalky, sulfuric residue clings to it. Perhaps its author was in a laboratory of some sort. It reads:
@@ -120,6 +152,10 @@ GD~
 @82   = ~Sea Bounty's Bitter Black Ale~
 @83   = ~The Thumb's Bitter Black Ale, intended as a gift for the smuggler Alim al-Makram.~
 @84   = ~After the victory at the Throne of Bhaal, Isra remained in Tethyr for a time, where she hoped to help repair the damage caused during the Bhaalspawn Crisis. Though she seldom spoke of the uglier aspects of the conflict, those who knew her believed that she felt the need to atone for harm inadvertently committed. This did little to dampen her spirits, however, and she became quite popular amongst the Tethyrian aristocracy... and with one if its minstrels in particular, according to rumor. Nevertheless, her time in Tethyr came to an abrupt end when relations with Amn escalated. Returning north to Crimmor, Isra finally renewed her ties to the Order of the Ruby Rose. Illustrious though her later career proved, no quest could compare to the one undertaken in her youth, and Isra retired from active service at a younger age than she might have otherwise liked. It is said that she eventually went into politics, striving to introduce a bit of compassion into a system sadly devoid of it. She never married, though if Athkatlan gossip can be believed, she seldom suffered from loneliness.~
+
+@9001 = ~[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+
 
 /* ----------- *
  *  Epilogues  *
