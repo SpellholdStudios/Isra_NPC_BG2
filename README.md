@@ -283,6 +283,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 #### Version 3.1 ( March 2020)
 
+- Added *isra_bg2.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Commented code as much as possible.
