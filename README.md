@@ -1,5 +1,5 @@
 
-![Latest Release](https://img.shields.io/github/v/release/GwendolyneFreddy/Isra_NPC_BG2?include_prereleases&color=darkred)<a name="top" id="top"> </a>
+![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Isra_NPC_BG2?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English&color=limegreen)
 
@@ -237,6 +237,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 The installer includes the following components. The number of each is the component *DESIGNATED* number which gives it a fixed install position and allows automated installers to specify component choices.
 
+## 
 
 **0. Isra NPC for BGII** (Main component)  
 
@@ -296,7 +297,7 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 3.1 ( March 2020)
+#### Version 3.1 (8 March 2020)
 
 - Added *isra_bg2.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
@@ -305,35 +306,26 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 - Commented code as much as possible.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
-
 - Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
 - ToB: Summoning Isra via fate spirit will be deactivated if Isra was in the party during ToB transition.
-
 - rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
 - rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).
-
 - Fixed Isra portraits in EE games.
-
 - <ins>Mantle of Roses (rh#cloak.itm)</ins>:
   - Fixed item description: added missing weight (3).
   - Removed Enchantment value (was 2).
   - Added missing opcodes for a full Immunity to Confusion effects: op#296 Protection from Specific Animation (SPCONFUS), op#267 (protection from string = 14782 *Confused* - 14791 *Rigid Thinking*), op#169 (Immunity Special Effect Icon = 2 Rigid Thinking, 3 Confused, 47 Chaos).
-
 - Updated setup.tra file for compatibility with *GW_UPDATE_ITM_DESCRIPTION_TO_EE* WeiDU function requirements which automatically removes usability restrictions for EE games.
 - Fixed typos in .tra files.
 - Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
 - Updated deprecated modding tools links.
-
 - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
-
 - Removed useless files and folders (backup, batch...).
 - Reorganized mod architecture tree: created folders to sort files according to their types.
 - Updated OggDec to v1.9.7.
-
-TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
-
+- Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
- 
+
 ## 
 
 #### Version 3 (24 April 2018)
