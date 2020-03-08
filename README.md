@@ -281,7 +281,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version ??? ( March 2020)
+#### Version 3.1 ( March 2020)
 
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
@@ -296,27 +296,28 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 - Fixed Isra portraits in EE games.
 
-- Updated setup.tra file for compatibility with GW_UPDATE_ITM_DESCRIPTION_TO_EE WeiDU function requirements which automatically removes usability restrictions for EE games.
-- Fixed typos in .tra files.
-- Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
-- Updated deprecated modding tools links.
-TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
-- Removed useless files and folders (backup...).
-- Reorganized mod architecture tree: created folders to sort files according to their types.
-
-TODO - oh6450.tra  
-
-TODO - Updated OggDec to v1.9.7 and sox to v14.4.1.
-
-TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
-
-- Uploaded mod to official Spellhold Studios GitHub mirror account.
-
 - <ins>Mantle of Roses (rh#cloak.itm)</ins>:
   - Fixed item description: added missing weight (3).
   - Removed Enchantment value (was 2).
   - Added missing opcodes for a full Immunity to Confusion effects: op#296 Protection from Specific Animation (SPCONFUS), op#267 (protection from string = 14782 *Confused* - 14791 *Rigid Thinking*), op#169 (Immunity Special Effect Icon = 2 Rigid Thinking, 3 Confused, 47 Chaos).
 
+- Updated setup.tra file for compatibility with *GW_UPDATE_ITM_DESCRIPTION_TO_EE* WeiDU function requirements which automatically removes usability restrictions for EE games.
+- Fixed typos in .tra files.
+- Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
+- Updated deprecated modding tools links.
+
+TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
+
+- Removed useless files and folders (backup...).
+- Reorganized mod architecture tree: created folders to sort files according to their types.
+
+TODO - oh6450.tra  
+
+- Updated OggDec to v1.9.7.
+
+TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
+
+- Uploaded mod to official Spellhold Studios GitHub mirror account.
  
 ## 
 

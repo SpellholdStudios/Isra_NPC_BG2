@@ -63,9 +63,9 @@ COPY_EXISTING ~ar1005.are~ ~override~
 BUT_ONLY
 
 
-// ---------------------------------------------
-// Audio
-// ---------------------------------------------
+/* ------------------------ *
+ *  Installing music files  *
+ * ------------------------ */
 COPY ~isra_bg2/audio/rh#blank.mus~ ~music~
 
 COPY_EXISTING ~songlist.2da~ ~override~
