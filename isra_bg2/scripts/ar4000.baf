@@ -1,0 +1,10 @@
+/* Isra was in party upon transition: she is no longer available for summoning */
+
+IF
+	InPartyAllowDead("rh#Isra2")
+	Global("rh#IsraSummoned","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("rh#IsraSummoned","GLOBAL",2)
+		Continue()
+END

@@ -307,6 +307,7 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 - Added missing `HANDLE_CHARSETS` function to convert string entries for EE games (to prepare for possible translations).
 
 - Removed redundant `IF_FILE_EXISTS` conditions in *isra_bg2_crossmod.tpa*.
+- ToB: Summoning Isra via fate spirit will be deactivated if Isra was in the party during ToB transition.
 
 - rh#isr.baf: Fixed wrong strref entry (was missing in rh#isr.tra).
 - rh#quest.d and rh#quest.tra: Integrated BWP Fixpack tokens typo fix (replaced *<PRO_BOYGIRL>* with *<PRO_GIRLBOY>* at entry @150).

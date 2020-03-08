@@ -137,6 +137,9 @@ COMPILE ~isra_bg2/scripts/rh#iswr1.baf~
 
 EXTEND_TOP ~ar6200.bcs~		~isra_bg2/scripts/ar6200.baf~
 EXTEND_BOTTOM ~cut218g.bcs~	~isra_bg2/scripts/rh#iswr2.baf~
+ACTION_IF (is_eet = 0) BEGIN
+	EXTEND_BOTTOM ~ar4000.bcs~   ~isra_bg/scripts/ar4000.baf~	//disable summoning in ToB if in party
+END
 
 
 /* ------------- *
