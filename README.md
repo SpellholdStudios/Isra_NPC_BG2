@@ -324,9 +324,9 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 - Traified rh#isstr.baf and completed isra_bg2.tp2 traification.
 - Updated deprecated modding tools links.
 
-TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
+- Re-formated, updated and renamed readme file to *isra_bg2-readme-english.html* and moved it into new readme folder.
 
-- Removed useless files and folders (backup...).
+- Removed useless files and folders (backup, batch...).
 - Reorganized mod architecture tree: created folders to sort files according to their types.
 - Updated OggDec to v1.9.7.
 
