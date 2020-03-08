@@ -67,7 +67,7 @@ COPY_EXISTING - ~fatesp.dlg~ ~override~
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET fatesp_transition_isra = GW_transition_number + 1
 			SET fatesp_state_isra = GW_state_number
-			PATCH_PRINT "CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%fatesp_state_ninde%	-	transition = #%fatesp_transition_ninde%."
+			PATCH_PRINT "CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%fatesp_state_isra%	-	transition = #%fatesp_transition_isra%."
 		END
 
 	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)

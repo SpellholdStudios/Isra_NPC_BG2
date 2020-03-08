@@ -100,7 +100,7 @@ COMPILE ~isra_bg2/scripts/rh#isct4.baf~
 COMPILE ~isra_bg2/scripts/rh#isct5.baf~
 COMPILE ~isra_bg2/scripts/rh#isct6.baf~
 COMPILE ~isra_bg2/scripts/rh#isct7.baf~
-COMPILE ~isra_bg2/scripts/rh#isstr.baf~	USING ~adrian/translations/%s\setup.tra~
+COMPILE ~isra_bg2/scripts/rh#isstr.baf~	USING ~isra_bg2/translations/%s\setup.tra~
 COMPILE ~isra_bg2/scripts/rh#isme.baf~
 COMPILE ~isra_bg2/scripts/rh#isvmp.baf~
 COMPILE ~isra_bg2/scripts/rh#evend.baf~
@@ -138,7 +138,7 @@ COMPILE ~isra_bg2/scripts/rh#iswr1.baf~
 EXTEND_TOP ~ar6200.bcs~		~isra_bg2/scripts/ar6200.baf~
 EXTEND_BOTTOM ~cut218g.bcs~	~isra_bg2/scripts/rh#iswr2.baf~
 ACTION_IF (is_eet = 0) BEGIN
-	EXTEND_BOTTOM ~ar4000.bcs~   ~isra_bg/scripts/ar4000.baf~	//disable summoning in ToB if in party
+	EXTEND_BOTTOM ~ar4000.bcs~   ~isra_bg2/scripts/ar4000.baf~	// disable summoning in ToB if in party
 END
 
 
@@ -220,9 +220,9 @@ COPY ~isra_bg2/creatures/rh#isr.cre~  ~override/rh#isr.cre~
 		WRITE_ASCII 0x34 ~rh#isras~ #8   //small portrait
 		WRITE_ASCII 0x3c ~rh#isram~ #8   //medium portrait
 	END
-	WRITE_ASCIIE DIALOG         ~%DEST_RES%~ #8
-	WRITE_ASCII DEATHVAR        ~rh#Isra2~ #32
-	WRITE_ASCII SCRIPT_OVERRIDE ~%DEST_RES%~ #8
+	WRITE_ASCIIE DIALOG          ~%DEST_RES%~ #8
+	WRITE_ASCII DEATHVAR         ~rh#Isra2~ #32
+	WRITE_ASCIIE SCRIPT_OVERRIDE ~%DEST_RES%~ #8
 	SAY BIO @1003						/* When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own. */
 	SAY MORALE ~~ []
 	SAY HAPPY @1005						/* ~I'm truly honored to be in your company.~ [rh#is001] */
