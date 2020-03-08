@@ -54,6 +54,11 @@ You can find her in the Den of the Seven Vales in Waukeen's Promenade, where she
 
 ## <a name="compat" id="compat"></a>Compatibility
 
+This mod is designed to work on the following Infinity Engine games: the original Baldur's Gate II (BG2 or just SoA) with the Throne of Bhaal (ToB) expansion, Baldur's Gate II: Enhanced Edition (BG2:EE), the conversion projects <a href="http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate Trilogy (BGT)</a> and <a href="https://github.com/K4thos/EET/releases">Enhanced Edition Trilogy (EET)</a>.
+
+Isra NPC for BGII is a WeiDU mod, and therefore should be compatible with all WeiDU mods. However, we cannot test every single one. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/638-isra/">report them on the forum</a>!
+
+>Although it is not required for Isra NPC for BGII to function properly, classical game players are strongly recommended to download and install the latest version of the <a href="http://www.gibberlings3.net/bg2fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.<br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -230,6 +235,16 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 ## <a name="components" id="components"></a>Components
 
+The installer includes the following components. The number of each is the component *DESIGNATED* number which gives it a fixed install position and allows automated installers to specify component choices.
+
+
+**0. Isra NPC for BGII** (Main component)  
+
+## 
+
+**1. Crossmod content**
+
+This component installs banters between Isra and Adrian, Coran (Kulyok's mod), Dace, Nephele, Ninde, Tiax (Kulyok's mod) and Xan (Kulyok's mod), if those mods are detected.
 
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -285,6 +300,7 @@ If you're not interested in or eligible for romancing Isra, she has friendship c
 
 - Added *isra_bg2.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
+- Added components `DESIGNATED` numbers and "*isra_npc_for_bg2*" and "*isra_npc_for_bg2_crossmod_content*"`LABELS`.
 - Externalized tp2 code into *main_component.tpa* and *isra_bg2_crossmod.tpa* libraries for more comfortable readability and maintenance.
 - Commented code as much as possible.
 - Replaced `GAME_IS` conditions with variables checks to speed up install time.
@@ -311,9 +327,6 @@ TODO - Re-formated, updated and renamed readme file to *isra_bg2-readme-english.
 
 - Removed useless files and folders (backup...).
 - Reorganized mod architecture tree: created folders to sort files according to their types.
-
-TODO - oh6450.tra  
-
 - Updated OggDec to v1.9.7.
 
 TODO - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).

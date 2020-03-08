@@ -1,10 +1,10 @@
 BACKUP ~isra_bg2/backup~
-AUTHOR ~Rhaella~
-SUPPORT ~ Rhaella and Spellhold staff at http://www.shsforums.net/forum/638-isra/~
+//AUTHOR ~Rhaella~
+SUPPORT ~Rhaella and Spellhold staff at http://www.shsforums.net/forum/638-isra/~
 
 VERSION ~v3~
 
-README ~isra_bg2/Isra_BG2_Readme.html~
+README ~isra_bg2/readme/isra_bg2-readme-english.html~
 
 ALWAYS
 
@@ -65,6 +65,7 @@ LANGUAGE ~English~
  *  Isra for BGII  *
  * =============== */
 BEGIN @0								 /* Isra for BGII */
+DESIGNATED 0 LABEL ~isra_npc_for_bg2~
 REQUIRE_PREDICATE GAME_INCLUDES ~tob~ @1 /* You must have Throne of Bhaal or BG2:EE installed to install Isra NPC for BGII mod. */
 
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
@@ -74,6 +75,7 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  *  Isra Crossmod Content  *
  * ======================= */
 BEGIN @2								/* Isra Crossmod Content */
+DESIGNATED 1 LABEL ~isra_npc_for_bg2_crossmod_content~
 REQUIRE_COMPONENT ~isra_bg2.tp2~ ~0~ @3	// ~Please install Isra NPC for BGII main component before additional content.~
 
 INCLUDE ~%MOD_FOLDER%/lib/isra_bg2_crossmod.tpa~
