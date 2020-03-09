@@ -39,10 +39,10 @@ END
 // Gives Imoen a banter file if there isn't one already
 // ----------------------------------------------------
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~bimoen2.dlg~ BEGIN
-	<<<<<<<< ninde/dialogue/bimoen2.d
+	<<<<<<<< isra_bg2/dialogue/bimoen2.d
   BEGIN BIMOEN2
   >>>>>>>>
-	COMPILE ~ninde/dialogue/bimoen2.d~
+	COMPILE ~isra_bg2/dialogue/bimoen2.d~
 END
 
 
