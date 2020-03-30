@@ -8,7 +8,7 @@
  *  Isra NPC  *
  * ---------- */
 @1002 = ~Isra~
-@1003 = ~When asked about her past, ISRA tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.~
+@1003 = ~When asked about her past, Isra tells you that she is a newly instated knight of the Ruby Rose, a paladin order dedicated to Sune. She speaks warmly of her long training in Crimmor, the Caravan Capital of Amn, though despite her obvious nostalgia, she seems happy enough to finally be away from it and out in the world on her own.~
 
 @1005 = ~I'm truly honored to be in your company.~ [rh#is001]
 @1006 = ~I don't care for some of the choices you've been making.~ [rh#is002]

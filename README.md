@@ -34,6 +34,8 @@ This mod adds Isra Ghadir, a cavalier paladin of Sune Firehair, to Baldur's Gate
 
 You can find her in the Den of the Seven Vales in Waukeen's Promenade, where she is looking into some family concerns. She will not immediately join the party, though you will have the chance to establish whether or not you knew her in BG. If you met her in Nashkel, you may either continue from where you left off or start anew as strangers. There will be significant differences in her early dialogue depending upon which you choose. She is playable through to the end of Throne of Bhaal.
 
+&nbsp;
+
 **Content:**
 - A new cavalier paladin NPC for BGII.
 - Content for SoA, ToB and BG2:EE.
@@ -286,7 +288,7 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 
 #### Copyrights Information
 
-###### <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> Isra NPC is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
+###### <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> Isra NPC mod is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by Rhaella, based on material from the game Baldur's Gate II and its expansion, and is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 ###### Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.
 
 <div align="right"><a href="#top">Back to top</a></div>
@@ -297,7 +299,7 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 3.1 (8 March 2020)
+#### Version 3.1 (30 March 2020)
 
 - Added *isra_bg2.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.

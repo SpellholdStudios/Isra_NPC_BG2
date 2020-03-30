@@ -34,6 +34,7 @@ ALWAYS
 		END
 
 
+		// Convert strings to UTF-8 for BGEE/BG2EE
 		// No exception, everything needs to be converted
 		// setup.tra contains in game texts as well as installation texts and need to be converted
 		ACTION_DEFINE_ARRAY rh#noconvert BEGIN END
