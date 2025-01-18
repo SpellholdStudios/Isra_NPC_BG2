@@ -1,3 +1,8 @@
+<hr>
+
+:warning: **The maintenance and support of this project has been moved to a [new repository](https://github.com/Spellhold-Studios/Isra-NPC-BG2).**
+
+<hr><br>
 
 ![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Isra_NPC_BG2?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
@@ -268,7 +273,7 @@ This component installs banters between Isra and Adrian, Coran (Kulyok's mod), D
 - Portrait: Lady Lesatho.
 - Playtesters: Skia, stinky_Ogre, Pretsal.
 - Additional help: A special thanks to AstroBryGuy for help with the OS-X installation, Kulyok for proofreading, and to K'aeloree and berelinde for advice, encouragement, and no small amount of help with banters!
-- Music: <a href="http://www.jamendo.com/en/track/989070/arabian-revolution-action">Arabian Revolution</a> (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">Grégoire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+- Music: <a href="http://www.jamendo.com/en/track/989070/arabian-revolution-action">Arabian Revolution</a> (<a href="http://www.jamendo.com/en/artist/560/gregoire-lourme">GrÃ©goire Lourme</a>) / <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
 - Everyone else from <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.
 
 
